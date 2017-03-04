@@ -1,5 +1,4 @@
-# gg-art-doc
-GeoGebra Automated Reasoning Tools – A Tutorial
+# GeoGebra Automated Reasoning Tools – A Tutorial
 
 This repository contains the LaTeX sources for creating the official tutorial for GeoGebra Automated Reasoning Tools.
 
