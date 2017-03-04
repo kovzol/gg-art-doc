@@ -9,7 +9,7 @@ Please feel free to make a copy of [english.tex](english.tex) and contribute a t
 
 ## Compilation
 
-We use the command `pdflatex english` twice to generate the PDF version. Alternatively the `make` command will do
+We use the command `pdflatex english` twice to generate the PDF version. Alternatively the `make` command does
 the same.
 
 ## GeoGebra files
@@ -22,7 +22,7 @@ The figures have been created directly by using the desktop version of GeoGebra.
 
 ## Authors
 * Zoltán Kovács <zoltan@geogebra.org>
-* Tomás Reció <tomas.recio@unican.es>
+* Tomás Recio <tomas.recio@unican.es>
 * M. Pilar Vélez <pvelez@nebrija.es>
 
 ## License
