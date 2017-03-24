@@ -19,11 +19,16 @@ The figures have been created directly by using the desktop version of GeoGebra.
 ## Planned changes on the Tutorial
 * Add references
 * Explain the difference between using axes and switching them off
+* Add icons
 
 ## Authors
 * Zoltán Kovács <zoltan@geogebra.org>
 * Tomás Recio <tomas.recio@unican.es>
 * M. Pilar Vélez <pvelez@nebrija.es>
+
+## Translators
+* Noël Lambert <noel@geogebra.org>
+* Katharina Schiffler <katharina.schiffler@ph-linz.at>
 
 ## License
 GNU General Public License 3

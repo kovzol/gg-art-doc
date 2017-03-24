@@ -28,7 +28,9 @@
 
 \title{GeoGebra Automatisierte Begründungwerkzeuge\\ \large Ein Tutorial}
 \author{Zolt\'an Kov\'acs, Tom\'as Recio und M. Pilar V\'elez\\
-Übersetzt von Katharina Schiffler}
+Übersetzt von Katharina Schiffler\\
+\textbf{work in progress}
+}
 %\date{January 2017}
 
 \begin{document}
@@ -50,270 +52,268 @@
 
 \section{Einführung}
 
-The software tool GeoGebra (\url{http://www.geogebra.org}) is capable of supporting the teaching of Euclidean plane geometry theorems by using symbolic computations. For these purposes some tools for the automatic proving and discovery of geometric theorems have been developed.
+Das Softwaretool GeoGebra (\url{http://www.geogebra.org}) ist geeignet zur Unterstützung des Unterrichts der zweidimensionalen euklidischen Geometrie Theorien mit symbolischen Berechnungen. Zu diesem Zweck wurden einige Werkzeuge für den automatischen Beweis und zur Entdeckung von geometrischen Lehrsätzen entwickelt.
 
-The novel technologies are still in an experimental phase in the classrooms. This document summarizes the technical possibilities by showing some examples also.
+Die neuen Technologien im Klassenzimmer befinden sich noch in einer experimentellen Phase. Dieses Dokument fasst die technischen Möglichkeiten zusammen und zeigt auch einige Beispiele.
 
 \section{Starting GeoGebra}
 
-GeoGebra is available on many platforms, including
+GeoGebra ist auf vielen Plattformen verfügbar, wie zum Beispiel
 \begin{itemize}
-    \item desktop or laptop computers with various operating systems installed,
-    \item tablets, and
-    \item phones.
+    \item Computer mit verschiedenen Betriebssystemen
+    \item Tablets, und
+    \item Smartphones.
 \end{itemize}
-Also embedded GeoGebra applets are available on web pages, including GeoGebra Materials (\url{https://www.geogebra.org/materials/}) with millions of freely available teaching materials.
+Darüber hinaus sind eingebettete GeoGebra Applets auf Websites verfügbar, speziell auf GeoGebra Materials (\url{https://www.geogebra.org/materials/}) mit Millionen kostenlos verfügbarer Unterrichtsmaterialien.
 
-The available tools on the different platforms may however differ. Also the user experience on the various platforms may be different: the symbolic computations may need a high amount of calculations and the underlying hardware or software components may or may not support some steps completely.
+Die verfügbaren Werkzeuge können unter Umständen variieren. Auch die Benutzererfahrung kann auf den verschiedenen Plattformen unterschiedlich sein: Die symbolischen Berechnungen können ein hohes Ausmaß an Kalkualtionen benötigen und die unterliegenden Hardware- und Softwarekomponenten unterstützen möglicherweise nicht alle Schritte vollständig.
 
-The recommended platform for classroom use may vary. The fastest results can be obtained by fast desktop (or laptop) computers, but in this case the software must be downloaded and installed by the user. Some examples in this tutorial may work only in the \glqq{}desktop\grqq{} version (which is created for Microsoft Windows, Apple Macintosh and Linux desktop and laptop computers). On the other hand, the ``web'' version does not require installation by the user: it will run in a modern web browser, and the teacher is able to prepare a list of examples as GeoGebra applets in advance before the classroom use by using GeoGebra Materials, for example. The ``web'' version is however slower: the symbolic computations may be slower by a magnitude.
+Die vorgeschlagene Plattform für Klassen kann variieren. Die schnellsten Resultate können mit schnellen Computern erzielt werden, aber in diesem Fall muss die Software vom Benutzer heruntergeladen und installiert werden. Manche Beispiele in diesem Tutorial funktionieren unter Umständen nur in der \glqq{}Desktop\grqq{} Version (welche für Microsoft Windows, Apple Macintosh und Linux Computer verfügbar ist). Auf der anderen Seite benötigt die ``Web'' Version keine Installation durch den Benutzer: Diese funktioniert mit einem aktuellen Web Browser und die Lehrerin/der Lehrer kann zum Beispiel eine Liste von Beispielen als GeoGebra Applets für die Klasse unter Verwendung von GeoGebra Materials vorbereiten. Die ``Web'' Version ist allerdings langsamer: Die symbolische Berechnung kann etwas langsamer sein.
 
-GeoGebra recently runs on tablets and phones also. In some cases these platforms provide faster user experience than the web version does, but the smaller screen size may prevent the users from investigating geometry theorems in details. It is encouraged that teachers do experiments by using these kind of modern devices, but their use for automated reasoning is still experimental.
+GeoGebra funktioniert mittlerweile auch auf Tablets und Smartphones. In manchen Fällen können diese Plattformen schnellere Ergebnisse liefern als die Web Version, aber der kleinere Bildschirm könnte die Benutzer davon abhalten, geometrische Lehrsätze im Detail zu untersuchen. Lehrerinnen und Lehrer sollen bestärkt werden, mit dem Umgang dieser modernen Hilfsmittel zu experimentieren, aber der Einsatz für automatische Beweisführung ist noch nicht erforscht.
 
-There is continuous work on GeoGebra's automated reasoning tools. The best practice is to always use the latest version. A weekly update can always be expected for all versions, excluding the Mac App Store version which is updated about monthly. The list of newest changes can be found at \url{http://dev.geogebra.org/trac/timeline}---this is intended only for advanced users and developers.
+An den Werkzeugen zur automatischen Beweisführung wird kontinuierlich gearbeitet. Es ist zu bevorzugen, immer die aktuellste Version zu verwenden. Ein wöchentliches Update kann generell für alle Versionen empfohlen werden, abgesehen vom Mac App Store, welcher ungefähr monatlich aktualisiert wird. Die Liste der neuesten Änderungen kann auf \url{http://dev.geogebra.org/trac/timeline}---eingesehen werden -das ist nur für fortgeschrittene Benutzer und Entwickler. 
 
-\section{Automated Reasoning Tools}
+\section{Automatische Beweisführung Werkzeuge}
 
-Automated reasoning tools are a collection of GeoGebra tools and commands ready to conjecture, discover, adjust and prove geometric statements in a dynamic geometric construction.
+Automatische Beweisführung Werkzeuge sind eine Sammlung von GeoGebra Werkzeugen und Befehlen zur Mutmaßung, Entdeckung, Abstimmung und Beweis geometrischer Axiome in einer dynamischen geometrischen Konstruktion.
 
-First the user needs to draw a geometric figure by using certain tools listed by default on top of the main window in GeoGebra. After constructing the figure, GeoGebra has many ways to promote investigating geometrical properties of a figure by various tools and settings:
+Am Anfang muss der Benutzer eine geometrische Figur mit bestimmten Werkzeugen auf dem Hauptfenster in GeoGebra zeichnen. Nach der Konstruktion der Figur kann GeoGebra auf verschiedene Arten die geometrischen Eigenschaften mit verschiedenen Werkzeugen und Einstellungen prüfen:
 \begin{enumerate}
-    \item By \textit{dragging the free objects} their dependent objects can be visually investigated.
-    \item The \textit{Relation} tool helps comparing objects and obtaining relations.
-    \item By setting the \textit{trace} of a constructed object on/off the movement of an object will be visualized when its parent objects are changing.
-    \item The \textit{Locus} tool shows the trace of an object for all possible positions of a parent object (while it moves on a path).
-    \item By typing the \texttt{Relation} or \texttt{Locus} command in GeoGebra's Input Bar more refined information can be obtained.
+    \item Mit \textit{freie Objekte ziehen} ihre abhängigen Objekte können sichtbar erforscht werden.
+    \item Das \textit{Beziehung} Werkzeug hilft beim Vergleichen von Objekten und erkennen von Beziehungen.
+    \item Mit dem Setzen der  \textit{Spur} eines konstruierten Objektes mit/ohne Bewegung eines Objektes wird sichtbar wenn seine vorhergehenden Objekte geändert werden.
+    \item Das \textit{Ortslinie} Werkzeug zeigt die Spur eines Objektes für alle möglichen Posititonen eines vorhergehenden Objektes (wenn es sich auf einem Pfad bewegt).
+    \item Mit dem Eintippen von \texttt{Beziehung} oder \texttt{Ortslinie} Befehl in der GeoGebra Befehlszeile können genauere Informationen ausgewählt werden. 
 \end{enumerate}
-These methods are usually well known by the GeoGebra community, and therefore they are well documented and many examples can be found on them at GeoGebra Materials (\url{https://www.geogebra.org/materials/}). On the other hand, currently GeoGebra also offers symbolic automated reasoning tools for generalizing the observed/conjectured geometric properties:
+Diese Methoden sind normalerweise bekannt in der GeoGebra community, deshalb sind sie gut dokumentiert und es können einige Beispiele auf GeoGebra Materials (\url{https://www.geogebra.org/materials/}) gefunden werden. Auf der anderen Seite bietet GeoGebra zurzeit auch symbolische automatische Beweisführung Werkzeuge für vermutete geometrische Eigenschaften:
 \begin{enumerate}
 \setcounter{enumi}{5}
-    \item The Relation tool and command can be used to recompute the results symbolically,
-    \item The \texttt{LocusEquation} command refines the result of the Locus command by displaying the algebraic equation of the graphical output.
-    \item The \texttt{LocusEquation} command can investigate implicit loci.
-    \item The \texttt{Envelope} command computes the equation of a curve which is tangent to a family of objects while a certain parent of the object moves on a path.
+    \item Beziehung Werkzeug und Befehl können zum symbolischen Nachrechnen verwendet werden,
+    \item Der \texttt{Ortsliniengleichung} Befehl berechnet das Ergebnis der Ortsliniengleichung mit dem Zeigen der algebraischen Gleichung der graphischen Darstellung genauer.
+    \item Der \texttt{Ortsliniengleichung} Befehl kann implicit loci prüfen.
+    \item Der \texttt{Einhüllende} Befehl berechnet die Gleichung der Tangente mehrerer Objekte während ein bestimmter Vorgänger sich auf einer Bahn bewegt.
 \end{enumerate}
 
-\subsection{High and low level tools}
+\subsection{Einfache und schwierige Werkzeuge}
 
-GeoGebra provides the above high level methods to promote investigating geometry theorems. These icons are considered as ``high level'' tools because of their ease of use and thus they can be directly shown in classrooms. There are also further ways to learn more on the mathematical background or just to help in troubleshooting. Those ``low level'' methods are listed in Appendix, and therefore not suggested for direct use among students.
+GeoGebra liefert die obenstehenden schwierigen Methoden um geometrische Theorien zu unterstützen. Diese Icons sind als schwierige Werkzeuge gedacht, weil sie aufgrund ihrer einfachen Benutzung direkt in der Klasse gezeigt werden können. Es gibt auch andere Wege, um mehr über den mathematischen Hintergrund zu lernen oder einfach zur Fehleranalyse. Diese einfachen Methoden sind im Zusatz aufgelistet und daher nicht empfohlen für den direkten Einsatz mit Schülerinnen und Schülern.
 
-Obviously, some of the listed methods are easier, and others are more difficult. Using the command line in the Input Bar in GeoGebra can be considered as a more difficult way for most users. That is, it can be suggested that a teacher first shows the easier methods, and later demonstrates the other ways when the pupils have enough experiments done.
+Offensichtlich sind einige der aufgelisteten Methoden einfach und andere schwierige. Bei der Befehlszeile in GeoGebra kann überlegt werden als ein schwierigerer Weg für die meisten Benutzer. Daher kann eine Lehrerin/ein Lehrer zuerst die einfacheren Methoden zeigen und nach einiger Erfahrung der Schülerinnen und Schüler die schwierigeren. 
 
-\subsection{Tools with symbolic support}
+\subsection{Werkzeuge mit symbolischer Unterstützung}
 
-As mentioned above some automated reasoning tools are provided of symbolic support. This feature allow  to verify in a mathematically rigorous way general statements of elementary Geometry that have been conjectured by the user.
+Wie oben erwähnt liefern einige automatische Beweisführung Werkzeuge symbolische Unterstützung. Dieses Feature erlaubt die Verifizierung einem mathematisch rigorosem Weg allgemeine Aussagen der Elementargeometrie, die vom Benutzer vermutet werden.
 
-A general hint that the user should start GeoGebra on startup in ``graphing calculator'' mode. This turns on showing the labels on each newly added object---this can be crucial for the Relation tool and command when reporting on various relations. 
+Ein allgemeiner Hinweis, dass der Benutzer sollte GeoGebra zur Inbetriebnahme mit``Grafikrechner'' Modus starten. Diese Einstellung zeigt die Bezeichnung auf jedem neu hinzugefügten Objekt. Das kann für Beziehungswerkzeug und -befehl entscheidend sein, wenn die verschiedenen Beziehungen ausgewertet werden. 
 
-In most cases, however, the axes are not really necessary to be shown: they can be switched off when the \textit{Move} tool is active (it is the leftmost icon showing an arrow cursor) by right-click in the \textit{Graphics View} and de-selecting the \textit{Axes} setting.
+In den meisten Fällen sind die Achsen nicht wirklich notwendig: Diese können ausgeschaltet werden, wenn das \textit{Bewegen} Werkzeug aktiv ist. (das ist das linke Icon, das einen Cursor zeigt) mit rechtsklickc in der \textit{Grafik Ansicht} und Auswahl der \textit{Achsen} Einstellung.
 
-In some cases the \textit{Algebra View} is not needed to be displayed---unless the equations of the implicit curves are to be investigated in details, this can however be done also by changing the object's label to contain its value, too. (To do so, by right-clicking on the object, choosing \textit{Object Properties}, the user needs to set \textit{Show Label} to \textit{Value} on the \textit{Basic} tab.)
+In einigen Fälle ist es nicht notwendig, die \textit{Algebra Ansicht} anzuzeigen. Wenn die Gleichungen der impliziten Kurven nicht im Detail betrachtet werden,  kann dies auch durch die Änderung der Bezeichnung erreicht werden, sodass auch der Wert angezeigt wird. (Um das durchzuführen, muss ein Rechtsklick und die Auswahl \textit{Objekt Eigenschaften} durchgeführt werden, der Benutzer muss  \textit{Beschriftung anzeigen} zu \textit{Wert} an dem  \textit{Basis} auswählen.)
 
-GeoGebra applets can be used conveniently if they are uploaded to GeoGebra Materials.
-If the Algebra View is used, it may be a good idea to increase its width before uploading an applet to GeoGebra Materials. Otherwise it will be not comfortable for the user to type the appropriate command. After uploading, in GeoGebra Materials it is suggested that for the applet at \textit{Advanced Settings}, the \textit{Show Toolbar} and \textit{Show Input Bar} options are checked. Also setting an appropriate size may be mandatory.
+GeoGebra Applets können komfortabel genutzt werden, wenn sie auf GeoGebra Materials hochgeladen  sind.
+Wenn die Algebra Ansicht verwendet wird, kann es hilfreich sein, die Weite zu vergrößern, bevor das Applet auf GeoGebra Materials hochgeladen wird. Sonst könnte es schwierig für den Benutzer sein, die Befehle einzugeben. Nach dem hochladen in GeoGebra Materials ist es wichtig, die Funktionen des Applets  \textit{Erweiterte Einstellungen},  \textit{Zeige Werkzeugleiste} und \textit{Zeige Befehlszeile} zu überprüfen. Danach sollte eine adäquate Größe für das Applet gewählt werden.
 
 
-\subsubsection{The Relation tool and command}
+\subsubsection{Das Beziehungswerkzeug und Befehle}
 
-GeoGebra's Relation tool and command shows a message box that gives the user information about the relation between two or more objects.
-This command allows the user to find out numerically (that is, for the drawing construction with assigned coordinates) whether
+GeoGebra's Beziehungswerkzeug und Befehle zeigt ein Fenster, das dem Benutzer Informationen über die Beziehung zwischen zwei oder mehr Objekten gibt.
+Dieser Befehl erlaubt dem Benutzer, numerisch herauszufinden, ob (für die gezeichnete Konstruktion mit zugehörigen Koordinaten)
 \begin{itemize}
-    \item two lines are perpendicular,
-    \item two lines are parallel,
-    \item two (or more) objects (points, segment lengths, polygon areas) are equal,
-    \item a point lies on a line or conic,
-    \item a line is tangent or a passing line to a conic,
-    \item three points are collinear,
-    \item three lines are concurrent (or parallel),
-    \item four points are concyclic (or collinear).
+    \item zwei Geraden normal aufeinander stehen,
+    \item zwei Geraden parallel sind,
+    \item zwei (oder mehr) Objekte (Punkte, Streckenlängen, Polygonflächen) gleich sind,
+    \item ein Punkt auf einer Linie oder Kurve liegt,
+    \item eine Gerade eine Tangent oder eine Passante einer Kurve ist,
+    \item drei Punkte kollinear sind,
+    \item drei Geraden übereinstimmend sind (oder parallel),
+    \item vier Punkte auf einer Kreisbahn liegen (oder kollinear sind).
 \end{itemize}
-Some of these checks can also be performed symbolically, that is, the statement can be verified rigorously for the general case (with arbitrary coordinates) and not only for the pictured concrete geometric construction.
+Manche dieser Überprüfungen können auch symbolisch ausgeführt werden, also der Satz kann generell verifiziert werden (mit beliebigen Koordinaten) und nicht nur für die gezeichnete konkrete Konstruktion.
 
-When using the Relation \textit{tool}, the user points on two objects to get the message box shown. Alternatively, two, three or four objects can be selected by the selection rectangle to invoke the message box. To prevent the user to select unneeded objects in the applet it is also possible to disallow selection of unnecessary objects by
-right clicking on the object, selecting \textit{Object properties}, choosing the \textit{Advanced} tab and unchecking \textit{Selection allowed}.
+Mit der Verwendung des Beziehungs \textit{werkzeug} muss der Benutzer auf zwei Objekte klicken um die Mitteilungsbox zu sehen. Alternativ können zwei, drei oder vier Objekte mit dem Auswahlrechteck ausgewählt werden, um die Mitteilungsbox zu erhalten. Um nicht ungewollte Objekte im Applet auszuwählen ist es möglich, diese von der Auswahl auszunehmen, indem man mit einem Rechtsklick und der Auswahl \textit{Objekt Eigenschaften} \textit{Erweitert} auswählt und das Häkchen bei \textit{Auswahl erlaubt}entfernt.
 
-When using the Relation \textit{command}, the user types one of the following formulas in the Input Bar:
+Bei der Verwendung des Beziehungs \textit{befehls} gibt der Benutzer eine der folgenden Formlen in die Befehlszeile ein:
 \begin{itemize}
-    \item \texttt{Relation[ <Object>, <Object> ]}
-    \item \texttt{Relation[ \{ <Object>, <Object> \} ]}
-    \item \texttt{Relation[ \{ <Object>, <Object>, <Object> \} ]}
-    \item \texttt{Relation[ \{ <Object>, <Object>, <Object>, <Object> \} ]}
+    \item \texttt{Beziehung[ <Objekt>, <Objekt> ]}
+    \item \texttt{Beziehung[ \{ <Objekt>, <Objekt> \} ]}
+    \item \texttt{Beziehung[ \{ <Objekt>, <Objekt>, <Objekt> \} ]}
+    \item \texttt{Beziehung[ \{ <Objekt>, <Objekt>, <Objekt>, <Objekt> \} ]}
 \end{itemize}
 
-When the message box is shown with one or more true numerical statements on the objects, there may be a button ``More$\ldots$'' shown if there is symbolic support for the given statement. When clicking ``More$\ldots$'', shortly the numerical statement will be updated with a more general symbolic one.
+Wenn die Mitteilungsbox eines oder mehrere zutreffende numerische Aussagen zu dem Objekt zeigt, gibt es unter Umständen eine Schaltfläche  ``Mehr$\ldots$'' , welche die symbolische Unterstützung für die gegebene Aussage zeigt. Bei Klick auf ``Mehr $\ldots$'', wird in Kürze die numerische Aussage zu einer allgemeinen Aussage aktualisiert.
 
-\paragraph{Example (Thales' circle theorem)}
+\paragraph{Beispiel (Thaleskreis)}
 \begin{center}
 \includegraphics[scale=0.5]{Relation-example}
 \end{center}
 \begin{enumerate}
-    \item By using the \textit{Segment} tool, construct $AB$.
-    \item By choosing the \textit{Semicircle through 2 Points} tool, create arc $c$.
-    \item Put point $C$ on $c$.
-    \item Create segments $AC$ and $BC$ and denote them by $g$ and $h$, respectively.
-    \item Compare $g$ and $h$ by using the Relation tool and pointing on $g$ and $h$ by the mouse, or type \texttt{Relation[g,h]} in the Input Bar. The following message will be shown:
+    \item Mit dem \textit{Strecke} Werkzeug wird $AB$ konstruiert.
+    \item Mit der Auswahl \textit{Halbkreis durch zwei Punkte} Werkzeug wird $c$ erstellt.
+    \item Der Punkt $C$ wird auf $c$ erstellt.
+    \item Konstruieren Sie die Strecken $AC$ und $BC$ und benennen Sie diese $g$ und $h$.
+    \item Vergleichen Sie $g$ und $h$ unter Verwendung des Beziehungswerkzeugs durch Anklicken von $g$ und $h$, oder durch Eintippen von \texttt{Beziehung[g,h]} in der Befehlszeile. Die folgende Mitteilung wird angezeigt:
     \begin{center}
-    \includegraphics[scale=0.5]{Relation-example-Relation1}
+    \includegraphics[scale=0.5]{Relation-example-Relation1-de}
     \end{center}
-    \item Click ``More$\ldots$''---the message will be changed as follows:
+    \item Klicken Sie auf ``Mehr$\ldots$''--- die Mitteilung wird sich wie folgt ändern:
     \begin{center}
-    \includegraphics[scale=0.5]{Relation-example-Relation2}
+    \includegraphics[scale=0.5]{Relation-example-Relation2-de}
     \end{center}
     
 \end{enumerate}
 
-Remark that Relation (step 5) looks for relations between $g$ and $h$ from the coordinates and equations assigned to the drawn construction. However by clicking ``More$\ldots$'' (step 6) we verify that $g$ and $h$ are perpendicular for any points $A$ and $B$ we can choose at step 1.
+Beachten Sie, dass Beziehung (Schritt 5) sucht nach Beziehungen zwischen $g$ und $h$ von den Koordinaten und Gleichungen abhängig von der gezeichneten Konstruktion. Durch Klicken auf ``Mehr$\ldots$'' (Schritt 6) kann verifiziert werden, dass $g$ und $h$ normal aufeinander stehen und für alle Punkte kann $A$ und $B$ kann man Schritt 1 auswählen.
 
-Relationship of certain objects can be true also under certain conditions, that is, not necessarily ``always''. In such cases, if possible, some sufficient conditions are displayed. Otherwise GeoGebra just remarks that the statement is true ``under certain conditions''. This must be intepreted that the statement is ``generally true'', but in some side cases (which are `a minimal number of cases' compared to the general cases) the statement may fail.
+Beziehung zwischen bestimmten Objekten kann unter bestimmten Bedingungen wahr sein, aber nicht zwingend  ``immer''. In diesen Fällen werden genug Voraussetzungen angezeigt. Sonst zeigt GeoGebra nur die Aussage  ``unter bestimmten Voraussetzungen''. Das muss als ``allgemein wahr'' verstanden werden, aber in manchen Einzelfällen (welche eine`minimale Anzahl von Fällen' ist, verglichen mit den allgemeinen Fällen) kann die Aussage falsch sein.
 
-The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (but not generally true)''.
+Das symbolische Ergebnis der Beziehung kann auch negativ sein, auch wenn die numerische Überprüfung positiv ist. Zum Beispiel, wenn man zwei Punkte $P=(0,0)$und $Q=(0,0)$ definiert, kann die Beziehung diese numerisch vergleichen, aber das symbolische Ergebnis kann ergeben, dass``$P$ und $Q$ gleich sind (aber nicht allgemein wahr)''.
 
-A complete overview of the various results of Relation can be found in the Appendix \ref{explanation-table} on page \pageref{explanation-table}.
+Eine komplette Übersicht der verschiedenen Ergebnisse der Beziehung könnene im Anhang gefunden werden. \ref{Erklaerungstabelle} auf der Seite \pageref{Erklaerungstabelle}.
 
-\subsubsection{The \texttt{LocusEquation} command}
+\subsubsection{Die Ortsliniengleichung \texttt{Ortsliniengleichung} Befehl}
 
-This command calculates the equation of a locus and plots this as an implicit curve. There are two kinds of uses:
+Dieser Befehl berechnet die Gleichung einer Ortslinie und zeichnet diese als implizite Kurve. Es gibt zwei Möglichkeiten der Nutzung:
 
 \begin{itemize}
-\item\textbf{Explicit locus.}
-Given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output point $\cal O$. The task is to determine the equation $\cal E$ of $\cal O$ while $\cal I$ is moving on $\cal P$, and then plot $\cal E$. $\cal I$ is usually called \textit{mover}, $\cal O$ is the \textit{tracer}. $\cal E$ is called \textit{locus equation}, and its graphical visualization is the \textit{locus}.
+\item\textbf{Explizite Ortslinie.}
+Gegeben ist ein Anfangspunkt $\cal{I}$ auf einer Strecke $\cal{P}$, einige Konstruktionsschritte und ein Endpunkt $\cal O$. Die Aufgabe ist, die Gleichung von $\cal E$ of $\cal O$ zu bestimmen, wenn sich  $\cal I$ auf $\cal P$ bewegt, und dann  $\cal E$ zu bestimmen. $\cal I$ ist für gewöhnlich \textit{beweger} genannt, $\cal O$ ist die \textit{Spur}. $\cal E$ heißt \textit{Ortsliniengleichung} und ihre grafische Visualisierung ist die \textit{Ortslinie}.
 
-The syntax of the command is
+Die Schreibweise des Befehls ist:
 \begin{center}
-    \texttt{LocusEquation[ <Point Tracer>, <Point Mover> ]}.
+    \texttt{Ortsliniengleichung[ <Punkt Spur>, <Punkt Beweger> ]}.
 \end{center}
 
-\paragraph{Example}
+\paragraph{Beispiel}
 \begin{center}
 \includegraphics[scale=0.5]{LocusEquation-example-explicit}
 \end{center}
 \begin{enumerate}
-    \item By using the \textit{Segment} tool, construct $AB$. This automatically creates segment $f$.
-    \item Put point $C$ on $f$.
-    \item Create point $D$ by using the \textit{Point} tool.
-    \item By using the \textit{Reflect about Point} tool, reflect $C$ about $D$. This defines $C'$.
-    \item Type \texttt{LocusEquation[C',C]} in the Input Bar. Now the implicit curve $a$ will be computed and plotted. This should be a segment (the mirror image of $f$ about $D$), but GeoGebra needs to handle $f$ as a line instead of a segment (for algebraic geometrical reasons), thus its mirror image is also a line.
-    \item Try dragging each draggable objects. It can be visually concluded that the mirror image of a segment about a point is always parallel to the preimage.
+    \item Unter Verwendung des \textit{Strecke} Werkzeug wird $AB$ konstruiert. Es wird eine automatische Strecke $f$ konstruiert.
+    \item Setzen Sie Punkt $C$ auf $f$.
+    \item Erstellen Sie Punkt $D$ mit dem \textit{Punkt} Werkzeug.
+    \item Mit dem \textit{über Punkt spiegeln} Werkzeug spiegeln Sie $C$ über $D$. Damit erstellen Sie Punkt $C'$.
+    \item Geben Sie \texttt{Ortsliniengleichung[C',C]} in die Befehlszeile ein. Nun wird die implizite Kurve $a$ berechnet und gezeichnet. Das sollte eine Strecke (das Spiegelbild von $f$ über $D$ sein), aber GeoGebra zeichnete $f$ als Gerade statt einer Strecke (aus algebraischen geometrischen Gründen), da das Spiegelbild ebenfalls eine Gerade ist.
+    \item Versuchen Sie, die verschiebbaren Objekte zu ziehen. Es kann gezeigt werden, dass das Spiegelbild einer Strecke über einen Punkt immer parallel zum Urbild ist.
 \end{enumerate}
 
-\item \textbf{Implicit locus.}
-Given an input point $\cal I$, either as a free point, or on a path $\cal P$. There are some construction steps given. The user claims a Boolean condition $\cal C$ on some objects of the construction. The task is to determine an equation $\cal E$ such that for all points $\cal{I}'$ of it, if $\cal{I}=\cal{I}'$, then $\cal{C}$ holds. Again, $\cal{E}$ is called locus equation, and its graphical representation is the locus.
+\item \textbf{Implizite Ortslinie.}
+Gegeben ist ein Anfangspunkt $\cal I$, entweder als beliebiger Punkt oder auf einer Strecke $\cal P$. Es sind auch einige Konstruktionsschritte gegeben. Der Benutzer behauptet eine Boolsche Bedingung $\cal C$ auf einige Objekte der Konstruktion. Die Aufgabe ist, eine Gleichung $\cal E$ für alle Punkte $\cal{I}'$ aufzustellen, sodass $\cal{I}=\cal{I}'$,  $\cal{C}$ erfüllt. Wieder heißt  $\cal{E}$ Ortsliniengleichung und ihre grafische Interpretation ist die Ortslinie.
 
-The syntax of the command is
+Die Schreibweise des Befehls ist:
 \begin{center}
-    \texttt{LocusEquation[ <Boolean Expression>, <Point> ]}.
+    \texttt{Ortsliniengleichung[ <Boolscher Ausdruck>, <Punkt> ]}.
 \end{center}
 
 %\vfill\eject %% no idea how to do it elegantly
 
-\paragraph{Example}
+\paragraph{Beispiel}
 \begin{center}
 \includegraphics[scale=0.5]{LocusEquation-example-implicit}
 \end{center}
 \begin{enumerate}
-    \item By using the \textit{Polygon} tool, construct triangle $ABC$. Now segments $a$, $b$ and $c$ will be automatically introduced by GeoGebra.
-    \item Type \texttt{LocusEquation[a\^{}2+b\^{}2==c\^{}2,C]} in the Input Bar. Now the implicit curve $d$ will be computed and plotted, which seems to be a circle.
-    Note that \textit{two} equal signs must be entered; another possibility is to use $\stackrel{?}{=}$ (by clicking the \framebox{$\alpha$} icon, or inserting this symbol from an external application by using Copy and Paste).
-    \item Try dragging each draggable objects. It can be visually concluded that if $C$ lies on a circle whose diameter is $AB$, then---because of the right property of the triangle---$a^2+b^2=c^2$ indeed follows.
+    \item Mit dem \textit{Polygon} Werkzeug wird ein Dreieck $ABC$ konstruiert.Die Strecken $a$, $b$ und $c$ werden automatisch von GeoGebra erstellt.
+    \item Es wird \texttt{Ortsliniengleichung a\^{}2+b\^{}2==c\^{}2,C]} in der Werkzeugleiste eingegeben. Jetzt wird die implizite Kurve $d$ berechnet und gezeichnet, welche wie ein Kreis aussieht.
+    Bedenken Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; eine andere Möglichkeit ist, $\stackrel{?}{=}$ zu verwenden. (durch anklicken von \framebox{$\alpha$} Icon, oder durch Einfügen des Symbols von einer externen Applikation mit Copy and Paste).
+    \item Versuchen Sie nun, die beweglichen Objekte zu ziehen. Es kann gezeigt werden, dass wenn $C$ auf einem Kreis liegt, dessen Durchmesser auf $AB$ liegt, wegen der rechtwinkeligen Eigenschaft des Dreiecks---$a^2+b^2=c^2$ gilt.
 \end{enumerate}
 
 \end{itemize}
 
-A Boolean expression can be:
+Eine Boolsche Bedingung kann sein:
 \begin{itemize}
-\item An equation of labels of segments, e.g.~\texttt{a\^{}2+b\^{}2==c\^{}2}.
-\item An equality of two geometric objects, e.g.~\texttt{A==B}. Note that \textit{two} equal signs must be entered; another possibilities are to use
+\item Eine Gleichung mit der Bezeichnung der Strecken, e.g.~\texttt{a\^{}2+b\^{}2==c\^{}2}.
+\item Eine Gleichheit von zwei Geometrischen Objekten, e.g.~\texttt{A==B}. Beachten Sie, dass \textit{zwei} gleiche Zeicehn eingegeben werden müssen; es gibt auch andere Möglichkeiten
 \begin{itemize}
-    \item $\stackrel{?}{=}$ (by clicking the \framebox{$\alpha$} icon, or inserting this symbol from an external application by using Copy and Paste), or
-    \item alternatively, \texttt{AreEqual[A,B]} for the complete Boolean expression.
+    \item $\stackrel{?}{=}$ (durch Anklicken des \framebox{$\alpha$} Icon, oder durch Einfügen des Symbols von einer externen Applikation mit Copy and Paste.
+    \item Alternativ, \texttt{SindGleichl[A,B]} für die gesamte Boolsche Bedingung.
 \end{itemize}
-\item A check if two geometric objects are congruent, e.g.~\texttt{AreCongruent[c,d]}.
-\item A check if a point is on a path, for example, on a line or circle, e.g.~\texttt{A$\in$c}.
-\item A check if two lines or segments are parallel, e.g.~\texttt{p$\parallel$q}. Here also \texttt{AreParallel[p,q]} can be used.
-\item A check if two lines or segments are perpendicular, e.g.~\texttt{p$\perp$q}. Here also \texttt{ArePerpendicular[p,q]} can be used.
-\item \texttt{AreCollinear[A,B,C]} checks if points $A$, $B$ and $C$ are collinear.
-\item \texttt{AreConcurrent[d,e,f]} checks if lines $d$, $e$ and $f$ are concurrent.
-\item \texttt{AreConcyclic[A,B,C,D]} checks if points $A$, $B$, $C$ and $D$ are concyclic.
+\item Eine Überprüfung, ob zwei geometrische Objekte kongruent sind, e.g.~\texttt{SindKongruent[c,d]}.
+\item Eine Überpüfung, ob ein Punkt auf einer Strecke, einer Gerade oder einem Kreis liegt, e.g.~\texttt{A$\in$c}.
+\item Eine Überprüfung, ob zwei Geraden oder Strecken parallel sind, e.g.~\texttt{p$\parallel$q}. Hier kann auch \texttt{SindParallel[p,q]} verwendet werden.
+\item Eine Überprüfung, ob zwei Geraden oder Strecken normal aufeinander stehen, e.g.~\texttt{p$\perp$q}. Hier kann auch \texttt{ArePerpendicular[p,q]} verwendet werden.
+\item \texttt{SindKollinear[A,B,C]} prüft, ob die Punkte $A$, $B$ und $C$ kollinear sind.
+\item \texttt{SindKongruent[d,e,f]} prüft, ob die Geraden $d$, $e$ und $f$ kongruent sind.
+\item \texttt{SindKonzentrisch[A,B,C,D]} prüft, ob die Punkte $A$, $B$, $C$ und $D$ konzentrisch sind.
 \end{itemize}
 
-\subsubsection{The \texttt{Envelope} command}
+\subsubsection{Der \texttt{Einhüllende} Befehl}
 
-This command computes the equation of a curve which is tangent to a family of objects while a certain parent of the object moves on a path.
+Dieser Befehl berechnet die Gleichung einer Tangente zu einer Gruppe von Objekten mit einem bestimmten Vorgänger auf einer Strecke.
 
-More precisely, given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output path $\cal O$, either a line or a circle. The task is to determine the equation $\cal E$ of a curve $\cal C$ which is tangent to $\cal O$, while $\cal I$ is moving on $\cal P$. Then finally plot $\cal E$. $\cal I$ is called the mover. $\cal E$ is called the \textit{envelope equation}, and its graphical visualization is the \textit{envelope}.
+Präziser gesagt, ist ein Anfangspunkt $\cal{I}$ auf einer Strecke $\cal{P}$,einige Konstruktionsschritte und ein Endpunkt $\cal O$ gegeben, entweder eine Gerade oder ein Kreis. Die Aufgabe besteht darin, die Gleichung $\cal E$ einer Kurve $\cal C$, welche die Tangente zu $\cal O$ ist, aufzustellen, wenn sich $\cal I$ auf $\cal P$. Am Ende ergibt sich $\cal E$. $\cal I$ wird der Beweger genannt. $\cal E$ wird die \textit{Einhüllende Gleichung} genannt, und ihre graphische Darstellung ist die \textit{Einhüllende}.
 
 %\vfill\eject %% no idea how to do it elegantly
 
-\paragraph{Example}
+\paragraph{Beispiel}
 \begin{center}
 \includegraphics[scale=0.5]{Envelope-example}
 \end{center}
 \begin{enumerate}
-    \item By using the \textit{Circle with Center through Point} tool, construct circle $c$ with center $A$ and circumpoint $B$.
-    \item Put point $C$ on $c$.
-    \item Create an arbitrary point $D$ inside $c$.
-    \item Construct the \textit{Perpendicular Bisector} $f$ of segment $CD$ by using its endpoints.
-    \item Type \texttt{Envelope[f,C]} in the Input Bar. Now the implicit curve $a$ will be computed and plotted, and it seems to be an ellipse.
+    \item Mit dem \textit{Kreis mit Mittelpunkt durch Punkt} Werkzeug, wird ein Kreis $c$ mit dem Mittelpunkt $A$und dem Umkreispunkt $B$ konstruiert.
+    \item Setzen Sie Punkt $C$ auf $c$.
+    \item Erstellen Sie einen beliebigen Punkt $D$ in $c$.
+    \item Konstruieren Sie die \textit{Mittelsenkrechte} $f$ der Strecke $CD$ unter Verwendung der Endpunkte.
+    \item Geben Sie \texttt{Einhüllende[f,C]}in der Befehlszeile ein. Die implizite Kurve $a$ wird berechnet und gezeichnet. Diese sieht aus wie eine Ellipse.
 \end{enumerate}
 
 
-\subsection{Technical notes}
+\subsection{Technische Notizen}
 
-The following notes are important restrictions for each automated reasoning tool in GeoGebra which uses symbolic computations:
+Die folgenden Notizen sind wichtige Einschränkungen für jedes Automatische Begründungswerkzeug in GeoGebra, symbolische Berechnungen nutzt:
 \begin{itemize}
-\item Not all GeoGebra tools and construction steps are supported.
-\item The supported tools work only for a restricted set of geometric objects, i.e.~using points, lines, circles, conics.
-\item Rays and line segments will be treated as infinite lines. Circle arcs will be treated as circles.
-\item Too complicated locus or envelope computations may return `undefined' in the Algebra View.
-\item Relationship proofs which yield too complicated computations will display the message ``possibly generally true''. This must be
-interpreted as GeoGebra was unable to decide if the relationship is valid in general, but the numerical results promise optimism.
-That is, the relationship can be false in general in this case, too.
-\item If there is no locus or envelope, then the implicit curve is the empty set $0=1$. Example: for an arbitrary point $P$
+\item Es werden nicht alle GeoGebra Werkzeuge und Konstruktionsschritte unterstützt.
+\item Die unterstützten Werkzeuge funktionieren nur für eine beschränkte Menge an geometrischen Objekten, zum Beispiel die Verwendung von Punkten, Geraden, Kreisen, Kegel.
+\item Abschnitte von Strahlen und Geraden werden als unendliche Geraden behandelt. Kreisbögen werden wie Kreise behandelt.
+\item Zu komplizierte Ortslinien- oder Einhüllende-Berechnungen können in der Algebra Ansicht als "undefiniert" dargestellt werden.
+\item Beziehungs-Beweise, deren Inhalt zu kompliziert ist, werden die Mitteilung "möglicherweise allgemein wahr" anzeigen. Die Interpretation dafür ist, dass es GeoGebra nicht möglich ist, zu entscheiden, ob die Beziehung im allgemeinen wahr ist, aber die numerischen Ergebnisse lassen darauf schließen.
+Das heißt, die Beziehung kann auch im allgemeinen falsch sein.
+\item Wenn es keine Ortslinie oder Einhüllende gibt, ist die implizite Kurve die leere Menge $0=1$. Zum Beispiel: Für einen beliebigen Punkt $P$
 \begin{center}
-\texttt{LocusEquation[false,P]}
+\texttt{Ortsliniengleichung[false,P]}
 \end{center}
-returns the empty set.
-\item If the locus or the envelope is the whole plane, then the implicit curve is the equation $0=0$. Example: for an arbitrary point $P$
+zeigt die leere Menge.
+\item Wennn die Ortslinie oder die Einhüllende die ganze Ebene ist, hat die implizite Kurve die Gleichung $0=0$. Zum Beispiel: Für einen beliebigen Punkt $P$
 \begin{center}
-\texttt{LocusEquation[true,P]}
+\texttt{Ortsliniengleichung[true,P]}
 \end{center}
-returns the whole plane.
-\item Sometimes extra branches of the curve will appear that were not in the original locus or envelope.
-\item The graph of the implicit curve may be inaccurate in some cases.
+zeigt die ganze Ebene.
+\item Manchmal werden zusätzliche Verzweigungen erscheinen, die nicht in der ursprünglichen Ortslinie oder Einhüllenden waren.
+\item Der Graph der impliziten Kurve kann in manchen Fällen ungenau sein.
 \end{itemize}
 
-\section{Classroom uses: conjecture, proof and generalization}
+\section{Verwendung in der Klasse: Vermutung, Beweis und Verallgemeinerung}
 
-Technically the easiest symbolic tool is the Relation tool in the list above. On the other hand, some teaching scenarios may require different tools to consider, or more than one tool, but in a different order than listed above.
+Technisch gesehen ist das Beziehungswerkzeug das einfachsten symbolische Werkzeug aus der obigen Liste. Auf der anderen Seite können manche Unterrichtssituationen den Einsatz andere Werkzeuge, oder den Einsatz mehr als eines Werkzeuges erfordern, möglicherweise auch in einer anderen Reihung als in der obigen Liste.
 
-\subsection{Thales' circle theorem}
+\subsection{Satz des Thales}
 
-In many traditional math classes Thales' circle theorem is stated in an explicit form: if $C$ is on a semicircle, the segments $g$ and $h$ are perpendicular. Actually this theorem can be formulated by using an open ended question: \textit{Let $ABC$ be an arbitrary triangle. What is the geometric locus of $C$ if the angle at $C$ must be right?}
+In vielen traditionellen Mathematikstunden wird der Satz des Thales in einer expliziten Form unterrichtet: Wenn $C$ auf einem Halbkreis liegt, sind die Strecken $g$ und $h$ normal aufeinander. Tatsächlich kann dieser Lehrsatz mit einer offenen Frage formuliert werden: \textit{Sei $ABC$ ein beliebiges Dreieck. Was ist die geometrische Ortslinie von $C$, wenn der Winkel bei $C$ ein rechter Winkel sein soll?}
 
-In this approach it may make more sense to use the technically more difficult \texttt{LocusEquation[g$\perp$h,C]} command first, than finishing the construction and use the Relation tool or command directly. What is more, the output of the \texttt{LocusEquation} command can suggest a conjecture for the pupils, namely that the curve is indeed a circle. The Algebra View shows the equation of the locus, this can be however difficult for younger learners to identify.
+Bei diesem Zugang kann es sinnvoller sein, den technisch anspruchsvolleren \texttt{Ortsliniengleichung[g$\perp$h,C]} Befehl zuerst zu verwenden und dann die Konstruktion mit dem Beziehungswerkzeug oder -befehl zu vollenden. Der Output des   \texttt{Ortsliniengleichung} Befehl kann den Schülerinnen und Schülern zeigen, dass die Kurve ein Kreis ist. Die Algebra Ansicht zeigt die Gleichung der Kurve, das könnte unter Umständen für jüngere Schülerinnen und Schüler verwirrend sein.
 
-Finally, Thales' circle theorem can be generalized towards the theorem of the inscribed angle in a triangle. In this case the condition is no longer $g\perp h$, but that the angle between them equals to a fix one. GeoGebra currently supports entering this kind of investigation with the syntax
+Schließlich kann der Satz des Thales durch das eingeschriebene Dreieck in einen Halbkreis verallgemeinert werden. In diesem Fall ist die Bedingung nicht mehr $g\perp h$, sondern der Winkel der beiden veränderlichen Strecken zu einer fixen. GeoGebra unterstützt diese Art der Erhebung mit der Schreibweise.
 \begin{center}
-\texttt{LocusEquation[AreCongruent[$\alpha$,$\beta$],C]}
+\texttt{Ortsliniengleichung[SindKongruent[$\alpha$,$\beta$],C]}
 \end{center}
-if $\alpha$ is fixed and $\beta=\angle{ACB}$.
+wenn $\alpha$ fix ist und $\beta=\angle{ACB}$.
 
-To sum up, in this approach
+Zusammenfassend, bei diesem Zugang
 \begin{enumerate}
-    \item an implicit locus is computed with GeoGebra,
-    \item a conjecture for the output curve is made by the pupil,
-    \item the conjecture is checked by the Relation tool or command in GeoGebra,
-    \item the proof can be optionally worked out by paper and pencil by the pupil,
-    \item the theorem can be generalized by plotting further implicit loci with GeoGebra---as further experiments for the pupil.
+    \item wird eine implizite Ortslinie mit GeoGebra berechnet,
+    \item wird von den Schülerinnen und Schülern eine Vermutung aufgestellt, wie die Kurve aussieht,
+    \item wird die Vermutung mit dem Beziehungswerkzeug oder -befehl in GeoGebra überprüft,
+    \item kann der Beweis von den Schülerinnen und Schülern optional handschriftlich durchgeführt werden,
+    \item wird der Satz des Thales mit den impliziten Ortslinien in GeoGebra verallgemeinert - als zukünftiges Experiment für die Schülerinnen und Schüler.
 \end{enumerate}
 
-\subsection{Further examples}
+\subsection{weitere Beispiele}
 
-The triangle inequality can be translated to an equality which can be turned into an investigation of degenerated triangles. As a generalization, the synthetic definition of conic sections can be mentioned.
+Die Dreiecksungleichung kann in eine Gleichung übersetzt werden, die in eine Erforschung der degenerierten Dreiecke geändert werden kann. Als Verallgemeinerung kann die künstliche Definition von konischen Segmenten erwähnt werden.
 
-Another application is to derive the locus equation in triangle $ABC$ with the condition $a\stackrel{?}{=}b$, here $C$ is to be found (step 1). Clearly, $C$ must lie on the bisector of segment $AB$ (step 2). As  by explicitly putting $C$ on the bisector, GeoGebra confirms that $AC=BC$ when starting the Relation tool's symbolic machinery (step 3). After proving the statement by traditional means (step 4), a generalization can be obtained by typing e.g.~\texttt{LocusEquation[a==2b,C]}: this can be an interesting experiment for advanced learners, too (step 5).
+Eine andere Anwendung ist eine Verzweigung der Ortsliniengleichung im Dreieck $ABC$ mit der Bedingung $a\stackrel{?}{=}b$, dazu muss $C$ gefunden werden (step 1). Natürlich muss $C$ auf der Streckensymmetrale  $AB$ liegen (step 2). Dass  $C$ explizit auf der Streckensymmetrale liegt, bestätigt GeoGebra, als $AC=BC$ , wenn man die Berechnung mit dem Beziehungswerkzeug startet (step 3). Nach dem Beweis des Satzes mit traditionellen Methoden (step 4) kann eine Verallgemeinerung durch das Eintippen des Befehles\texttt{Ortsliniengleichung[a==2b,C]}: erhalten werden. Dies kann auch ein interessantes Experiment für fortgeschrittene Schülerinnen und Schüler sein. (step 5).
 
-\subsection{A worked out example: The midline theorem}
+\subsection{Ein ausgearbeitetes Beispiel: Das A worked out example: The midline theorem}
 
 Here step-by-step instructions are provided on a possible way on investigating the midline theorem by using GeoGebra's automated reasoning tools.
 
@@ -401,7 +401,7 @@ An implicit curve $a$ which seems like a circle will be shown.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales2-2}
 \end{center}
-    \item Compare $g$ and $h$ by using \texttt{Relation[f,g]}. The numerical result is correct, but GeoGebra reports that the perpendicularity of $f$ and $g$ is not generally true. \textbf{Why? When $C$ and $D$ were created, it was not defined which is which. That is, the visual precondition that $A=C$ is actually false---the other case $A=D$ must be also allowed as a possible precondition. In that other case, of course, $f$ and $g$ are not perpendicular, but identical.}
+    \item Compare $g$ and $h$ by using \texttt{Relation[g,h]}. The numerical result is correct, but GeoGebra reports that the perpendicularity of $f$ and $g$ is not generally true. \textbf{Why? When $C$ and $D$ were created, it was not defined which is which. That is, the visual precondition that $A=C$ is actually false---the other case $A=D$ must be also allowed as a possible precondition. In that other case, of course, $f$ and $g$ are not perpendicular, but identical.}
 \begin{enumerate}
       \item Instead, change the definition of $g$ to $g=CE$. Now the relationship between $g$ and $h$ will be correctly reported in the symbolic case as well.
       \item Another option is to not create both intersection points $C$ and $D$, but just one of them (which differs from $A$). This is possible by clicking on the neighborhood of the sought intersection point in the diagram.
@@ -500,7 +500,7 @@ The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} c
 \end{enumerate}
 
 \subsubsection{A comparison of \texttt{Prove}, \texttt{ProveDetails} and \texttt{Relation}}
-\label{explanation-table}
+\label{Erklaerungstabelle}
 
 The following table explains the meanings of the outputs of the commands \texttt{Prove},
 \texttt{ProveDetails} and \texttt{Relation}.
