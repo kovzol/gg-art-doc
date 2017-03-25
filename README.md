@@ -26,9 +26,9 @@ The figures have been created directly by using the desktop version of GeoGebra.
 * Tomás Recio <tomas.recio@unican.es>
 * M. Pilar Vélez <pvelez@nebrija.es>
 
-## Translators
-* Noël Lambert <noel@geogebra.org>
-* Katharina Schiffler <katharina.schiffler@ph-linz.at>
+## Translations and translators
+* [French](pdf/francais.pdf) by Noël Lambert <noel@geogebra.org>
+* [German](pdf/deutsch.pdf) by Katharina Schiffler <katharina.schiffler@ph-linz.at>
 
 ## License
 GNU General Public License 3
