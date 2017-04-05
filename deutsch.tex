@@ -31,7 +31,6 @@
 Übersetzt von Katharina Schiffler\\
 \textbf{work in progress}
 }
-%\date{January 2017}
 
 \begin{document}
 \lstset{
@@ -307,203 +306,203 @@ Zusammenfassend, bei diesem Zugang
     \item wird der Satz des Thales mit den impliziten Ortslinien in GeoGebra verallgemeinert - als zukünftiges Experiment für die Schülerinnen und Schüler.
 \end{enumerate}
 
-\subsection{weitere Beispiele}
+\subsection{Weitere Beispiele}
 
 Die Dreiecksungleichung kann in eine Gleichung übersetzt werden, die in eine Erforschung der degenerierten Dreiecke geändert werden kann. Als Verallgemeinerung kann die künstliche Definition von konischen Segmenten erwähnt werden.
 
 Eine andere Anwendung ist eine Verzweigung der Ortsliniengleichung im Dreieck $ABC$ mit der Bedingung $a\stackrel{?}{=}b$, dazu muss $C$ gefunden werden (step 1). Natürlich muss $C$ auf der Streckensymmetrale  $AB$ liegen (step 2). Dass  $C$ explizit auf der Streckensymmetrale liegt, bestätigt GeoGebra, als $AC=BC$ , wenn man die Berechnung mit dem Beziehungswerkzeug startet (step 3). Nach dem Beweis des Satzes mit traditionellen Methoden (step 4) kann eine Verallgemeinerung durch das Eintippen des Befehles\texttt{Ortsliniengleichung[a==2b,C]}: erhalten werden. Dies kann auch ein interessantes Experiment für fortgeschrittene Schülerinnen und Schüler sein. (step 5).
 
-\subsection{Ein ausgearbeitetes Beispiel: Das A worked out example: The midline theorem}
+\subsection{Ein ausgearbeitetes Beispiel: Der Satz von der Mittelparallelen im Dreieck}
 
-Here step-by-step instructions are provided on a possible way on investigating the midline theorem by using GeoGebra's automated reasoning tools.
+Diese Schritt für Schritt Anleitungen sind ein möglicher Weg, den Satz von der Mittelparallelen im Dreieck mit den automatischen Beweiswerkzeugen in GeoGebra durchzuführen.
 
-\paragraph{Step 1}
+\paragraph{Schritt 1}
 \begin{center}
 \includegraphics[scale=0.5]{classroom1}
 \end{center}
 \begin{enumerate}
-    \item By using the \textit{Polygon} tool, construct triangle $ABC$. This will automatically create segments $a$, $b$ and $c$.
-    \item By using the \textit{Midpoint or Center} tool, create the midpoint $D$ of $a$.
-    \item Put point $E$ on $b$.
-    \item Create line $f$ which joins $D$ and $E$.
-    \item Ask GeoGebra on the requirement for $E$ in order to have $f$ parallel to $c$: type \texttt{LocusEquation[c$\parallel$f,E]} in the Input Bar. Now the implicit curve $d$ will be computed and plotted, and it seems to be a single point. Note: it may to be useful to change the line thickness of the implicit curve $d$, and also to increase ist layer number to ensure that other objects do not hide it. Both settings can be changed in the Object properties window.
+    \item Mit Verwendung des \textit{Polygon} Werkzeuges wird ein Dreieck $ABC$ konstruiert. Dabei werden automatisch die Strecken $a$, $b$ und $c$ konstruiert.
+    \item Mit Verwendung des \textit{Mittelpunkt} Werkzeuges, wird der Mittelpunkt $D$ von $a$ konstruiert..
+    \item Erstellen Sie Punkt $E$ auf $b$.
+    \item Erstellen Sie die Gerade $f$, die $D$ und $E$ verbindet.
+    \item Fragen Sie GeoGebra, wie $E$ sein muss, damit $f$ parallel zu $c$ ist: Tippen Sie\texttt{Ortsliniengleichung[c$\parallel$f,E]} in die Eingabezeile. Dadurch wird die implizite Kurve $d$ berechnet und konstruiert. Diese scheint ein einziger Punkt zu sein. Achtung: Es könnte hilfreich sein, die Linienstärke der impliziten Kurve $d$ zu ändern und auch die Schriftgröße zu ändern, damit diese nicht von anderen Objekten versteckt wird. Beide Einstellungen können im Fenster Grundeinstellungen geändert werden.
 \end{enumerate}
-\paragraph{Step 2}
+\paragraph{Schritt 2}
 \begin{center}
 \includegraphics[scale=0.5]{classroom2}
 \end{center}
 \begin{enumerate}
-    \item[6.] Drag the free objects and conjecture that $E$ must be the midpoint of $b$.
-    \item[7.] To confirm this conjecture create midpoint $F$ of segment $b$ (and align labels of $d$ and $F$ to avoid overlapping). Drag the free objects again.
+    \item[6.] Ziehen Sie an den beweglichen Objekten und zeigen Sie, dass $E$ der Mittelpunkt von $b$ sein muss.
+    \item[7.] Um diese Vermutung zu bestätigen, erstellen Sie den Mittelpunkt $F$ der Strecke $b$ (und passen Sie die Beschriftung von $d$ und $F$, um Überschneidungen zu vermeiden.). Ziehen Sie erneut an den beweglichen Objekten.
 \end{enumerate}
-\paragraph{Step 3}
+\paragraph{Schritt 3}
 \begin{center}
 \includegraphics[scale=0.5]{classroom3}
 \end{center}
 \begin{enumerate}
-    \item[8.] Make the objects $E$, $f$ and $d$ invisible by hiding them.
-    \item[9.] Join $D$ and $F$ by segment $g$.
-    \item[10.] Use the \textit{Relation} tool to compare $c$ and $g$. They seem to be parallel.
-    \item[11.] Click ``More$\ldots$'' in the popup window and check symbolically that they are indeed parallel.
+    \item[8.] Machen Sie die Objekte $E$, $f$ und $d$ unsichtbar, indem Sie diese verstecken.
+    \item[9.] Verbinden Sie $D$ und $F$ mit einer Strecke $g$.
+    \item[10.] Verwenden Sie das  \textit{Beziehung} Werkzeug, um $c$ und $g$ zu vergleichen. Sie sind parallel.
+    \item[11.] Klicken Sie auf ``Mehr $\ldots$'' im Pop Up Fenster und überprüfen Sie symbolisch, dass sie parallel sind.
 \end{enumerate}
 \begin{center}
 \includegraphics[scale=0.5]{classroom3-Relation}
 \end{center}
-The pupils may continue with step 4 if they need an elegant way to prove this statement, or just stop here if there is no time for further work in the classroom.
+Die Schülerinnen und  Schüler machen mit Schritt 4 weiter, wenn sie einen eleganten Weg benötigen, diese Behauptung zu beweisen, oder hören an dieser Stelle auf, wenn keine weitere Zeit in der Klasse für dieses Problem aufgewendet werden soll.
 
-Also, in step 5 further questions can be raised. $c$ and $g$ do not have the same length---but can $g$ be computed by using the length of $c$? Maybe $c=1.5\cdot g$, or maybe more? The GeoGebra command \texttt{Relation[c,1.5g]} will result in the answer that $c$ and $1.5g$ are not equal, but maybe there is another constant than $1.5$ which results in a positive answer$\ldots$ Even if there is no time for further work in the classroom, some pupils may find these questions interesting and they can continue thinking on them alone or in groups---but in some sense \textit{independently}, using the computer as an expert system.
+Auch in Schritt 5 können weitere Fragen auftreten. $c$ und $g$ haben nicht die selbe Länge, können aber unter Verwendung der Länge von $c$ berechnet werden? Vielleicht $c=1.5\cdot g$, oder vielleicht mehr? Der GeoGebra Befehl \texttt{Relation[c,1.5g]} ergibt, dass $c$ und $1.5g$ nicht gleich sind, aber es vielleicht eine andere Konstante als $1.5$ gibt, die eine positive Antwort erzeugt. $\ldots$ Auch wenn keine Zeit für weitere Arbeiten in der Klasse bleibt, werden manche Schülerinnen und Schüler diese Fragen interesant finden und alleine oder in Gruppen darüber nachdenken, sinnvollerweise  \textit{independently}, unter Verwendung des Computers als Experten.
 
-\section{Limitations: a case study of Thales' circle theorem}
+\section{Beschränkung: Eine Fallstudie des Satzes von Thales}
 
-Intiutive use of GeoGebra Automated Reasoning Tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use.
+Intuitive Benutzung des GeoGebra automatischen Beweiswerkzeuges kann unter Umständen unerwartete Ergebnisse hervorbringen. Diese Unterteilung erklärt einige häufige Fehler bei der Benutzung.
 
-Different approaches will be discussed when investigating Thales' circle theorem.
+Unterschiedliche Zugänge bei der Erstellung des Satzes von Thales werden diskutiert.
 
-\paragraph{Approach 1}
+\paragraph{Zugang 1}
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-1}
 \end{center}
 \begin{enumerate}
-    \item Create points $A$, $B$ and $C$.
-    \item Create lines $f=AC$, $g=BC$.
-    \item Check the result of the command \texttt{Relation[f,g]}: ``$f$ intersects with $g$''.
-    \item Ask GeoGebra about geometric prerequisites of $f\perp g$:
-\begin{center}\texttt{LocusEquation[f$\perp$g,C]}.\end{center}
-An implicit curve $a$ which seems like a circle will be shown.
-    \item Move $C$ in the neighborhood of the implicit curve as close as possible. Now \texttt{Relation[f,g]} may still report that ``$f$ intersects with $g$''. \textbf{Why? Because the point $C$ may be not accurately on the circle. We need to exactly state that it is on the circle.}
+    \item Erstellen Sie die Punkte $A$, $B$ und $C$.
+    \item Erstellen Sie die Geraden $f=AC$, $g=BC$.
+    \item Überprüfen Sie das Ergebnis des Befehls \texttt{Beziehung[f,g]}: ``$f$ schneidet $g$''.
+    \item Fragen Sie GeoGebra über geometrische Voraussetzungen von $f\perp g$:
+\begin{center}\texttt{Ortsliniengleichung[f$\perp$g,C]}.\end{center}
+Eine implizite Kurve $a$ , die kreisförmig aussieht, wird gezeigt.
+    \item Bewegen Sie $C$ so nahe wie möglich an die implizite Kurve. Nun wird \texttt{Relation[f,g]} noch immer aussagen, dass ``$f$ schneidet $g$''. \textbf{Warum? Weil der Punkt $C$ nicht direkt auf der Kreisbahn liegt. Wir müssen den Punkt exakt auf di Kreisbahn legen.}
     \begin{enumerate}
-      \item Try attaching point $C$ on implicit curve $a$ by using the \textit{Attach / Detach Point} tool. \textbf{This is not allowed in GeoGebra, because by definition $a$ depends on $C$, and circular dependency would make no sense.}
-      \item Instead, create a new point $D$ by putting it on the implicit curve. This is allowed in GeoGebra. Create also lines $h=AD$, $i=BD$.
+      \item Versuchen Sie, den Punkt $C$ direkt auf die implizite Kurve $a$ zu setzen. Verwenden Sie dazu das  \textit{Attach / Detach Point} Werkzeug. \textbf{GeoGebra erlaubt das nicht, weil per Definition $a$ auf $C$ liegt, und das würde keinen Sinn ergeben.}
+      \item Erstellen Sie stattdessen einen neuen Punkt $D$, den Sie direkt auf die implizite Kurve setzen. Das erlaubt GeoGebra. Erstellen Sie auch die Geraden $h=AD$, $i=BD$.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-2}
 \end{center}
-      \item Check the result of the command \texttt{Relation[h,i]}: ``$h$ and $i$ are perpendicular'' when checked numerically. By clicking ``More$\ldots$'' the result is however ``possibly generally true''. \textbf{Why? Because GeoGebra interprets the underlying implicit curve as the result of a particular setup of the construction. In other words: an implicit curve is a numerical object, it does not have a symbolic representation. That is, symbolic checks based on an implicit curve are not possible. Here GeoGebra was just optimistic about the truth of the conjecture, but the software was actually unable to prove it.}
-      \item The proper way to finalize the steps in this approach is to create the circle with diameter $AB$ with a Circle tool, for example by using the \textit{Semicircle through 2 Points} tool, after detaching $D$ from $a$ and making $a$ invisible. Now $D$ can be attached to the semicircle.
+      \item Überprüfen Sie das Ergebnis des Befehls \texttt{Beziehung[h,i]}: ``$h$ und $i$ sind normal aufeinander'' mit einer numerischen Überprüfung. Durch Klicken auf ``Mehr$\ldots$''ist das Ergebnis ``vielleicht immer richtig''. \textbf{Warum? Weil GeoGebra die darunterliegenden implizite Kurve als das Ergebnis einer teilweisen Konfiguration der Konstruktion interpretiert. Mit anderen Worten: eine implizite Kurve ist ein numerisches Objekt, sie hat keine symbolische Bedeutung. Daher sind symbolische Überprüfungen basierend auf einer impliziten Kurve nicht möglich. Hier ist GeoGebra nur optimistisch, was die Wahrheit der Vermutung betrifft, aber die Software ist nicht fähig, dies zu prüfen.}
+      \item Der eigentliche Weg, die Schritte in dieser Vermutung zu einem Ende zu führen ist,  einen Kreis mit dem Durchmesser $AB$ mit dem Kreiswerkzeug zu konstruieren, zum Beispiel mit dem \textit{Halbkreis durch 2 Punkte} Werkzeug, nachdem $D$ von $a$ abgetrennt wurd und dann $a$ unsichtbar zu machen. Dann kann $D$ zu dem Halbkreis hinzugefügt werden.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-3}
 \end{center}
-      (Optionally the implicit curve can be set to visible by displaying it with a different style. In this example another style was used for the semicircle as well.) Finally \texttt{Relation[h,i]} will now result in positive outputs both numerically and symbolically.
+      (Optional kann die implizite Kurve auch durch eine andere Formatierung sichtbar gemacht werden. In diesem Beispiel wurde eine andere Formatierung auch für den Halbkreis verwendet. Zum Schluss zeigt \texttt{Beziehung [h,i]} positive Ergebnisse, sowohl numerisch, als auch symbolisch.
     \end{enumerate}
 \end{enumerate}
 
 
-\paragraph{Approach 2}
+\paragraph{Zugang 2}
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales2-1}
 \end{center}
 \begin{enumerate}
-    \item Create points $A$ and $B$.
-    \item Create circle $c$ with center $B$ through $A$.
-    \item Draw line $f$ by joining points $A$ and $B$.
-    \item Create the intersection points $C$ and $D$ of $c$ and $f$. (You may want to move the label of $A$ away to avoid overlapping with the label of $C$.)
-    \item Put point $E$ on $c$.
-    \item Draw lines $g=AE$, $h=DE$.
+    \item Erstellen Sie die Punkte $A$ und $B$.
+    \item Erstellen Sie den Kreise $c$ mit dem Mittelpunkt $B$ durch $A$.
+    \item Konstruieren Sie die Gerade $f$ durch Verbinden der Punkte $A$ und $B$.
+    \item Erstellen Sie die Schnitpunkte $C$ und $D$ von $c$ und $f$. (Vielleicht müssen sie die Beschriftung von $A$ verschieben, um Überschneidungen mit der Beschriftung von $C$ zu vermeiden.)
+    \item Erstellen Sie Punkt $E$ auf $c$.
+    \item Konstruieren Sie die Geraden $g=AE$, $h=DE$.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales2-2}
 \end{center}
-    \item Compare $g$ and $h$ by using \texttt{Relation[g,h]}. The numerical result is correct, but GeoGebra reports that the perpendicularity of $f$ and $g$ is not generally true. \textbf{Why? When $C$ and $D$ were created, it was not defined which is which. That is, the visual precondition that $A=C$ is actually false---the other case $A=D$ must be also allowed as a possible precondition. In that other case, of course, $f$ and $g$ are not perpendicular, but identical.}
+    \item Vergleichen Sie $g$ und $h$ unter Verwendung von \texttt{Beziehung[f,g]}. Das numerische Ergebnis ist richtig, aber GeoGebra sagt, dass die Orthogonalität von $f$ und $g$ nicht grundsätzlich richtig ist. \textbf{Warum? Als $C$ und $D$ konstruiert wurden, wurde nicht definiert, welche welche ist. Daher ist die sichtbare Voraussetzung, dass $A=C$ falsch ist---die andere Möglichkeit $A=D$ muss auch als mögliche Voraussetzung erlaubt sein. In diesem anderen Fall sind $f$ und $g$ natürlich nicht normal aufeinander, sondern identisch.}
 \begin{enumerate}
-      \item Instead, change the definition of $g$ to $g=CE$. Now the relationship between $g$ and $h$ will be correctly reported in the symbolic case as well.
-      \item Another option is to not create both intersection points $C$ and $D$, but just one of them (which differs from $A$). This is possible by clicking on the neighborhood of the sought intersection point in the diagram.
+      \item Stattdessen wird die Definition von $g$ zu $g=CE$ geändert. Jetzt wird die Beziehung zwischen $g$ und $h$ richtig gewertet, auch im symbolischen Fall.
+      \item Eine andere Möglichkeit ist, nicht beide Schnittpunkte $C$ und $D$ zu konstruieren, sondern nur einen der beiden (Unterschieder zu $A$). Das ist möglich, indem man in die Nähe der Schnittpunkte des Diagramms klickt.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales2-3}
 \end{center}
-      Now continuing with the creation of $D$ (by putting it on $c$), $g=AD$ and $h=CD$, \texttt{Relation[f,g]} will report the correct results both numerically and symbolically.
+      Jetzt wird mit der Konstruktion von  $D$ (durch erstellen auf $c$), $g=AD$ und $h=CD$, weitergemacht.\texttt{Beziehung[f,g]} wird das richtige Ergebnis numerisch und symbolisch zeigen.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales2-4}
 \end{center}
-      \textbf{Why? In this diagram GeoGebra assumes that $C$ differs from $A$ in general (the special case $A=C$ will be excluded from the symbolic proof of the perpendicularity---but even in this side case the statement on perpendicularity will be true, that is the symbolic result will be ``always true'').}
+      \textbf{Warum? In diesem Diagramm zeigt GeoGebra, dass sich $C$ von $A$ grundsätzlich unterscheidt. (der Spezialfall $A=C$ wird ausgeschlossen von dem symbolisichen Beweis zur Orthogonalität, aber sogar in diesesm Spezialfall wäre die Behauptung der Orthogonalität wahr, das symbolische Ergebnis ist "immer wahr").}
     \end{enumerate}
 \end{enumerate}
 
 
-\section{Appendix}
-\subsection{Low level GeoGebra tools}
+\section{Anhang}
+\subsection{Einfache GeoGebra Werkzeuge}
 
-Automated reasoning tools in GeoGebra are completed by some low level tools prepared for learning more and in a more accurate way about geometric properties.
+Automatische Beweisführungswerkzeuge in GeoGebra werden abgerundet durch einige einfach Werkzeuge, die zum zusätzlichen Lernen über exaktere geometrische Eigenschaften.
 
-\subsubsection{The \texttt{Prove} command}
-The \texttt{Prove} command decides if a geometric statement is true in general. It has three possible outputs:
+\subsubsection{Der \texttt{Beweis} Befehl}
+Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemeinen wahr ist. Es hat drei mögliche Ergebnisse:
 \begin{itemize}
-    \item \textit{true} means that the statement is always true, or true under some non-degeneracy conditions.
-    \item \textit{false} means that the statement is false in general. GeoGebra uses algebraic geometry in many cases to decide such questions. In algebraic geometry ``generally true'' (true in ``most'' cases) and ``generally false'' (false in ``most'' cases) are not opposite properties, that is, a statement can be not ``generally true'' and not ``generally false'' at the same time. GeoGebra interprets this special case as \textit{false} (since it is not generally true).
-    \item \textit{undefined} means that GeoGebra cannot decide because of some reason:
+    \item \textit{wahr} bedeutet, dass die Aussage immer wahr ist, oder wahr unter einigen degenerierten Bedingungen.
+    \item \textit{falsch} bedeutet, dass die Aussage im allgemeinen falsch ist. GeoGebra nutzt algebraische Geometrie in manchen Fällen, um solche Fragen zu entscheiden. In algebraischer Geometrie ``allgemein wahr'' (wahr in `den meisten'' Fällen) und ``im Allgemeinen falsch'' (falsch in ``den meisten'' Fällen) sind nicht gegenseitige Eigenschaften, sondern, eine Aussage kann nicht ``im Allgemeinen wahr'' und nicht ``im Allgemeinen falsch'' zur selben Zeit sein. GeoGebra interpretiert diesen speziellen Fall als\textit{falsch} (wenn es nicht im Allgemeinen wahr ist).
+    \item \textit{nicht definiert} bedeutet, dass GeoGebra aufgrund verschiedener Ursachen keine Entscheidung treffen kann:
     \begin{itemize}
-        \item The statement cannot be translated into a model which can be further investigated. This usually means that algebraization of the statement failed because of 
+        \item Die Aussage kann nicht in ein Modell übersetzt werden, das erforscht werden kann. Das bedeutet normalerweise, dass die Algebraisierung der Aussage nicht durchgeführt werden kann, aufgrund
         \begin{itemize}
-            \item theoretical impossibility (e.g.~using a transcendent function as a construction step, for example, sine of $x$),
-            \item missing implementation in GeoGebra.
+            \item theoretischer Unmöglichkeit (e.g.~ Verwendung einer transzendenten Funktion als Konstruktionsschritt, z.B Sinus von $x$),
+            \item fehlende Implementation in GeoGebra.
         \end{itemize}
-        \item The translated statement in algebraic geometry is too difficult to solve. This means that either there are too many variables, or the equations are hard to handle by the solver algorithm. This results in either a timeout or an out of memory error.
-        \item The solver algorithm was able to investigate the situation, but the result is ambiguous: either the statement is false, or it is true under certain conditions---but the algorithm was not able decide which case is present.
-        \item There was an internal error in GeoGebra during the computations.
+        \item Die übersetzte Aussage in algebraischer Geometrie ist zu schwierig zu lösen. Das kann einerseits bedeuten, dass es zu viele Variablen gibt, oder die Gleichungen sind mit einem Algorithmus schwierig zu bearbeiten. Das führt entweder zu einem Timeout oder der Platz im Hauptspeicher reicht nicht aus.
+        \item Der Lösungsalgorithmus konnte die Situation prüfen, aber das Ergebnis ist nicht eindeutig: entweder ist die Behauptung falsch, oder sie ist wahr unter bestimmten Bedingungen. Aber der Algorithmus konnte nicht feststellen, welcher Fall vorliegt.
+        \item Es gab eine interne Störung in GeoGebra während der Berechnungen.
     \end{itemize}
 \end{itemize}
 
 % Prevent putting the image on the next page.
 \vfill\eject % FIXME
 
-\paragraph{Example}
+\paragraph{Beispiel}
 \begin{center}
 \includegraphics[scale=0.5]{Prove-example}
 \end{center}
 \begin{enumerate}
-\item Construct the triangle $ABC$ by using the \textit{Polygon} tool.
-\item Construct the midpoints $D$ and $E$ of sides $a$ and $b$, respectively, by using the \textit{Midpoint or Center} tool.
-\item By using the \textit{Segment} tool, create $f$ by joining $D$ and $E$.
-\item Type \texttt{Prove[f$\parallel$c]} to obtain \textit{true} in the Algebra View as Boolean Value $d$. Note that the parallel sign must be entered by using either
+\item Konstruieren Sie das Dreieck $ABC$ mit dem \textit{Vieleck} Werkzeug.
+\item Konstruieren Sie die Mittelpunkte $D$ und $E$ der Seiten $a$ und $b$,mit dem \textit{Mittelpunkt} Werkzeug.
+\item Unter Verwendung des \textit{Strecke} Werkzeug, konstruieren Sie $f$ durch Verbinden mit $D$ und $E$.
+\item Geben Sie \texttt{Beweis[f$\parallel$c]} ein, um zu zeigen, dass \textit{wahr} in der Algebra Ansicht als Boolscher Wert $d$ angezeigt wird. Achten Sie darauf, dass das Parallel Zeichen eingegeben werden muss, entweder durch:
 \begin{itemize}
-\item the list of the mathematical symbols by clicking the \framebox{$\alpha$} icon in the Input Bar, or
-\item inserting this symbol externally by using Copy and Paste.
-\item Alternatively, \texttt{f$\parallel$c} can be substituted by \texttt{AreParallel[f,c]} also.
+\item die Liste der mathematischen Symbole durch Klicken auf das \framebox{$\alpha$} Icon in der Eingabezeile, oder
+\item externe Eingabe des Symbols mit Copy and Paste.
+\item Alternativ kann \texttt{f$\parallel$c} auch durch \texttt{AreParallel[f,c]} ersetzt werden.
 \end{itemize}
 
-\item Type \texttt{Prove[c==3f]}. Now the answer is \textit{undefined}, because GeoGebra cannot decide if the statement is false or it is true under certain conditions. In such cases the \texttt{ProveDetails} command can help (see below). Note that \textit{two} equal signs must be entered; another possibilities are to use
+\item Geben Sie \texttt{Beweis[c==3f]} ein. Jetzt ist die Antwort \textit{undefiniert}, weil GeoGebra nicht entscheiden kann, ob die Aussage falsch oder wahr ist unter bestimmten Bedingungen. In diesen Fällen kann der Befehl \texttt{ProveDetails} helfen. (siehe unten). Beachten Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; andere Möglichkeiten der Verwendung sind:
 \begin{itemize}
-    \item \texttt{Prove[c$\stackrel{?}{=}$3f]}, or
+    \item \texttt{Prove[c$\stackrel{?}{=}$3f]}, oder
     \item \texttt{Prove[AreEqual[c,3f]]}.
 \end{itemize}
 
 \end{enumerate}
 
-\subsubsection{The \texttt{ProveDetails} command}
-The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} command has, but it may use different algorithms in the decision process, and may provide more information on the results. It has three possible outputs:
+\subsubsection{The \texttt{ProveDetails} Befehl}
+Der \texttt{ProveDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis}Befehl, aber es kann verschiedene Algorithmen im Entscheidungsprozess verwenden und und könnte mehr Informationen des Ergebnisses zeigen. Es gibt drei mögliche Ergebnisse:
 \begin{itemize}
-    \item \textit{\{true\}} means that the statement is always true.
-    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy or essential conditions: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions is true, then the statement is true.
-    \item \textit{\{false\}} means that the statement is false in general. See the comments at the \texttt{Prove} command for more details on this.
+    \item \textit{\{true\}} bedeutet, dass die Aussage immer wahr ist.
+    \item \textit{\{true, \{$\ldots$\}\}} wenn die Aussage unter bestimmten, nicht-degenerierten oder essentiellen Bedingungen wahr ist: Diese Bedingungen sind in Klammern geschrieben. (Wenn die Liste bleibt, bedeutet das, dass keine künstliche Übersetzung gefunden werden konnte ``$\ldots$''.) Wenn die Verbindung der Verneinten Bedingungen wahr ist, dann ist die Aussage wahr.
+    \item \textit{\{false\}} bedeutet, dass die Aussage im Allgemeinen falsch ist. Die Kommentare dazu finden Sie beim \texttt{Beweis} Befehl, falls Sie weitere Details benötigen.
 \end{itemize}
-\paragraph{Example (continued)}
+\paragraph{Beispiel (fortgesetzt)}
 \begin{enumerate}
 \setcounter{enumi}{5}
-    \item Type \texttt{ProveDetails[c==3f]}. Now the answer is \textit{\{false\}}.
-    \item Type \texttt{ProveDetails[c==2f]}. Now the answer is \textit{\{true\}}.
+    \item Geben Sie \texttt{ProveDetails[c==3f]} ein. Jetzt ist die Antwort \textit{\{false\}}.
+    \item Geben Sie \texttt{ProveDetails[c==2f]} ein. Jetzt ist die Antwort \textit{\{true\}}.
 \begin{center}
 \includegraphics[scale=0.5]{ProveDetails-example-1}
 \end{center}
-    \item Now let $F$ be the midpoint of $c$, and let us denote segment $CF$ by $g$. Let $G$ be the intersection point of $f$ and $g$. Finally, let us denote segments $CG$ and $FG$ by $h$ and $i$, respectively. In this case \texttt{ProveDetails[h==i]} returns \textit{\{true,\{``AreCollinear[A,B,C]''\}\}} which means that if $A$, $B$ and $C$ are not collinear, then $h=i$.
+    \item Sei $F$ der Mittelpunkt von $c$,und die Strecke $CF$ wird in $g$ umbenannt. Sei $G$ der Schnittpunkt von $f$ und $g$. Zum Schluss werden noch die Strecken $CG$ und $FG$ in $h$und $i$ umbenannt. In diesem Falle wird \texttt{ProveDetails[h==i]} wieder \textit{\{true,\{``AreCollinear[A,B,C]''\}\}}, was bedeutet, dass, wenn $A$, $B$ und $C$ nicht kollinear sind, ist $h=i$.
 \end{enumerate}
 
-\paragraph{Another example}
+\paragraph{Ein weiteres Beispiel}
 \begin{center}
 \includegraphics[scale=0.5]{ProveDetails-example-2}
 \end{center}
 \begin{enumerate}
-    \item Let $AB$ a segment, denoted by $f$.
-    \item Let $C$ be a point on $f$.
-    \item Let us denote segments $AC$ and $BC$ by $g$ and $h$, respectively.
-    \item Type \texttt{ProveDetails[f==g+h]}. Now the answer is
+    \item Sei $AB$ eine Strecke, umbenannt in $f$.
+    \item Sei $C$ ein Punkt auf $f$.
+    \item Die Strecken $AC$ und $BC$ werden in  $g$ und $h$ umbenannt.
+    \item Geben Sie \texttt{ProveDetails[f==g+h]} ein. Jetzt ist die Antwort
     \begin{center}
         \textit{\{true,\{``g+f=h'', ``h+f=g''\}\}} 
     \end{center}
-    which means that if $g+f\neq h$ and $h+f\neq g$, then $f=g+h$.
+    was bedeutet, dass, wenn $g+f\neq h$ und $h+f\neq g$, ist $f=g+h$.
 \end{enumerate}
 
-\subsubsection{A comparison of \texttt{Prove}, \texttt{ProveDetails} and \texttt{Relation}}
+\subsubsection{Ein Vergleich von \texttt{Prove}, \texttt{ProveDetails} und \texttt{Relation}}
 \label{Erklaerungstabelle}
 
-The following table explains the meanings of the outputs of the commands \texttt{Prove},
-\texttt{ProveDetails} and \texttt{Relation}.
+Die folgende Tabelle erklärt die Bedeutung der Ergebnisse der Befehle \texttt{Prove},
+\texttt{ProveDetails} und \texttt{Relation}.
 
 % This table was exported from LyX. LaTeX experts: Please improve its look if possible.
 \begin{tabular}{|>{\raggedright}m{0.15\textwidth}|>{\centering}m{0.2\textwidth}|>{\centering}m{0.2\textwidth}|>{\centering}m{0.3\textwidth}|}
