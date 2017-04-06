@@ -11,10 +11,10 @@ and contribute a translation.
 
 ## Compilation
 
-We use the command `pdflatex english` and `pdflatex deutsch' twice to
+We use the command `pdflatex english` and `pdflatex deutsch` twice to
 generate the PDF version of the English and German translations.
-Alternatively the `make` and `make pdf' commands do the same. The command
-`make odt' will create .odt version of the text. Note that the French
+Alternatively the `make` and `make pdf` commands do the same. The command
+`make odt` will create .odt version of the text. Note that the French
 translation is only present as an .odt file.
 
 ## GeoGebra files
