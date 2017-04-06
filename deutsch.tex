@@ -1,5 +1,3 @@
-%%% THIS IS A WORK IN PROGRESS! %%%
-
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel} % Silbentrennung, Anführungszeichen usw.
@@ -28,8 +26,7 @@
 
 \title{GeoGebra Automatisierte Begründungwerkzeuge\\ \large Ein Tutorial}
 \author{Zolt\'an Kov\'acs, Tom\'as Recio und M. Pilar V\'elez\\
-Übersetzt von Katharina Schiffler\\
-\textbf{work in progress}
+Übersetzt von Katharina Schiffler
 }
 
 \begin{document}
@@ -55,7 +52,7 @@ Das Softwaretool GeoGebra (\url{http://www.geogebra.org}) ist geeignet zur Unter
 
 Die neuen Technologien im Klassenzimmer befinden sich noch in einer experimentellen Phase. Dieses Dokument fasst die technischen Möglichkeiten zusammen und zeigt auch einige Beispiele.
 
-\section{Starting GeoGebra}
+\section{GeoGebra starten}
 
 GeoGebra ist auf vielen Plattformen verfügbar, wie zum Beispiel
 \begin{itemize}
@@ -116,7 +113,7 @@ Wenn die Algebra Ansicht verwendet wird, kann es hilfreich sein, die Weite zu ve
 
 \subsubsection{Das Beziehungswerkzeug und Befehle}
 
-GeoGebra's Beziehungswerkzeug und Befehle zeigt ein Fenster, das dem Benutzer Informationen über die Beziehung zwischen zwei oder mehr Objekten gibt.
+GeoGebras Beziehungswerkzeug und Befehle zeigt ein Fenster, das dem Benutzer Informationen über die Beziehung zwischen zwei oder mehr Objekten gibt.
 Dieser Befehl erlaubt dem Benutzer, numerisch herauszufinden, ob (für die gezeichnete Konstruktion mit zugehörigen Koordinaten)
 \begin{itemize}
     \item zwei Geraden normal aufeinander stehen,
@@ -303,14 +300,14 @@ Zusammenfassend, bei diesem Zugang
     \item wird von den Schülerinnen und Schülern eine Vermutung aufgestellt, wie die Kurve aussieht,
     \item wird die Vermutung mit dem Beziehungswerkzeug oder -befehl in GeoGebra überprüft,
     \item kann der Beweis von den Schülerinnen und Schülern optional handschriftlich durchgeführt werden,
-    \item wird der Satz des Thales mit den impliziten Ortslinien in GeoGebra verallgemeinert - als zukünftiges Experiment für die Schülerinnen und Schüler.
+    \item wird der Satz des Thales mit den impliziten Ortslinien in GeoGebra verallgemeinert -- als zukünftiges Experiment für die Schülerinnen und Schüler.
 \end{enumerate}
 
 \subsection{Weitere Beispiele}
 
 Die Dreiecksungleichung kann in eine Gleichung übersetzt werden, die in eine Erforschung der degenerierten Dreiecke geändert werden kann. Als Verallgemeinerung kann die künstliche Definition von konischen Segmenten erwähnt werden.
 
-Eine andere Anwendung ist eine Verzweigung der Ortsliniengleichung im Dreieck $ABC$ mit der Bedingung $a\stackrel{?}{=}b$, dazu muss $C$ gefunden werden (step 1). Natürlich muss $C$ auf der Streckensymmetrale  $AB$ liegen (step 2). Dass  $C$ explizit auf der Streckensymmetrale liegt, bestätigt GeoGebra, als $AC=BC$ , wenn man die Berechnung mit dem Beziehungswerkzeug startet (step 3). Nach dem Beweis des Satzes mit traditionellen Methoden (step 4) kann eine Verallgemeinerung durch das Eintippen des Befehles\texttt{Ortsliniengleichung[a==2b,C]}: erhalten werden. Dies kann auch ein interessantes Experiment für fortgeschrittene Schülerinnen und Schüler sein. (step 5).
+Eine andere Anwendung ist eine Verzweigung der Ortsliniengleichung im Dreieck $ABC$ mit der Bedingung $a\stackrel{?}{=}b$, dazu muss $C$ gefunden werden (Schritt 1). Natürlich muss $C$ auf der Streckensymmetrale  $AB$ liegen (Schritt 2). Dass  $C$ explizit auf der Streckensymmetrale liegt, bestätigt GeoGebra, als $AC=BC$ , wenn man die Berechnung mit dem Beziehungswerkzeug startet (Schritt 3). Nach dem Beweis des Satzes mit traditionellen Methoden (Schritt 4) kann eine Verallgemeinerung durch das Eintippen des Befehles\texttt{Ortsliniengleichung[a==2b,C]}: erhalten werden. Dies kann auch ein interessantes Experiment für fortgeschrittene Schülerinnen und Schüler sein (Schritt 5).
 
 \subsection{Ein ausgearbeitetes Beispiel: Der Satz von der Mittelparallelen im Dreieck}
 
@@ -346,11 +343,11 @@ Diese Schritt für Schritt Anleitungen sind ein möglicher Weg, den Satz von der
     \item[11.] Klicken Sie auf ``Mehr $\ldots$'' im Pop Up Fenster und überprüfen Sie symbolisch, dass sie parallel sind.
 \end{enumerate}
 \begin{center}
-\includegraphics[scale=0.5]{classroom3-Relation}
+\includegraphics[scale=0.5]{classroom3-Relation-de}
 \end{center}
 Die Schülerinnen und  Schüler machen mit Schritt 4 weiter, wenn sie einen eleganten Weg benötigen, diese Behauptung zu beweisen, oder hören an dieser Stelle auf, wenn keine weitere Zeit in der Klasse für dieses Problem aufgewendet werden soll.
 
-Auch in Schritt 5 können weitere Fragen auftreten. $c$ und $g$ haben nicht die selbe Länge, können aber unter Verwendung der Länge von $c$ berechnet werden? Vielleicht $c=1.5\cdot g$, oder vielleicht mehr? Der GeoGebra Befehl \texttt{Relation[c,1.5g]} ergibt, dass $c$ und $1.5g$ nicht gleich sind, aber es vielleicht eine andere Konstante als $1.5$ gibt, die eine positive Antwort erzeugt. $\ldots$ Auch wenn keine Zeit für weitere Arbeiten in der Klasse bleibt, werden manche Schülerinnen und Schüler diese Fragen interesant finden und alleine oder in Gruppen darüber nachdenken, sinnvollerweise  \textit{independently}, unter Verwendung des Computers als Experten.
+Auch in Schritt 5 können weitere Fragen auftreten. $c$ und $g$ haben nicht die selbe Länge, können aber unter Verwendung der Länge von $c$ berechnet werden? Vielleicht $c=1.5\cdot g$, oder vielleicht mehr? Der GeoGebra Befehl \texttt{Relation[c,1.5g]} ergibt, dass $c$ und $1.5g$ nicht gleich sind, aber es vielleicht eine andere Konstante als $1.5$ gibt, die eine positive Antwort erzeugt. $\ldots$ Auch wenn keine Zeit für weitere Arbeiten in der Klasse bleibt, werden manche Schülerinnen und Schüler diese Fragen interessant finden und alleine oder in Gruppen darüber nachdenken, sinnvollerweise  \textit{independently}, unter Verwendung des Computers als Experten.
 
 \section{Beschränkung: Eine Fallstudie des Satzes von Thales}
 
@@ -405,7 +402,7 @@ Eine implizite Kurve $a$ , die kreisförmig aussieht, wird gezeigt.
       \item Stattdessen wird die Definition von $g$ zu $g=CE$ geändert. Jetzt wird die Beziehung zwischen $g$ und $h$ richtig gewertet, auch im symbolischen Fall.
       \item Eine andere Möglichkeit ist, nicht beide Schnittpunkte $C$ und $D$ zu konstruieren, sondern nur einen der beiden (Unterschieder zu $A$). Das ist möglich, indem man in die Nähe der Schnittpunkte des Diagramms klickt.
 \begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-3}
+\includegraphics[scale=0.5]{limitations-Thales2-3-de}
 \end{center}
       Jetzt wird mit der Konstruktion von  $D$ (durch erstellen auf $c$), $g=AD$ und $h=CD$, weitergemacht.\texttt{Beziehung[f,g]} wird das richtige Ergebnis numerisch und symbolisch zeigen.
 \begin{center}
@@ -440,7 +437,8 @@ Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemei
 \end{itemize}
 
 % Prevent putting the image on the next page.
-\vfill\eject % FIXME
+% \vfill\eject % FIXME
+% not needed in German
 
 \paragraph{Beispiel}
 \begin{center}
@@ -457,16 +455,16 @@ Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemei
 \item Alternativ kann \texttt{f$\parallel$c} auch durch \texttt{AreParallel[f,c]} ersetzt werden.
 \end{itemize}
 
-\item Geben Sie \texttt{Beweis[c==3f]} ein. Jetzt ist die Antwort \textit{undefiniert}, weil GeoGebra nicht entscheiden kann, ob die Aussage falsch oder wahr ist unter bestimmten Bedingungen. In diesen Fällen kann der Befehl \texttt{ProveDetails} helfen. (siehe unten). Beachten Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; andere Möglichkeiten der Verwendung sind:
+\item Geben Sie \texttt{Beweis[c==3f]} ein. Jetzt ist die Antwort \textit{undefiniert}, weil GeoGebra nicht entscheiden kann, ob die Aussage falsch oder wahr ist unter bestimmten Bedingungen. In diesen Fällen kann der Befehl \texttt{PrüfeDetails} helfen. (siehe unten). Beachten Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; andere Möglichkeiten der Verwendung sind:
 \begin{itemize}
-    \item \texttt{Prove[c$\stackrel{?}{=}$3f]}, oder
-    \item \texttt{Prove[AreEqual[c,3f]]}.
+    \item \texttt{Prüfe[c$\stackrel{?}{=}$3f]}, oder
+    \item \texttt{Prüfe[AreEqual[c,3f]]}.
 \end{itemize}
 
 \end{enumerate}
 
-\subsubsection{The \texttt{ProveDetails} Befehl}
-Der \texttt{ProveDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis}Befehl, aber es kann verschiedene Algorithmen im Entscheidungsprozess verwenden und und könnte mehr Informationen des Ergebnisses zeigen. Es gibt drei mögliche Ergebnisse:
+\subsubsection{The \texttt{PrüfeDetails} Befehl}
+Der \texttt{PrüfeDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis}Befehl, aber es kann verschiedene Algorithmen im Entscheidungsprozess verwenden und und könnte mehr Informationen des Ergebnisses zeigen. Es gibt drei mögliche Ergebnisse:
 \begin{itemize}
     \item \textit{\{true\}} bedeutet, dass die Aussage immer wahr ist.
     \item \textit{\{true, \{$\ldots$\}\}} wenn die Aussage unter bestimmten, nicht-degenerierten oder essentiellen Bedingungen wahr ist: Diese Bedingungen sind in Klammern geschrieben. (Wenn die Liste bleibt, bedeutet das, dass keine künstliche Übersetzung gefunden werden konnte ``$\ldots$''.) Wenn die Verbindung der Verneinten Bedingungen wahr ist, dann ist die Aussage wahr.
@@ -475,12 +473,12 @@ Der \texttt{ProveDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis
 \paragraph{Beispiel (fortgesetzt)}
 \begin{enumerate}
 \setcounter{enumi}{5}
-    \item Geben Sie \texttt{ProveDetails[c==3f]} ein. Jetzt ist die Antwort \textit{\{false\}}.
-    \item Geben Sie \texttt{ProveDetails[c==2f]} ein. Jetzt ist die Antwort \textit{\{true\}}.
+    \item Geben Sie \texttt{PrüfeDetails[c==3f]} ein. Jetzt ist die Antwort \textit{\{false\}}.
+    \item Geben Sie \texttt{PrüfeDetails[c==2f]} ein. Jetzt ist die Antwort \textit{\{true\}}.
 \begin{center}
 \includegraphics[scale=0.5]{ProveDetails-example-1}
 \end{center}
-    \item Sei $F$ der Mittelpunkt von $c$,und die Strecke $CF$ wird in $g$ umbenannt. Sei $G$ der Schnittpunkt von $f$ und $g$. Zum Schluss werden noch die Strecken $CG$ und $FG$ in $h$und $i$ umbenannt. In diesem Falle wird \texttt{ProveDetails[h==i]} wieder \textit{\{true,\{``AreCollinear[A,B,C]''\}\}}, was bedeutet, dass, wenn $A$, $B$ und $C$ nicht kollinear sind, ist $h=i$.
+    \item Sei $F$ der Mittelpunkt von $c$,und die Strecke $CF$ wird in $g$ umbenannt. Sei $G$ der Schnittpunkt von $f$ und $g$. Zum Schluss werden noch die Strecken $CG$ und $FG$ in $h$und $i$ umbenannt. In diesem Falle wird \texttt{PrüfeDetails[h==i]} wieder \textit{\{true,\{``AreCollinear[A,B,C]''\}\}}, was bedeutet, dass, wenn $A$, $B$ und $C$ nicht kollinear sind, ist $h=i$.
 \end{enumerate}
 
 \paragraph{Ein weiteres Beispiel}
@@ -491,77 +489,75 @@ Der \texttt{ProveDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis
     \item Sei $AB$ eine Strecke, umbenannt in $f$.
     \item Sei $C$ ein Punkt auf $f$.
     \item Die Strecken $AC$ und $BC$ werden in  $g$ und $h$ umbenannt.
-    \item Geben Sie \texttt{ProveDetails[f==g+h]} ein. Jetzt ist die Antwort
+    \item Geben Sie \texttt{PrüfeDetails[f==g+h]} ein. Jetzt ist die Antwort
     \begin{center}
         \textit{\{true,\{``g+f=h'', ``h+f=g''\}\}} 
     \end{center}
     was bedeutet, dass, wenn $g+f\neq h$ und $h+f\neq g$, ist $f=g+h$.
 \end{enumerate}
 
-\subsubsection{Ein Vergleich von \texttt{Prove}, \texttt{ProveDetails} und \texttt{Relation}}
+\subsubsection{Ein Vergleich von \texttt{Prüfe}, \texttt{PrüfeDetails} und \texttt{Beziehung}}
 \label{Erklaerungstabelle}
 
-Die folgende Tabelle erklärt die Bedeutung der Ergebnisse der Befehle \texttt{Prove},
-\texttt{ProveDetails} und \texttt{Relation}.
+Die folgende Tabelle erklärt die Bedeutung der Ergebnisse der Befehle \texttt{Prüfe},
+\texttt{PrüfeDetails} und \texttt{Beziehung}.
 
 % This table was exported from LyX. LaTeX experts: Please improve its look if possible.
 \begin{tabular}{|>{\raggedright}m{0.15\textwidth}|>{\centering}m{0.2\textwidth}|>{\centering}m{0.2\textwidth}|>{\centering}m{0.3\textwidth}|}
 \hline 
-\multicolumn{3}{|c|}{GeoGebra outputs} & \multirow{2}{0.3\textwidth}{\textbf{\centerline{Conclusion}}}\tabularnewline
+\multicolumn{3}{|c|}{GeoGebra Outputs} & \multirow{2}{0.3\textwidth}{\textbf{\centerline{Konklusion}}}\tabularnewline
 \cline{1-3} 
-\textbf{\centerline{Prove}} & \textbf{ProveDetails} & \textbf{Relation}'s symbolic window & \tabularnewline
+\textbf{\centerline{Prüfe}} & \textbf{PrüfeDetails} & Symbolisches Fenster von \textbf{Beziehung}& \tabularnewline
 \hline 
-\multirow{4}{0.15\textwidth}{\centerline{\footnotesize{}true}} & {\footnotesize{}\{true\}} & {\footnotesize{}always true} & {\footnotesize{}The statement is true.}\tabularnewline
+\multirow{4}{0.15\textwidth}{\centerline{\footnotesize{}true}} & {\footnotesize{}\{true\}} & {\footnotesize{}immer wahr} & {\footnotesize{}Die Aussage ist wahr.}\tabularnewline
 \cline{2-4} 
- & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\}\}}} & {\footnotesize{}true under }\emph{\footnotesize{}conjuction of specified
-conditions} & {\footnotesize{}The statement is true if the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
-hold. These conditions are sufficient, but maybe not necessary. There
-may be other sufficient conditions to make the statement true.}\tabularnewline
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}Bedingungen}{\footnotesize{}\}\}}} & {\footnotesize{}wahr unter}\emph{\footnotesize{}Vereinigung von speziellen Bedingungen} & {\footnotesize{}Die Aussage ist wahr, wenn die speziellen}\emph{\footnotesize{}Bedingungen}{\footnotesize{}
+stimmen. Diese Bedingungen sind ausreichend, aber möglicherweise nicht notwendig. Es 
+könnte andere ausreichende Bedingungen geben, die die Aussage wahr machen.}\tabularnewline
 \cline{2-4} 
- & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}true under certain conditions} & {\footnotesize{}The statement is true if certain equations hold. These
-equations have no visually clear geometric meanings for GeoGebra.}\tabularnewline
+ & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}wahr unter bestimmten Bedingungen} & {\footnotesize{} Die Aussage ist wahr, wenn gewisse Gleichungen stimmen. Diese
+Gleichungen haben keine klar ersichtliche Bedeutung für GeoGebra.}\tabularnewline
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}generally true} & {\footnotesize{}The statement is true if certain conditions hold.
-GeoGebra was unable to find these conditions due to computational
-difficulties.}\tabularnewline
+ & {\footnotesize{}\{\}} & {\footnotesize{}im Allgemeinen wahr} & {\footnotesize{} Die Aussage ist wahr, wenn gewisse Gleichungen stimmen.
+GeoGebra konnte diese Bedingungen nicht ermitteln, weil die Berechnungen zu kompliziert 
+waren.}\tabularnewline
 \hline 
-\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}not generally true} & {\footnotesize{}The statement is false.}\tabularnewline
+\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{} nicht im Allgemeinen wahr} & {\footnotesize{}Die Aussage ist falsch.}\tabularnewline
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}possibly generally true} & {\footnotesize{}GeoGebra was unable to decide if the statement is
-true or false. The numerical check confirms the truth, but the symbolic
-check was unsuccessful due to computational difficulties.}\tabularnewline
+ & {\footnotesize{}\{\}} & {\footnotesize{}möglicherweise im Allgemeinen wahr} & {\footnotesize{}GeoGebra konnte nicht entscheiden, ob die Aussage
+wahr oder falsch ist. Die numerische Überprüfung zeigt, dass die Aussage wahr ist, aber die symbolische 
+war konnte nicht durchgeführt werden, weil die Berechnungen zu kompliziert waren.}\tabularnewline
 \hline 
-\multirow{5}{0.15\textwidth}{\centerline{\footnotesize{}undefined}} & {\footnotesize{}\{true\}} & {\footnotesize{}always true} & {\footnotesize{}The statement is true.}\tabularnewline
+\multirow{5}{0.15\textwidth}{\centerline{\footnotesize{}nicht definiert}} & {\footnotesize{}\{true\}} & {\footnotesize{}immer wahr} & {\footnotesize{}Die Aussage ist wahr.}\tabularnewline
 \cline{2-4} 
- & \multicolumn{1}{c|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\}\}}} & {\footnotesize{}true under }\emph{\footnotesize{}conjuction of specified
-conditions} & {\footnotesize{}The statement is true if the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
-hold. These conditions are sufficient, but maybe not necessary. There
-may be other sufficient conditions to make the statement true.}\tabularnewline
+ & \multicolumn{1}{c|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}Bedingungen}{\footnotesize{}\}\}}} & {\footnotesize{}wahr unter }\emph{\footnotesize{}Vereinigung von bestimmten
+Bedingungen} & {\footnotesize{}Die Aussage ist wahr, wenn die bestimmten }\emph{\footnotesize{}Bedingungen}{\footnotesize{}
+stimmen. Diese Bedingungen sind ausreichend, aber möglicherweise nicht notwendig. Es 
+könnte andere ausreichende Bedingungen geben, die die Aussage wahr machen.}\tabularnewline
 \cline{2-4} 
- & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}true under certain conditions} & {\footnotesize{}The statement is true if certain conditions hold.
-These equations have no visually clear geometric meanings for GeoGebra.}\tabularnewline
+ & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}wahr unter bestimmten Bedingungen} & {\footnotesize{} Die Aussage ist wahr, wenn bestimmte Bedingungen stimmen.
+Diese Gleichungen haben keine klar ersichtliche Bedeutung für GeoGebra.}\tabularnewline
 \cline{2-4} 
- & {\footnotesize{}\{false\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
+ & {\footnotesize{}\{false\}} & {\footnotesize{}im Allgemeinen falsch} & {\footnotesize{} Die Aussage ist falsch.}\tabularnewline
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}possibly generally true} & {\footnotesize{}GeoGebra was unable to decide if the statement is
-true or false. The numerical check confirms the truth, but the symbolic
-check was unsuccessful due to computational difficulties, or the symbolic
-check for the given statement is not yet implemented in GeoGebra.}\tabularnewline
+ & {\footnotesize{}\{\}} & {\footnotesize{} möglicherweise im Allgemeinen wahr} & {\footnotesize{}GeoGebra konnte nicht entscheiden, ob die Aussage wahr oder falsch ist.
+Die numerische Überprüfung vermutet, dass die Aussage wahr ist, aber die symbolische
+Überprüfung konnte nicht durchgeführt werden, weil die Berechnungen zu kompliziert waren, oder die gegebene Aussage ist noch nicht in GeoGebra eingebaut.}\tabularnewline
 \hline 
 \end{tabular}
 
 
-\subsection{Debugging}
-Starting GeoGebra via command line there are more possibilities to investigate the results. Here the method on a typical Linux installation is demonstrated.
+\subsection{Fehlerbeseitigung}
+Wenn Sie GeoGebra mit einem Befehl in der Befehlszeile starten, gibt es mehr Möglichkeiten, die Ergebnisse zu überprüfen. Hier ist eine Methode in einer typischen Linux-Installation gezeigt.
 
-The user needs to start GeoGebra by the following command:
+Der Benutzer muss GeoGebra mit dem folgenden Befehl starten:
 {
 %\scriptsize
     \begin{center}
         \texttt{geogebra --logfile=/dev/stdout --logshowcaller=false $\backslash$\\ --logshowtime=false --logshowlevel=false} 
     \end{center}
 } % \scriptsize
-A typical output looks like as follows:
+Eine typische Ausgabe sieht wie folgt aus:
 {
 \scriptsize
 \begin{lstlisting}[language=mylog]
@@ -633,19 +629,19 @@ STATEMENT IS TRUE (yes/no: TRUE)
 OUTPUT for ProveDetails: null = {true, {"f + h = g", "h = f + g"}}
 \end{lstlisting}
 } % \scriptsize
-There is intentionally no easier way to show the users this type of output. However, the last few lines of the debug information is available in GeoGebra in the \textit{Help} menu, by choosing \textit{About/License}, and clicking \textit{System Information}---this copies the latest debug messages into the clipboard.
+Es wird absichtlich kein einfacherer Weg gezeigt, die Ausgabe zu erstellen. Die letzten paar Zeilen der Information zur Fehlerbeseitigung ist in GeoGebra verfügbar im \textit{Hilfe} Menü, durch Auswählen von \textit{Über/Lizenz}, und durch Anklicken von \textit{Systeminformation} Dies kopiert die aktuellsten Fehlerbeseitigungs-Nachrichten in die Zwischenablage.
 
-\subsection{Translation of GeoGebra commands}
+\subsection{Übersetzung von GeoGebra Befehlen}
 
-The names of GeoGebra automated reasoning tools may need to be translated to other languages. For example, the German translation of \texttt{Prove} can be \texttt{Pr\"ufe}.
+Die Bezeichnungen von GeoGebra automatischen Beweisführungs-Werkzeugen könnten auch als Übersetzungen in andere Sprachen benötigt werden. Zum Beispiel ist die deutsche Übersetzung von \texttt{Prüfe}  \texttt{Pr\"ufe}.
 % or \texttt{Demuestra}
-To learn the translated command names the following steps are recommended:
+Um die übersetzten Befehlsbezeichnungen zu lernen, sind folgende Schritte empfohlen:
 
 \begin{enumerate}
-\item Create a GeoGebra file which contains the required commands in the Algebra View.
-\item Change the language in GeoGebra in the \textit{Options} menu by choosing \textit{Language}.
-\item The command names will be automatically changed in the Algebra View.
-\item Move the mouse over a command in the Algebra View and read its translated name off.
+\item Erstellen Sie eine GeoGebra Datei, die die benötigten Befehle in der Algebra Ansicht beinhaltet.
+\item Ändern Sie die Sprache in GeoGebra im \textit{Optionen} Menü durch Auswählen von \textit{Sprache}.
+\item Die Befehlsbezeichnungen werden in der Algebra Ansicht automatisch geändert.
+\item Bewegen Sie die Maus über einen Befehl in der Algebra Ansicht und lesen Sie die übersetzte Bezeichnung ab.
 \end{enumerate}
 
 
