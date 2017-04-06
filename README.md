@@ -4,8 +4,10 @@ This repository contains the LaTeX sources for creating the official tutorial fo
 
 ## PDF version
 
-The latest official PDF version of the tutorial takes place in the [pdf](pdf) folder. Currently there is only an English version.
-Please feel free to make a copy of [english.tex](english.tex) and contribute a translation.
+The latest official PDF version of the tutorial takes place in the
+[pdf](pdf) folder. Currently there are English, French and German
+versions. Please feel free to make a copy of [english.tex](english.tex)
+and contribute a translation.
 
 ## Compilation
 
