@@ -11,17 +11,23 @@ and contribute a translation.
 
 ## Compilation
 
-We use the command `pdflatex english` twice to generate the PDF version. Alternatively the `make` command does
-the same.
+We use the command `pdflatex english` and `pdflatex deutsch' twice to
+generate the PDF version of the English and German translations.
+Alternatively the `make` and `make pdf' commands do the same. The command
+`make odt' will create .odt version of the text. Note that the French
+translation is only present as an .odt file.
 
 ## GeoGebra files
 
-The figures have been created directly by using the desktop version of GeoGebra. These sources take place in the [ggb](ggb) folder.
+The figures have been created directly by using the desktop version of
+GeoGebra. These sources take place in the [ggb](ggb) folder.
 
 ## Planned changes on the Tutorial
 * Add references
 * Explain the difference between using axes and switching them off
+* Explain the difference between attaching a point to a polygon or a segment
 * Add icons
+* Convert the French .odt file into .tex
 
 ## Authors
 * Zoltán Kovács <zoltan@geogebra.org>
