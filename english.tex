@@ -350,9 +350,8 @@ Also, in step 5 further questions can be raised. $c$ and $g$ do not have the sam
 
 Intiutive use of GeoGebra Automated Reasoning Tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use.
 
-Different approaches will be discussed when investigating Thales' circle theorem.
+Thales' circle theorem will be investigated.
 
-\paragraph{Approach 1}
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-1}
 \end{center}
@@ -380,36 +379,6 @@ An implicit curve $a$ which seems like a circle will be shown.
 \end{enumerate}
 
 
-\paragraph{Approach 2}
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-1}
-\end{center}
-\begin{enumerate}
-    \item Create points $A$ and $B$.
-    \item Create circle $c$ with center $B$ through $A$.
-    \item Draw line $f$ by joining points $A$ and $B$.
-    \item Create the intersection points $C$ and $D$ of $c$ and $f$. (You may want to move the label of $A$ away to avoid overlapping with the label of $C$.)
-    \item Put point $E$ on $c$.
-    \item Draw lines $g=AE$, $h=DE$.
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-2}
-\end{center}
-    \item Compare $g$ and $h$ by using \texttt{Relation[g,h]}. The numerical result is correct, but GeoGebra reports that the perpendicularity of $f$ and $g$ is not generally true. \textbf{Why? When $C$ and $D$ were created, it was not defined which is which. That is, the visual precondition that $A=C$ is actually false---the other case $A=D$ must be also allowed as a possible precondition. In that other case, of course, $f$ and $g$ are not perpendicular, but identical.}
-\begin{enumerate}
-      \item Instead, change the definition of $g$ to $g=CE$. Now the relationship between $g$ and $h$ will be correctly reported in the symbolic case as well.
-      \item Another option is to not create both intersection points $C$ and $D$, but just one of them (which differs from $A$). This is possible by clicking on the neighborhood of the sought intersection point in the diagram.
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-3}
-\end{center}
-      Now continuing with the creation of $D$ (by putting it on $c$), $g=AD$ and $h=CD$, \texttt{Relation[f,g]} will report the correct results both numerically and symbolically.
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-4}
-\end{center}
-      \textbf{Why? In this diagram GeoGebra assumes that $C$ differs from $A$ in general (the special case $A=C$ will be excluded from the symbolic proof of the perpendicularity---but even in this side case the statement on perpendicularity will be true, that is the symbolic result will be ``always true'').}
-    \end{enumerate}
-\end{enumerate}
-
-
 \section{Appendix}
 \subsection{Low level GeoGebra tools}
 
@@ -418,7 +387,7 @@ Automated reasoning tools in GeoGebra are completed by some low level tools prep
 \subsubsection{The \texttt{Prove} command}
 The \texttt{Prove} command decides if a geometric statement is true in general. It has three possible outputs:
 \begin{itemize}
-    \item \textit{true} means that the statement is always true, or true under some non-degeneracy conditions.
+    \item \textit{true} means that the statement is always true, or true under some non-degeneracy \cite{Chou} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on some components \cite{ZhouWangSun}.
     \item \textit{false} means that the statement is false in general. GeoGebra uses algebraic geometry in many cases to decide such questions. In algebraic geometry ``generally true'' (true in ``most'' cases) and ``generally false'' (false in ``most'' cases) are not opposite properties, that is, a statement can be not ``generally true'' and not ``generally false'' at the same time. GeoGebra interprets this special case as \textit{false} (since it is not generally true).
     \item \textit{undefined} means that GeoGebra cannot decide because of some reason:
     \begin{itemize}
@@ -463,7 +432,7 @@ The \texttt{Prove} command decides if a geometric statement is true in general. 
 The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} command has, but it may use different algorithms in the decision process, and may provide more information on the results. It has three possible outputs:
 \begin{itemize}
     \item \textit{\{true\}} means that the statement is always true.
-    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy or essential conditions: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions is true, then the statement is true.
+    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy \cite{Chou} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on some components \cite{ZhouWangSun}: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions is true, then the statement is true.
     \item \textit{\{false\}} means that the statement is false in general. See the comments at the \texttt{Prove} command for more details on this.
 \end{itemize}
 \paragraph{Example (continued)}
@@ -642,6 +611,6 @@ To learn the translated command names the following steps are recommended:
 \item Move the mouse over a command in the Algebra View and read its translated name off.
 \end{enumerate}
 
-
+\input{bibliography.tex}
 
 \end{document}

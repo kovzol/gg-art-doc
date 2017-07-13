@@ -353,9 +353,8 @@ Auch in Schritt 5 können weitere Fragen auftreten. $c$ und $g$ haben nicht die 
 
 Intuitive Benutzung des GeoGebra automatischen Beweiswerkzeuges kann unter Umständen unerwartete Ergebnisse hervorbringen. Diese Unterteilung erklärt einige häufige Fehler bei der Benutzung.
 
-Unterschiedliche Zugänge bei der Erstellung des Satzes von Thales werden diskutiert.
+Der Satz von Thales wird diskutiert.
 
-\paragraph{Zugang 1}
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-1}
 \end{center}
@@ -383,36 +382,6 @@ Eine implizite Kurve $a$ , die kreisförmig aussieht, wird gezeigt.
 \end{enumerate}
 
 
-\paragraph{Zugang 2}
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-1}
-\end{center}
-\begin{enumerate}
-    \item Erstellen Sie die Punkte $A$ und $B$.
-    \item Erstellen Sie den Kreise $c$ mit dem Mittelpunkt $B$ durch $A$.
-    \item Konstruieren Sie die Gerade $f$ durch Verbinden der Punkte $A$ und $B$.
-    \item Erstellen Sie die Schnitpunkte $C$ und $D$ von $c$ und $f$. (Vielleicht müssen sie die Beschriftung von $A$ verschieben, um Überschneidungen mit der Beschriftung von $C$ zu vermeiden.)
-    \item Erstellen Sie Punkt $E$ auf $c$.
-    \item Konstruieren Sie die Geraden $g=AE$, $h=DE$.
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-2}
-\end{center}
-    \item Vergleichen Sie $g$ und $h$ unter Verwendung von \texttt{Beziehung[f,g]}. Das numerische Ergebnis ist richtig, aber GeoGebra sagt, dass die Orthogonalität von $f$ und $g$ nicht grundsätzlich richtig ist. \textbf{Warum? Als $C$ und $D$ konstruiert wurden, wurde nicht definiert, welche welche ist. Daher ist die sichtbare Voraussetzung, dass $A=C$ falsch ist---die andere Möglichkeit $A=D$ muss auch als mögliche Voraussetzung erlaubt sein. In diesem anderen Fall sind $f$ und $g$ natürlich nicht normal aufeinander, sondern identisch.}
-\begin{enumerate}
-      \item Stattdessen wird die Definition von $g$ zu $g=CE$ geändert. Jetzt wird die Beziehung zwischen $g$ und $h$ richtig gewertet, auch im symbolischen Fall.
-      \item Eine andere Möglichkeit ist, nicht beide Schnittpunkte $C$ und $D$ zu konstruieren, sondern nur einen der beiden (Unterschieder zu $A$). Das ist möglich, indem man in die Nähe der Schnittpunkte des Diagramms klickt.
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-3-de}
-\end{center}
-      Jetzt wird mit der Konstruktion von  $D$ (durch erstellen auf $c$), $g=AD$ und $h=CD$, weitergemacht.\texttt{Beziehung[f,g]} wird das richtige Ergebnis numerisch und symbolisch zeigen.
-\begin{center}
-\includegraphics[scale=0.5]{limitations-Thales2-4}
-\end{center}
-      \textbf{Warum? In diesem Diagramm zeigt GeoGebra, dass sich $C$ von $A$ grundsätzlich unterscheidt. (der Spezialfall $A=C$ wird ausgeschlossen von dem symbolisichen Beweis zur Orthogonalität, aber sogar in diesesm Spezialfall wäre die Behauptung der Orthogonalität wahr, das symbolische Ergebnis ist "immer wahr").}
-    \end{enumerate}
-\end{enumerate}
-
-
 \section{Anhang}
 \subsection{Einfache GeoGebra Werkzeuge}
 
@@ -421,7 +390,7 @@ Automatische Beweisführungswerkzeuge in GeoGebra werden abgerundet durch einige
 \subsubsection{Der \texttt{Beweis} Befehl}
 Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemeinen wahr ist. Es hat drei mögliche Ergebnisse:
 \begin{itemize}
-    \item \textit{wahr} bedeutet, dass die Aussage immer wahr ist, oder wahr unter einigen degenerierten Bedingungen.
+    \item \textit{wahr} bedeutet, dass die Aussage immer wahr ist, oder wahr unter nicht-degenerierten \cite{Chou} oder essentiellen \cite{KovacsRecioSolyomGecse} Bedingungen oder auf einigen Komponenten \cite{ZhouWangSun}.
     \item \textit{falsch} bedeutet, dass die Aussage im allgemeinen falsch ist. GeoGebra nutzt algebraische Geometrie in manchen Fällen, um solche Fragen zu entscheiden. In algebraischer Geometrie ``allgemein wahr'' (wahr in `den meisten'' Fällen) und ``im Allgemeinen falsch'' (falsch in ``den meisten'' Fällen) sind nicht gegenseitige Eigenschaften, sondern, eine Aussage kann nicht ``im Allgemeinen wahr'' und nicht ``im Allgemeinen falsch'' zur selben Zeit sein. GeoGebra interpretiert diesen speziellen Fall als\textit{falsch} (wenn es nicht im Allgemeinen wahr ist).
     \item \textit{nicht definiert} bedeutet, dass GeoGebra aufgrund verschiedener Ursachen keine Entscheidung treffen kann:
     \begin{itemize}
@@ -467,7 +436,7 @@ Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemei
 Der \texttt{PrüfeDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis}Befehl, aber es kann verschiedene Algorithmen im Entscheidungsprozess verwenden und und könnte mehr Informationen des Ergebnisses zeigen. Es gibt drei mögliche Ergebnisse:
 \begin{itemize}
     \item \textit{\{true\}} bedeutet, dass die Aussage immer wahr ist.
-    \item \textit{\{true, \{$\ldots$\}\}} wenn die Aussage unter bestimmten, nicht-degenerierten oder essentiellen Bedingungen wahr ist: Diese Bedingungen sind in Klammern geschrieben. (Wenn die Liste bleibt, bedeutet das, dass keine künstliche Übersetzung gefunden werden konnte ``$\ldots$''.) Wenn die Verbindung der Verneinten Bedingungen wahr ist, dann ist die Aussage wahr.
+    \item \textit{\{true, \{$\ldots$\}\}} wenn die Aussage unter bestimmten, nicht-degenerierten \cite{Chou} oder essentiellen \cite{KovacsRecioSolyomGecse} Bedingungen oder auf einigen Komponenten \cite{ZhouWangSun} wahr ist: Diese Bedingungen sind in Klammern geschrieben. (Wenn die Liste bleibt, bedeutet das, dass keine künstliche Übersetzung gefunden werden konnte ``$\ldots$''.) Wenn die Verbindung der Verneinten Bedingungen wahr ist, dann ist die Aussage wahr.
     \item \textit{\{false\}} bedeutet, dass die Aussage im Allgemeinen falsch ist. Die Kommentare dazu finden Sie beim \texttt{Beweis} Befehl, falls Sie weitere Details benötigen.
 \end{itemize}
 \paragraph{Beispiel (fortgesetzt)}
@@ -644,6 +613,6 @@ Um die übersetzten Befehlsbezeichnungen zu lernen, sind folgende Schritte empfo
 \item Bewegen Sie die Maus über einen Befehl in der Algebra Ansicht und lesen Sie die übersetzte Bezeichnung ab.
 \end{enumerate}
 
-
+\input{bibliography.tex}
 
 \end{document}
