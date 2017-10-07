@@ -387,11 +387,11 @@ Eine implizite Kurve $a$ , die kreisförmig aussieht, wird gezeigt.
 
 Automatische Beweisführungswerkzeuge in GeoGebra werden abgerundet durch einige einfach Werkzeuge, die zum zusätzlichen Lernen über exaktere geometrische Eigenschaften.
 
-\subsubsection{Der \texttt{Beweis} Befehl}
-Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemeinen wahr ist. Es hat drei mögliche Ergebnisse:
+\subsubsection{Der \texttt{Prüfe} Befehl}
+Der \texttt{Prüfe} Befehl entscheidet, ob eine geometrische Aussage im allgemeinen wahr ist. Es hat drei mögliche Ergebnisse:
 \begin{itemize}
     \item \textit{wahr} bedeutet, dass die Aussage immer wahr ist, oder wahr unter bestimmten, nicht-degenerierten \cite{Chou} oder essentiellen \cite{KovacsRecioSolyomGecse} Bedingungen oder auf einigen Komponenten \cite{ZhouWangSun}.
-    \item \textit{falsch} bedeutet, dass die Aussage im allgemeinen falsch ist. GeoGebra nutzt algebraische Geometrie in manchen Fällen, um solche Fragen zu entscheiden. In algebraischer Geometrie ``allgemein wahr'' (wahr in `den meisten'' Fällen) und ``im Allgemeinen falsch'' (falsch in ``den meisten'' Fällen) sind nicht gegenseitige Eigenschaften, sondern, eine Aussage kann nicht ``im Allgemeinen wahr'' und nicht ``im Allgemeinen falsch'' zur selben Zeit sein. GeoGebra interpretiert diesen speziellen Fall als\textit{falsch} (wenn es nicht im Allgemeinen wahr ist).
+    \item \textit{falsch} bedeutet, dass die Aussage im allgemeinen falsch ist.
     \item \textit{nicht definiert} bedeutet, dass GeoGebra aufgrund verschiedener Ursachen keine Entscheidung treffen kann:
     \begin{itemize}
         \item Die Aussage kann nicht in ein Modell übersetzt werden, das erforscht werden kann. Das bedeutet normalerweise, dass die Algebraisierung der Aussage nicht durchgeführt werden kann, aufgrund
@@ -406,8 +406,7 @@ Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemei
 \end{itemize}
 
 % Prevent putting the image on the next page.
-% \vfill\eject % FIXME
-% not needed in German
+\vfill\eject % FIXME
 
 \paragraph{Beispiel}
 \begin{center}
@@ -417,14 +416,14 @@ Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemei
 \item Konstruieren Sie das Dreieck $ABC$ mit dem \textit{Vieleck} Werkzeug.
 \item Konstruieren Sie die Mittelpunkte $D$ und $E$ der Seiten $a$ und $b$,mit dem \textit{Mittelpunkt} Werkzeug.
 \item Unter Verwendung des \textit{Strecke} Werkzeug, konstruieren Sie $f$ durch Verbinden mit $D$ und $E$.
-\item Geben Sie \texttt{Beweis[f$\parallel$c]} ein, um zu zeigen, dass \textit{wahr} in der Algebra Ansicht als Boolscher Wert $d$ angezeigt wird. Achten Sie darauf, dass das Parallel Zeichen eingegeben werden muss, entweder durch:
+\item Geben Sie \texttt{Prüfe[f$\parallel$c]} ein, um zu zeigen, dass \textit{wahr} in der Algebra Ansicht als Boolscher Wert $d$ angezeigt wird. Achten Sie darauf, dass das Parallel Zeichen eingegeben werden muss, entweder durch:
 \begin{itemize}
 \item die Liste der mathematischen Symbole durch Klicken auf das \framebox{$\alpha$} Icon in der Eingabezeile, oder
 \item externe Eingabe des Symbols mit Copy and Paste.
 \item Alternativ kann \texttt{f$\parallel$c} auch durch \texttt{AreParallel[f,c]} ersetzt werden.
 \end{itemize}
 
-\item Geben Sie \texttt{Beweis[c==3f]} ein. Jetzt ist die Antwort \textit{undefiniert}, weil GeoGebra nicht entscheiden kann, ob die Aussage falsch oder wahr ist unter bestimmten Bedingungen. In diesen Fällen kann der Befehl \texttt{PrüfeDetails} helfen. (siehe unten). Beachten Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; andere Möglichkeiten der Verwendung sind:
+\item Geben Sie \texttt{Prüfe[c==3f]} ein. Jetzt ist die Antwort \textit{undefiniert}, weil GeoGebra nicht entscheiden kann, ob die Aussage falsch oder wahr ist unter bestimmten Bedingungen. In diesen Fällen kann der Befehl \texttt{PrüfeDetails} helfen. (siehe unten). Beachten Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; andere Möglichkeiten der Verwendung sind:
 \begin{itemize}
     \item \texttt{Prüfe[c$\stackrel{?}{=}$3f]}, oder
     \item \texttt{Prüfe[AreEqual[c,3f]]}.
@@ -433,11 +432,11 @@ Der \texttt{Beweis} Befehl entscheidet, ob eine geometrische Aussage im allgemei
 \end{enumerate}
 
 \subsubsection{The \texttt{PrüfeDetails} Befehl}
-Der \texttt{PrüfeDetails} Befehl hat ähnliches Verhalten wie der \texttt{Beweis}Befehl, aber es kann verschiedene Algorithmen im Entscheidungsprozess verwenden und und könnte mehr Informationen des Ergebnisses zeigen. Es gibt drei mögliche Ergebnisse:
+Der \texttt{PrüfeDetails} Befehl hat ähnliches Verhalten wie der \texttt{Prüfe} Befehl, aber es kann verschiedene Algorithmen im Entscheidungsprozess verwenden und und könnte mehr Informationen des Ergebnisses zeigen. Es gibt drei mögliche Ergebnisse:
 \begin{itemize}
     \item \textit{\{true\}} bedeutet, dass die Aussage immer wahr ist.
     \item \textit{\{true, \{$\ldots$\}\}} wenn die Aussage unter bestimmten, nicht-degenerierten \cite{Chou} oder essentiellen \cite{KovacsRecioSolyomGecse} Bedingungen oder auf einigen Komponenten \cite{ZhouWangSun} wahr ist: Diese Bedingungen sind in Klammern geschrieben. (Wenn die Liste bleibt, bedeutet das, dass keine künstliche Übersetzung gefunden werden konnte ``$\ldots$''.) Wenn die Verbindung der Verneinten Bedingungen wahr ist, dann ist die Aussage wahr.
-    \item \textit{\{false\}} bedeutet, dass die Aussage im Allgemeinen falsch ist. Die Kommentare dazu finden Sie beim \texttt{Beweis} Befehl, falls Sie weitere Details benötigen.
+    \item \textit{\{false\}} bedeutet, dass die Aussage im Allgemeinen falsch ist.
 \end{itemize}
 \paragraph{Beispiel (fortgesetzt)}
 \begin{enumerate}
@@ -527,6 +526,8 @@ Der Benutzer muss GeoGebra mit dem folgenden Befehl starten:
     \end{center}
 } % \scriptsize
 Eine typische Ausgabe sieht wie folgt aus:
+% Prevent putting the image on the next page.
+\vfill\eject % FIXME
 {
 \scriptsize
 \begin{lstlisting}[language=mylog]

@@ -388,7 +388,7 @@ Automated reasoning tools in GeoGebra are completed by some low level tools prep
 The \texttt{Prove} command decides if a geometric statement is true in general. It has three possible outputs:
 \begin{itemize}
     \item \textit{true} means that the statement is always true, or true under some non-degeneracy \cite{Chou} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on some components \cite{ZhouWangSun}.
-    \item \textit{false} means that the statement is false in general. GeoGebra uses algebraic geometry in many cases to decide such questions. In algebraic geometry ``generally true'' (true in ``most'' cases) and ``generally false'' (false in ``most'' cases) are not opposite properties, that is, a statement can be not ``generally true'' and not ``generally false'' at the same time. GeoGebra interprets this special case as \textit{false} (since it is not generally true).
+    \item \textit{false} means that the statement is false in general.
     \item \textit{undefined} means that GeoGebra cannot decide because of some reason:
     \begin{itemize}
         \item The statement cannot be translated into a model which can be further investigated. This usually means that algebraization of the statement failed because of 
@@ -433,7 +433,7 @@ The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} c
 \begin{itemize}
     \item \textit{\{true\}} means that the statement is always true.
     \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy \cite{Chou} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on some components \cite{ZhouWangSun}: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions is true, then the statement is true.
-    \item \textit{\{false\}} means that the statement is false in general. See the comments at the \texttt{Prove} command for more details on this.
+    \item \textit{\{false\}} means that the statement is false in general.
 \end{itemize}
 \paragraph{Example (continued)}
 \begin{enumerate}
