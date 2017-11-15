@@ -68,7 +68,7 @@ Die vorgeschlagene Plattform für Klassen kann variieren. Die schnellsten Result
 
 GeoGebra funktioniert mittlerweile auch auf Tablets und Smartphones. In manchen Fällen können diese Plattformen schnellere Ergebnisse liefern als die Web Version, aber der kleinere Bildschirm könnte die Benutzer davon abhalten, geometrische Lehrsätze im Detail zu untersuchen. Lehrerinnen und Lehrer sollen bestärkt werden, mit dem Umgang dieser modernen Hilfsmittel zu experimentieren, aber der Einsatz für automatische Beweisführung ist noch nicht erforscht.
 
-An den Werkzeugen zur automatischen Beweisführung wird kontinuierlich gearbeitet. Es ist zu bevorzugen, immer die aktuellste Version zu verwenden. Ein wöchentliches Update kann generell für alle Versionen empfohlen werden, abgesehen vom Mac App Store, welcher ungefähr monatlich aktualisiert wird. Die Liste der neuesten Änderungen kann auf \url{http://dev.geogebra.org/trac/timeline}---eingesehen werden -das ist nur für fortgeschrittene Benutzer und Entwickler. 
+An den Werkzeugen zur automatischen Beweisführung wird kontinuierlich gearbeitet. Es ist zu bevorzugen, immer die aktuellste Version zu verwenden. Ein wöchentliches Update kann generell für alle Versionen empfohlen werden, abgesehen vom Mac App Store, welcher ungefähr monatlich aktualisiert wird. Die Liste der neuesten Änderungen kann auf \url{http://dev.geogebra.org/trac/timeline} eingesehen werden; das ist nur für fortgeschrittene Benutzer und Entwickler. 
 
 \section{Automatische Beweisführung Werkzeuge}
 
@@ -85,9 +85,9 @@ Am Anfang muss der Benutzer eine geometrische Figur mit bestimmten Werkzeugen au
 Diese Methoden sind normalerweise bekannt in der GeoGebra community, deshalb sind sie gut dokumentiert und es können einige Beispiele auf GeoGebra Materials (\url{https://www.geogebra.org/materials/}) gefunden werden. Auf der anderen Seite bietet GeoGebra zurzeit auch symbolische automatische Beweisführung Werkzeuge für vermutete geometrische Eigenschaften:
 \begin{enumerate}
 \setcounter{enumi}{5}
-    \item Beziehung Werkzeug und Befehl können zum symbolischen Nachrechnen verwendet werden,
+    \item Beziehung Werkzeug und Befehl können zum symbolischen Nachrechnen verwendet werden.
     \item Der \texttt{Ortsliniengleichung} Befehl berechnet das Ergebnis der Ortsliniengleichung mit dem Zeigen der algebraischen Gleichung der graphischen Darstellung genauer.
-    \item Der \texttt{Ortsliniengleichung} Befehl kann implicit loci prüfen.
+    \item Der \texttt{Ortsliniengleichung} Befehl kann implizite Ortslinien prüfen.
     \item Der \texttt{Einhüllende} Befehl berechnet die Gleichung der Tangente mehrerer Objekte während ein bestimmter Vorgänger sich auf einer Bahn bewegt.
 \end{enumerate}
 
@@ -127,9 +127,9 @@ Dieser Befehl erlaubt dem Benutzer, numerisch herauszufinden, ob (für die gezei
 \end{itemize}
 Manche dieser Überprüfungen können auch symbolisch ausgeführt werden, also der Satz kann generell verifiziert werden (mit beliebigen Koordinaten) und nicht nur für die gezeichnete konkrete Konstruktion.
 
-Mit der Verwendung des Beziehungs \textit{werkzeug} muss der Benutzer auf zwei Objekte klicken um die Mitteilungsbox zu sehen. Alternativ können zwei, drei oder vier Objekte mit dem Auswahlrechteck ausgewählt werden, um die Mitteilungsbox zu erhalten. Um nicht ungewollte Objekte im Applet auszuwählen ist es möglich, diese von der Auswahl auszunehmen, indem man mit einem Rechtsklick und der Auswahl \textit{Objekt Eigenschaften} \textit{Erweitert} auswählt und das Häkchen bei \textit{Auswahl erlaubt}entfernt.
+Mit der Verwendung des Beziehungs \textit{Werkzeug} muss der Benutzer auf zwei Objekte klicken um die Mitteilungsbox zu sehen. Alternativ können zwei, drei oder vier Objekte mit dem Auswahlrechteck ausgewählt werden, um die Mitteilungsbox zu erhalten. Um nicht ungewollte Objekte im Applet auszuwählen ist es möglich, diese von der Auswahl auszunehmen, indem man mit einem Rechtsklick und der Auswahl \textit{Objekt Eigenschaften} \textit{Erweitert} auswählt und das Häkchen bei \textit{Auswahl erlaubt} entfernt.
 
-Bei der Verwendung des Beziehungs \textit{befehls} gibt der Benutzer eine der folgenden Formlen in die Befehlszeile ein:
+Bei der Verwendung des Beziehungs \textit{Befehls} gibt der Benutzer eine der folgenden Formlen in die Befehlszeile ein:
 \begin{itemize}
     \item \texttt{Beziehung[ <Objekt>, <Objekt> ]}
     \item \texttt{Beziehung[ \{ <Objekt>, <Objekt> \} ]}
@@ -152,7 +152,7 @@ Wenn die Mitteilungsbox eines oder mehrere zutreffende numerische Aussagen zu de
     \begin{center}
     \includegraphics[scale=0.5]{Relation-example-Relation1-de}
     \end{center}
-    \item Klicken Sie auf ``Mehr$\ldots$''--- die Mitteilung wird sich wie folgt ändern:
+    \item Klicken Sie auf ``Mehr$\ldots$'' -- die Mitteilung wird sich wie folgt ändern:
     \begin{center}
     \includegraphics[scale=0.5]{Relation-example-Relation2-de}
     \end{center}
@@ -209,9 +209,9 @@ Die Schreibweise des Befehls ist:
 \end{center}
 \begin{enumerate}
     \item Mit dem \textit{Polygon} Werkzeug wird ein Dreieck $ABC$ konstruiert.Die Strecken $a$, $b$ und $c$ werden automatisch von GeoGebra erstellt.
-    \item Es wird \texttt{Ortsliniengleichung a\^{}2+b\^{}2==c\^{}2,C]} in der Werkzeugleiste eingegeben. Jetzt wird die implizite Kurve $d$ berechnet und gezeichnet, welche wie ein Kreis aussieht.
+    \item Es wird \texttt{Ortsliniengleichung[a\^{}2+b\^{}2==c\^{}2,C]} in der Werkzeugleiste eingegeben. Jetzt wird die implizite Kurve $d$ berechnet und gezeichnet, welche wie ein Kreis aussieht.
     Bedenken Sie, dass \textit{zwei} gleiche Zeichen eingegeben werden müssen; eine andere Möglichkeit ist, $\stackrel{?}{=}$ zu verwenden. (durch anklicken von \framebox{$\alpha$} Icon, oder durch Einfügen des Symbols von einer externen Applikation mit Copy and Paste).
-    \item Versuchen Sie nun, die beweglichen Objekte zu ziehen. Es kann gezeigt werden, dass wenn $C$ auf einem Kreis liegt, dessen Durchmesser auf $AB$ liegt, wegen der rechtwinkeligen Eigenschaft des Dreiecks---$a^2+b^2=c^2$ gilt.
+    \item Versuchen Sie nun, die beweglichen Objekte zu ziehen. Es kann gezeigt werden, dass wenn $C$ auf einem Kreis liegt, dessen Durchmesser auf $AB$ liegt, wegen der rechtwinkeligen Eigenschaft des Dreiecks, $a^2+b^2=c^2$ gilt.
 \end{enumerate}
 
 \end{itemize}
