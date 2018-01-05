@@ -397,7 +397,7 @@ The \texttt{Prove} command decides if a geometric statement is true in general. 
             \item missing implementation in GeoGebra.
         \end{itemize}
         \item The translated statement in algebraic geometry is too difficult to solve. This means that either there are too many variables, or the equations are hard to handle by the solver algorithm. This results in either a timeout or an out of memory error.
-        \item The solver algorithm was able to investigate the situation, but the result is ambiguous: either the statement is false, or it is true under certain conditions---but the algorithm was not able decide which case is present.
+        \item The solver algorithm was able to investigate the situation, but the result is ambiguous: either the statement is false, or it is true under certain conditions---but the algorithm was not able to decide which case is present.
         \item There was an internal error in GeoGebra during the computations.
     \end{itemize}
 \end{itemize}
@@ -475,45 +475,66 @@ The following table explains the meanings of the outputs of the commands \texttt
 \textbf{\centerline{Prove}} & \textbf{ProveDetails} & \textbf{Relation}'s symbolic window & \tabularnewline
 \hline 
 \multirow{4}{0.15\textwidth}{\centerline{\footnotesize{}true}} & {\footnotesize{}\{true\}} & {\footnotesize{}always true} & {\footnotesize{}The statement is true.}\tabularnewline
+% example: Pythagoras
 \cline{2-4} 
- & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\}\}}} & {\footnotesize{}true under }\emph{\footnotesize{}conjuction of specified
-conditions} & {\footnotesize{}The statement is true if the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
-hold. These conditions are sufficient, but maybe not necessary. There
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\}\}}} & {\footnotesize{}generally true under }\emph{\footnotesize{}conjuction of the negations of the specified
+conditions} & {\footnotesize{}The statement is true if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
+hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
+% example: inversion-line-circle4
 \cline{2-4} 
- & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}true under certain conditions} & {\footnotesize{}The statement is true if certain equations hold. These
+ & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}generally true if non-degenerate} & {\footnotesize{}The statement is true if certain equations hold. These
 equations have no visually clear geometric meanings for GeoGebra.}\tabularnewline
+% example: circle-midpoints-are-concyclic-ex211, ICMI2-square, 11gon-1
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}generally true} & {\footnotesize{}The statement is true if certain conditions hold.
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\},``c''\}}} & {\footnotesize{}partially true under }\emph{\footnotesize{}conjuction of the negations of the specified
+conditions} & {\footnotesize{}The statement is partially true if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
+hold. These negated conditions are sufficient, but maybe not necessary. There
+may be other sufficient conditions to make the statement true.}\tabularnewline
+% example: (Prove only via Singular) rhombus-AL, Thales-underdetermined, Kovacs-example1
+\cline{2-4} 
+ & {\footnotesize{}\{\}} & {\footnotesize{}generally true\footnotemark[1]} & {\footnotesize{}The statement is true if certain conditions hold.
 GeoGebra was unable to find these conditions due to computational
 difficulties.}\tabularnewline
+% example: sum-of-three-segments1, (Prove only via Giac) isoscel-ex91, (Prove only via Singular) two-circle-ex101
 \hline 
-\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}not generally true} & {\footnotesize{}The statement is false.}\tabularnewline
+\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}not generally true\footnotemark[2]} & {\footnotesize{}The statement is false.}\tabularnewline
+% example: (Prove only via Singular) points-equal
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}possibly generally true} & {\footnotesize{}GeoGebra was unable to decide if the statement is
-true or false. The numerical check confirms the truth, but the symbolic
-check was unsuccessful due to computational difficulties.}\tabularnewline
+ & {\footnotesize{}\{\}} & {\footnotesize{}not generally true\footnotemark[2]} & {\footnotesize{}The statement is false.}\tabularnewline
+% example: (Prove only via Singular) sum-of-three-segments7
 \hline 
 \multirow{5}{0.15\textwidth}{\centerline{\footnotesize{}undefined}} & {\footnotesize{}\{true\}} & {\footnotesize{}always true} & {\footnotesize{}The statement is true.}\tabularnewline
+% example: ?
 \cline{2-4} 
- & \multicolumn{1}{c|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\}\}}} & {\footnotesize{}true under }\emph{\footnotesize{}conjuction of specified
-conditions} & {\footnotesize{}The statement is true if the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
-hold. These conditions are sufficient, but maybe not necessary. There
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\}\}}} & {\footnotesize{}generally true under }\emph{\footnotesize{}conjuction of the negations of the specified
+conditions} & {\footnotesize{}The statement is true if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
+hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
+% example: Peaucellier-easy, (Prove only via Giac) tangent-are-collinear, secant-tangent2, rotate-by-45-degrees
 \cline{2-4} 
- & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}true under certain conditions} & {\footnotesize{}The statement is true if certain conditions hold.
+ & {\footnotesize{}\{true,\{$\ldots$\}\}} & {\footnotesize{}generally true if non-degenerate} & {\footnotesize{}The statement is true if certain conditions hold.
 These equations have no visually clear geometric meanings for GeoGebra.}\tabularnewline
+% example: 13gon-2
 \cline{2-4} 
- & {\footnotesize{}\{false\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\},``c''\}}} & {\footnotesize{}partially true under }\emph{\footnotesize{}conjuction of the negations of the specified
+conditions} & {\footnotesize{}The statement is partially true if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
+hold. These negated conditions are sufficient, but maybe not necessary. There
+may be other sufficient conditions to make the statement true.}\tabularnewline
+% example: Kovacs-example1
+\cline{2-4} 
+ & {\footnotesize{}\{false\}} & {\footnotesize{}not generally true\footnotemark[2]} & {\footnotesize{}The statement is false.}\tabularnewline
+% example: (Prove only via Giac) Pythagoras-expression4
 \cline{2-4} 
  & {\footnotesize{}\{\}} & {\footnotesize{}possibly generally true} & {\footnotesize{}GeoGebra was unable to decide if the statement is
 true or false. The numerical check confirms the truth, but the symbolic
 check was unsuccessful due to computational difficulties, or the symbolic
 check for the given statement is not yet implemented in GeoGebra.}\tabularnewline
+% example: BlazekPech
 \hline 
 \end{tabular}
-
-
+\footnotetext[1]{This case could also be partially true but GeoGebra does not identify this possibility at the moment.}
+\footnotetext[2]{actually, generally false}
 \subsection{Debugging}
 Starting GeoGebra via command line there are more possibilities to investigate the results. Here the method on a typical Linux installation is demonstrated.
 
