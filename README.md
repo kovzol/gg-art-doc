@@ -23,7 +23,6 @@ The figures have been created directly by using the desktop version of
 GeoGebra. These sources take place in the [ggb](ggb) folder.
 
 ## Planned changes on the Tutorial
-* Add references
 * Explain the difference between using axes and switching them off
 * Explain the difference between attaching a point to a polygon or a segment
 * Add icons

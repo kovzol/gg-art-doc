@@ -43,9 +43,13 @@
 
 \section{Introduction}
 
-The software tool GeoGebra (\url{http://www.geogebra.org}) is capable of supporting the teaching of Euclidean plane geometry theorems by using symbolic computations. For these purposes some tools for the automatic proving and discovery of geometric theorems have been developed.
+The software tool GeoGebra (\url{http://www.geogebra.org}) is capable of supporting the teaching of Euclidean plane geometry theorems in various ways. In this tutorial we focus on some new features, based on symbolic computations,  allowing the automatic proving and discovery of theorems on geometric figures constructed with GeoGebra.
 
-The novel technologies are still in an experimental phase in the classrooms. This document summarizes the technical possibilities by showing some examples also.
+This novel technology attempts to address recent challenges
+in mathematics education \cite{HowsonWilson,Davis,SinclairBartoliniBussiDeVilliersOwens,Quaresma,RichardOllerMeavilla},
+it is however still in an experimental phase in the classroom \cite{KovacsRecioRichardVelez,Kovacs2017}.
+This document summarizes its technical possibilities and describes in detail how to use them through some examples. The tutorial is aimed at users who already
+have some basic knowledge on GeoGebra and want to learn about the recently implemented automated reasoning commands.
 
 \section{Starting GeoGebra}
 
@@ -55,61 +59,62 @@ GeoGebra is available on many platforms, including
     \item tablets, and
     \item phones.
 \end{itemize}
-Also embedded GeoGebra applets are available on web pages, including GeoGebra Materials (\url{https://www.geogebra.org/materials/}) with millions of freely available teaching materials.
+Moreover, embedded GeoGebra applets are accessible on web pages, such as those within the GeoGebra Materials (\url{https://www.geogebra.org/materials/}) collection, with millions of freely available teaching materials.
 
-The available tools on the different platforms may however differ. Also the user experience on the various platforms may be different: the symbolic computations may need a high amount of calculations and the underlying hardware or software components may or may not support some steps completely.
+Some specific GeoGebra tools could however differ on the different platforms. Also,  the user experience on the various platforms may be different: the required symbolic computations may need a high amount of calculations and the underlying hardware or software components could or could not support some steps completely.
 
-The recommended platform for classroom use may vary. The fastest results can be obtained by fast desktop (or laptop) computers, but in this case the software must be downloaded and installed by the user. Some examples in this tutorial may work only in the ``desktop'' version (which is created for Microsoft Windows, Apple Macintosh and Linux desktop and laptop computers). On the other hand, the ``web'' version does not require installation by the user: it will run in a modern web browser, and the teacher is able to prepare a list of examples as GeoGebra applets in advance before the classroom use by using GeoGebra Materials, for example. The ``web'' version is however slower: the symbolic computations may be slower by a magnitude.
+The recommended platform for classroom use can vary. The fastest results can be obtained by fast desktop (or laptop) computers, but in this case the software must be downloaded and installed by the user. Some examples in this tutorial will work only in the ``desktop'' version (which is created for Microsoft Windows, Apple Macintosh and Linux desktop and laptop computers). On the other hand, the ``web'' version does not require installation by the user: it will run in a modern web browser, and the teacher is able to prepare a list of examples as GeoGebra applets in advance before the classroom use by using GeoGebra Materials, for example. The ``web'' version is however usually slower than the desktop one: the symbolic computations may be slower by a magnitude.
 
-GeoGebra recently runs on tablets and phones also. In some cases these platforms provide faster user experience than the web version does, but the smaller screen size may prevent the users from investigating geometry theorems in details. It is encouraged that teachers do experiments by using these kind of modern devices, but their use for automated reasoning is still experimental.
+Since recently, GeoGebra runs on tablets and smartphones also. In some cases these platforms provide faster user experience than the web version does, but the smaller screen size could prevent the users from investigating geometry theorems in details. It is encouraged that teachers do experiments by using these modern devices, but their use for automated reasoning is still considered as experimental.
 
-There is continuous work on GeoGebra's automated reasoning tools. The best practice is to always use the latest version. A weekly update can always be expected for all versions, excluding the Mac App Store version which is updated about monthly. The list of newest changes can be found at \url{http://dev.geogebra.org/trac/timeline}---this is intended only for advanced users and developers.
+There is a continuous workflow improving GeoGebra's automated reasoning tools. Thus, the best practice is to always use the latest version. A weekly update is usually performed for all versions, excluding the Mac App Store version which is updated about monthly. The list of newest changes can be found at \url{http://dev.geogebra.org/trac/timeline}---although this piece of information is intended only for advanced users and developers.
 
 \section{Automated Reasoning Tools}
 
-Automated reasoning tools are a collection of GeoGebra tools and commands ready to conjecture, discover, adjust and prove geometric statements in a dynamic geometric construction.
+Automated reasoning tools are a collection of GeoGebra features and commands that allow to conjecture, discover, adjust and prove geometric statements in a dynamic geometric construction.
 
-First the user needs to draw a geometric figure by using certain tools listed by default on top of the main window in GeoGebra. After constructing the figure, GeoGebra has many ways to promote investigating geometrical properties of a figure by various tools and settings:
+To start with,  the user needs to draw a geometric figure by using certain tools listed by default on top of the main window in GeoGebra. After constructing the figure, GeoGebra has many ways to promote investigating geometrical properties of a figure,  through various tools and settings:
 \begin{enumerate}
-    \item By \textit{dragging the free objects} their dependent objects can be visually investigated.
-    \item The \textit{Relation} tool helps comparing objects and obtaining relations.
-    \item By setting the \textit{trace} of a constructed object on/off the movement of an object will be visualized when its parent objects are changing.
-    \item The \textit{Locus} tool shows the trace of an object for all possible positions of a parent object (while it moves on a path).
-    \item By typing the \texttt{Relation} or \texttt{Locus} command in GeoGebra's Input Bar more refined information can be obtained.
+    \item By \textit{dragging the free objects}, the behavior of their dependent objects can be visually investigated.
+    \item The \textit{Relation} tool helps comparing objects and obtaining relations among them.
+    \item By setting on/off the \textit{trace} of a constructed object,  the movement of a ``descendant" object will be visualized when its ``parent'' objects are changing.
+    \item The \textit{Locus} tool shows the trace of an object for all possible positions of a parent object moving on a certain path.
+    \item By typing the \texttt{Relation} or \texttt{Locus} command in GeoGebra's \textit{Input Bar} more refined information can be obtained.
 \end{enumerate}
-These methods are usually well known by the GeoGebra community, and therefore they are well documented and many examples can be found on them at GeoGebra Materials (\url{https://www.geogebra.org/materials/}). On the other hand, currently GeoGebra also offers symbolic automated reasoning tools for generalizing the observed/conjectured geometric properties:
+These methods are usually well known by the GeoGebra community, and therefore they are well documented and many examples can be found on them at GeoGebra Materials (\url{https://www.geogebra.org/materials/}). On the other hand, GeoGebra also offers symbolic automated reasoning tools for generalizing some observed/conjectured geometric properties:
 \begin{enumerate}
 \setcounter{enumi}{5}
-    \item The Relation tool and command can be used to recompute the results symbolically,
-    \item The \texttt{LocusEquation} command refines the result of the Locus command by displaying the algebraic equation of the graphical output.
+    \item The Relation tool and command can be used to recompute the numerical results symbolically,
+    \item The \texttt{LocusEquation} command refines the result of the Locus command by displaying the algebraic equation of the graphical output (see Section \ref{sec:TechnicalNotes} for a list of possible
+limitations).
     \item The \texttt{LocusEquation} command can investigate implicit loci.
-    \item The \texttt{Envelope} command computes the equation of a curve which is tangent to a family of objects while a certain parent of the object moves on a path.
+    \item The \texttt{Envelope} command computes the equation of a curve which is tangent to a family of objects while a certain parent of the family moves on a path.
 \end{enumerate}
 
 \subsection{High and low level tools}
 
-GeoGebra provides the above high level methods to promote investigating geometry theorems. These icons are considered as ``high level'' tools because of their ease of use and thus they can be directly shown in classrooms. There are also further ways to learn more on the mathematical background or just to help in troubleshooting. Those ``low level'' methods are listed in Appendix, and therefore not suggested for direct use among students.
+GeoGebra provides the above high level methods to promote investigating geometry theorems. These are considered as ``high level'' tools because of the simplicity of their  format; and, thus,  they are intended to  be directly used in classrooms. There are also other, more complicated, ways to learn more on the mathematical background of a given statement or just to help in troubleshooting. Those ``low level'' methods are listed in Section \ref{sec:Appendix}, and therefore not suggested for direct use among students.
 
-Obviously, some of the listed methods are easier, and others are more difficult. Using the command line in the Input Bar in GeoGebra can be considered as a more difficult way for most users. That is, it can be suggested that a teacher first shows the easier methods, and later demonstrates the other ways when the pupils have enough experiments done.
+Obviously, some of the listed methods are easier, and others are more difficult. For instance, using the command line in the Input Bar in GeoGebra can be considered as a more difficult task for most users than using the \textit{Toolbar}. Thus, it can be suggested that a teacher first shows the students how to deal with the easier methods, and later demonstrates the more demanding ways,  when the pupils have enough experiments done and are a little bit more acquainted with the reasoning tools.
 
 \subsection{Tools with symbolic support}
 
-As mentioned above some automated reasoning tools are provided of symbolic support. This feature allow  to verify in a mathematically rigorous way general statements of elementary Geometry that have been conjectured by the user.
+As mentioned above some automated reasoning tools are provided with symbolic support. This feature allows to verify in a mathematically rigorous way general statements of Elementary Geometry that have been conjectured by the user.
 
-A general hint that the user should start GeoGebra on startup in ``graphing calculator'' mode. This turns on showing the labels on each newly added object---this can be crucial for the Relation tool and command when reporting on various relations. 
+A general hint is that the user should start GeoGebra on startup in the ``graphing calculator'' mode. This turns on showing the labels on each newly added object---this can be crucial for the Relation tool and command when reporting on various relations. 
 
 In most cases, however, the axes are not really necessary to be shown: they can be switched off when the \textit{Move} tool is active (it is the leftmost icon showing an arrow cursor) by right-click in the \textit{Graphics View} and de-selecting the \textit{Axes} setting.
 
-In some cases the \textit{Algebra View} is not needed to be displayed---unless the equations of the implicit curves are to be investigated in details, this can however be done also by changing the object's label to contain its value, too. (To do so, by right-clicking on the object, choosing \textit{Object Properties}, the user needs to set \textit{Show Label} to \textit{Value} on the \textit{Basic} tab.)
+In some cases the \textit{Algebra View} is not needed to be displayed---unless the equations of the implicit curves are to be investigated in detail. This can,  however, be done also by changing the object's label to contain its value, too. (To do so, by right-clicking on the object, choosing \textit{Object Properties}, the user needs to set \textit{Show Label} to \textit{Value} on the \textit{Basic} tab.)
 
 GeoGebra applets can be used conveniently if they are uploaded to GeoGebra Materials.
-If the Algebra View is used, it may be a good idea to increase its width before uploading an applet to GeoGebra Materials. Otherwise it will be not comfortable for the user to type the appropriate command. After uploading, in GeoGebra Materials it is suggested that for the applet at \textit{Advanced Settings}, the \textit{Show Toolbar} and \textit{Show Input Bar} options are checked. Also setting an appropriate size may be mandatory.
+If the Algebra View is used, it may be a good idea to increase its width before uploading an applet to GeoGebra Materials. Otherwise it will be not comfortable for the user to type the appropriate command. After uploading, in GeoGebra Materials it is suggested that for the applet at \textit{Advanced Settings}, the \textit{Show Toolbar} and \textit{Show Input Bar} options are checked. Also setting an appropriate size is mandatory.
 
 
 \subsubsection{The Relation tool and command}
 
 GeoGebra's Relation tool and command shows a message box that gives the user information about the relation between two or more objects.
-This command allows the user to find out numerically (that is, for the drawing construction with assigned coordinates) whether
+This command allows the user to find out numerically (that is, for the drawn construction with precisely assigned coordinates to each point) whether
 \begin{itemize}
     \item two lines are perpendicular,
     \item two lines are parallel,
@@ -120,9 +125,9 @@ This command allows the user to find out numerically (that is, for the drawing c
     \item three lines are concurrent (or parallel),
     \item four points are concyclic (or collinear).
 \end{itemize}
-Some of these checks can also be performed symbolically, that is, the statement can be verified rigorously for the general case (with arbitrary coordinates) and not only for the pictured concrete geometric construction.
+Some of these checks can also be performed symbolically, that is, the statement can be verified rigorously for the general case (with arbitrary coordinates) and not only for the displayed concrete geometric construction.
 
-When using the Relation \textit{tool}, the user points on two objects to get the message box shown. Alternatively, two, three or four objects can be selected by the selection rectangle to invoke the message box. To prevent the user to select unneeded objects in the applet it is also possible to disallow selection of unnecessary objects by
+When using the Relation \textit{tool}, the user points on two objects and gets a message box as shown in the figure below. Alternatively, two, three or four objects can be selected by the selection rectangle to invoke the message box. To prevent the user to select unneeded objects in the applet it is also possible to disallow selection of unnecessary objects by
 right clicking on the object, selecting \textit{Object properties}, choosing the \textit{Advanced} tab and unchecking \textit{Selection allowed}.
 
 When using the Relation \textit{command}, the user types one of the following formulas in the Input Bar:
@@ -133,16 +138,23 @@ When using the Relation \textit{command}, the user types one of the following fo
     \item \texttt{Relation[ \{ <Object>, <Object>, <Object>, <Object> \} ]}
 \end{itemize}
 
-When the message box is shown with one or more true numerical statements on the objects, there may be a button ``More$\ldots$'' shown if there is symbolic support for the given statement. When clicking ``More$\ldots$'', shortly the numerical statement will be updated with a more general symbolic one.
+When the message box is shown with one or more true numerical statements on the objects, there may be a button ``More$\ldots$'' shown if there is symbolic support for the given statement. When clicking ``More$\ldots$'', shortly the numerical statement will be updated to a more general symbolic one, stating or denying the validity of the Relation for arbitrary instances of the given construction (i.e. if some two lines were perpendicular just in the precisely given position or if they are perpendicular in general, etc.).
+
+In some GeoGebra installations the message box on using the Relation tool or command
+is shown behind the main GeoGebra window and seems hidden for the user.
+This is considered as an installation issue
+and GeoGebra should be updated to a newer version.
 
 \paragraph{Example (Thales' circle theorem)}
+\label{par:Thales}
+Here we want to explore the possible perpendicularity of lines $CA$, $CB$, where $C$ is a point on a circle, while $AB$ is a diameter thereof. We can proceed as follows:
 \begin{center}
 \includegraphics[scale=0.5]{Relation-example}
 \end{center}
 \begin{enumerate}
     \item By using the \textit{Segment} tool, construct $AB$.
     \item By choosing the \textit{Semicircle through 2 Points} tool, create arc $c$.
-    \item Put point $C$ on $c$.
+    \item Put point $C$ on $c$, by using \textit{Point on Object}.
     \item Create segments $AC$ and $BC$ and denote them by $g$ and $h$, respectively.
     \item Compare $g$ and $h$ by using the Relation tool and pointing on $g$ and $h$ by the mouse, or type \texttt{Relation[g,h]} in the Input Bar. The following message will be shown:
     \begin{center}
@@ -157,19 +169,19 @@ When the message box is shown with one or more true numerical statements on the 
 
 Remark that Relation (step 5) looks for relations between $g$ and $h$ from the coordinates and equations assigned to the drawn construction. However by clicking ``More$\ldots$'' (step 6) we verify that $g$ and $h$ are perpendicular for any points $A$ and $B$ we can choose at step 1.
 
-Relationship of certain objects can be true also under certain conditions, that is, not necessarily ``always''. In such cases, if possible, some sufficient conditions are displayed. Otherwise GeoGebra just remarks that the statement is true ``under certain conditions''. This must be intepreted that the statement is ``generally true'', but in some side cases (which are `a minimal number of cases' compared to the general cases) the statement may fail.
+Sometimes, the relationship among certain objects holds only under certain conditions, that is, not necessarily ``always''. In such cases, if possible, some sufficient conditions would be displayed by the Relation tool. Otherwise GeoGebra just remarks that the statement is ``true if non-degenerate''. This must be interpreted as meaning that the statement is ``generally true'', but in some side cases (which are `a small number of cases' compared to the general case) the statement may fail.
 
-The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (but not generally true)''.
+The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (but not generally true)'', because the two given points are considered, in the general symbolic approach, as two free points, with arbitrary coordinates.
 
-A complete overview of the various results of Relation can be found in the Appendix \ref{explanation-table} on page \pageref{explanation-table}.
+A complete overview of the various results of Relation can be found in Section \ref{explanation-table} on page \pageref{explanation-table}.
 
 \subsubsection{The \texttt{LocusEquation} command}
 
-This command calculates the equation of a locus and plots this as an implicit curve. There are two kinds of uses:
+This command calculates the equation of a locus and plots it as an implicit curve. There are two kinds of uses:
 
 \begin{itemize}
 \item\textbf{Explicit locus.}
-Given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output point $\cal O$. The task is to determine the equation $\cal E$ of $\cal O$ while $\cal I$ is moving on $\cal P$, and then plot $\cal E$. $\cal I$ is usually called \textit{mover}, $\cal O$ is the \textit{tracer}. $\cal E$ is called \textit{locus equation}, and its graphical visualization is the \textit{locus}.
+Consider as given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output point $\cal O$. The task is to determine the equation $\cal E$ of the locus of $\cal O$ while $\cal I$ is moving on $\cal P$, and then plot $\cal E$. Point $\cal I$ is usually called \textit{mover}, $\cal O$ is the \textit{tracer}. $\cal E$ is called the \textit{locus equation}, and its graphical visualization is the \textit{locus}.
 
 The syntax of the command is
 \begin{center}
@@ -177,6 +189,7 @@ The syntax of the command is
 \end{center}
 
 \paragraph{Example}
+Let us study the symmetric of a segment with respect to a point, as follows: 
 \begin{center}
 \includegraphics[scale=0.5]{LocusEquation-example-explicit}
 \end{center}
@@ -185,12 +198,12 @@ The syntax of the command is
     \item Put point $C$ on $f$.
     \item Create point $D$ by using the \textit{Point} tool.
     \item By using the \textit{Reflect about Point} tool, reflect $C$ about $D$. This defines $C'$.
-    \item Type \texttt{LocusEquation[C',C]} in the Input Bar. Now the implicit curve $a$ will be computed and plotted. This should be a segment (the mirror image of $f$ about $D$), but GeoGebra needs to handle $f$ as a line instead of a segment (for algebraic geometrical reasons), thus its mirror image is also a line.
+    \item Type \texttt{LocusEquation[C',C]} in the Input Bar. Now the implicit curve $a$ will be computed and plotted. This should be a segment (the mirror image of $f$ about $D$), but GeoGebra needs---and automatically does---to handle $f$ as a line instead of a segment (for algebraic geometric reasons regarding the involved symbolic computation algorithms), thus its mirror image is also a line.
     \item Try dragging each draggable objects. It can be visually concluded that the mirror image of a segment about a point is always parallel to the preimage.
 \end{enumerate}
 
 \item \textbf{Implicit locus.}
-Given an input point $\cal I$, either as a free point, or on a path $\cal P$. There are some construction steps given. The user claims a Boolean condition $\cal C$ on some objects of the construction. The task is to determine an equation $\cal E$ such that for all points $\cal{I}'$ of it, if $\cal{I}=\cal{I}'$, then $\cal{C}$ holds. Again, $\cal{E}$ is called locus equation, and its graphical representation is the locus.
+Consider as given an input point $\cal I$, either as a free point, or on a path $\cal P$. Moreover, assume some construction steps are also given. The user claims a Boolean condition $\cal C$  holds on some objects of the construction. The task is to determine an equation $\cal E$ such that for all points $\cal{I}'$ of it, if $\cal{I}=\cal{I}'$, then $\cal{C}$ holds. Again, $\cal{E}$ is called locus equation, and its graphical representation is the locus.
 
 The syntax of the command is
 \begin{center}
@@ -200,6 +213,7 @@ The syntax of the command is
 %\vfill\eject %% no idea how to do it elegantly
 
 \paragraph{Example}
+Given a triangle $ABC$, and the circle having $AB$ as diameter, find the locus of $C$ such that $CA^2+ CB^2=AB^2$ (a converse of Pythagoras' Theorem).
 \begin{center}
 \includegraphics[scale=0.5]{LocusEquation-example-implicit}
 \end{center}
@@ -209,7 +223,6 @@ The syntax of the command is
     Note that \textit{two} equal signs must be entered; another possibility is to use $\stackrel{?}{=}$ (by clicking the \framebox{$\alpha$} icon, or inserting this symbol from an external application by using Copy and Paste).
     \item Try dragging each draggable objects. It can be visually concluded that if $C$ lies on a circle whose diameter is $AB$, then---because of the right property of the triangle---$a^2+b^2=c^2$ indeed follows.
 \end{enumerate}
-
 \end{itemize}
 
 A Boolean expression can be:
@@ -228,16 +241,25 @@ A Boolean expression can be:
 \item \texttt{AreConcurrent[d,e,f]} checks if lines $d$, $e$ and $f$ are concurrent.
 \item \texttt{AreConcyclic[A,B,C,D]} checks if points $A$, $B$, $C$ and $D$ are concyclic.
 \end{itemize}
+Symbols like $\in$, $\parallel$ and $\perp$ can be inserted by clicking the \framebox{$\alpha$} icon, or from an external application by using Copy and Paste.
+
+In many cases it may be useful to change the color and the line thickness of the resulting curves, and also to increase their layer number to ensure that other objects do not hide them. These settings can be changed in the Object properties window.
+
+Further information and references can be found in \cite{AbanadesBotanaKovacsRecioSolyomGecse}.
 
 \subsubsection{The \texttt{Envelope} command}
 
-This command computes the equation of a curve which is tangent to a family of objects while a certain parent of the object moves on a path.
+This command computes the equation of a curve which is tangent to a family of objects while a certain ``parent" of the objects in the family moves on a path \cite{BotanaRecio2017}.
 
-More precisely, given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output path $\cal O$, either a line or a circle. The task is to determine the equation $\cal E$ of a curve $\cal C$ which is tangent to $\cal O$, while $\cal I$ is moving on $\cal P$. Then finally plot $\cal E$. $\cal I$ is called the mover. $\cal E$ is called the \textit{envelope equation}, and its graphical visualization is the \textit{envelope}.
+More precisely, given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output path $\cal O$, either a line or a circle, the task is to determine the equation $\cal E$ of a curve $\cal C$ which is tangent to $\cal O$, while $\cal I$ is moving on $\cal P$. Then finally plot $\cal E$. $\cal I$ is called the mover. $\cal E$ is called the \textit{envelope equation}, and its graphical visualization is the \textit{envelope}.
 
 %\vfill\eject %% no idea how to do it elegantly
 
-\paragraph{Example}
+\paragraph{Example} A well known way to define an ellipse through the tangent to a family of lines is as follows:
+Given a circle and an internal point of it.
+The curve which is tangent to the family of the perpendicular bisectors of a moving circumpoint
+of the circle and its internal point, is an ellipse.
+
 \begin{center}
 \includegraphics[scale=0.5]{Envelope-example}
 \end{center}
@@ -246,52 +268,74 @@ More precisely, given an input point $\cal{I}$ on a path $\cal{P}$, some constru
     \item Put point $C$ on $c$.
     \item Create an arbitrary point $D$ inside $c$.
     \item Construct the \textit{Perpendicular Bisector} $f$ of segment $CD$ by using its endpoints.
-    \item Type \texttt{Envelope[f,C]} in the Input Bar. Now the implicit curve $a$ will be computed and plotted, and it seems to be an ellipse.
+    \item Type \texttt{Envelope[f,C]} in the Input Bar. Now the implicit curve $a$ will be computed and plotted---the equation of the envelope is given in the Algebra Window and it is easily seen as
+the equation of a conic section. In the Geometry Window an ellipse is shown, the graphical
+representation of the computed algebraic equation.
 \end{enumerate}
 
-
 \subsection{Technical notes}
+\label{sec:TechnicalNotes}
 
-The following notes are important restrictions for each automated reasoning tool in GeoGebra which uses symbolic computations:
+The following notes describe some situations that might occur when one of the previously described automated reasoning tools in GeoGebra uses symbolic computations:
 \begin{itemize}
 \item Not all GeoGebra tools and construction steps are supported.
-\item The supported tools work only for a restricted set of geometric objects, i.e.~using points, lines, circles, conics.
+\item The supported tools work only for a restricted set of geometric objects, i.e.~using points, lines, circles, conics, but not for arbitrary curves.
 \item Rays and line segments will be treated as infinite lines. Circle arcs will be treated as circles.
-\item Too complicated locus or envelope computations may return `undefined' in the Algebra View.
-\item Relationship proofs which yield too complicated computations will display the message ``possibly generally true''. This must be
+\item Too complicated locus or envelope computations may return `undefined' in the Algebra View, meaning, for example, that the computation has not been achieved within the allowed time limit.
+\item Relationship proofs which yield too complicated computations will display the message ``checked numerically''. This must be
 interpreted as GeoGebra was unable to decide if the relationship is valid in general, but the numerical results promise optimism.
-That is, the relationship can be false in general in this case, too.
-\item If there is no locus or envelope, then the implicit curve is the empty set $0=1$. Example: for an arbitrary point $P$
+That is, the relationship can be false in general in this case, too (or not!).
+\item If there is no locus or envelope associated to a construction, then the output yields the empty implicit curve $0=1$. Example: for an arbitrary point $P$
 \begin{center}
 \texttt{LocusEquation[false,P]}
 \end{center}
 returns the empty set.
-\item If the locus or the envelope is the whole plane, then the implicit curve is the equation $0=0$. Example: for an arbitrary point $P$
+\item In some cases all points of the plane fulfill the input requirements. For instance, the command
 \begin{center}
 \texttt{LocusEquation[true,P]}
 \end{center}
-returns the whole plane.
-\item Sometimes extra branches of the curve will appear that were not in the original locus or envelope.
+refers to all points $P$ in the plane. In such cases the output of the command is the equation $0=0$.
+\item Sometimes, the output can include extra branches of the curve that are traditionally not considered to belong to the locus or envelope.
+For example, let points $A$ and $B$ be given, and also a third point $C$ on the circle $c$ with center $A$
+and circumpoint $B$. Now let us consider the orthocenter $D$ of triangle $ABC$. Then the
+command \texttt{LocusEquation[D,C]} results in a strophoid curve plus a line---here the
+line corresponds to a degenerate case of the triangle when $B=C$, but the line is actually
+not a part of the geometric locus.
+\begin{center}
+\includegraphics[scale=0.5]{strophoid}
+\end{center}
+By dragging point $C$ on the circle one can find that the output contains an extra branch here.
+In general, to exclude all points that do not play a geometric role, one may need further
+investigations that are not supported by GeoGebra ART at the moment. See \cite{BotanaRecio2017}
+for some further details.
 \item The graph of the implicit curve may be inaccurate in some cases.
 \end{itemize}
 
 \section{Classroom uses: conjecture, proof and generalization}
 
-Technically the easiest symbolic tool is the Relation tool in the list above. On the other hand, some teaching scenarios may require different tools to consider, or more than one tool, but in a different order than listed above.
+Technically speaking,  the easiest symbolic tool is the Relation tool in the list above. On the other hand, some teaching scenarios may require different tools to consider, or more than one tool, but in a different order than the one listed above.
 
 \subsection{Thales' circle theorem}
 
-In many traditional math classes Thales' circle theorem is stated in an explicit form: if $C$ is on a semicircle, the segments $g$ and $h$ are perpendicular. Actually this theorem can be formulated by using an open ended question: \textit{Let $ABC$ be an arbitrary triangle. What is the geometric locus of $C$ if the angle at $C$ must be right?}
+In many traditional math classes, Thales' circle theorem is stated in an explicit form: if $C$ is on a semicircle, the segments $g$ and $h$ are perpendicular (see Section \ref{par:Thales} on page
+\pageref{par:Thales}). Obviously,  the truth of such statement can be easily verified through the Relation and/or Prove commands. In this way, GeoGebra automated reasoning tools simply act here as a kind of encyclopedic geometry coach, as a kind of ``omniscient'' teacher.  But, we think it is far more interesting to approach this statement in a quite different way, formulating it as an open ended question: \textit{Let $ABC$ be an arbitrary triangle. What is the geometric locus of $C$ if the angle at $C$ is to be right?} (See also
+\cite{Artigue} for a similar approach.)
+\begin{center}
+\includegraphics[scale=0.5]{Thales-triangle}
+\end{center}
+In this approach it may make more sense to use the technically more difficult \texttt{LocusEquation[g$\perp$h,C]} command first, than finishing the construction and use the Relation tool or command directly. Moreover, the output of the \texttt{LocusEquation} command can suggest a conjecture for the pupils, namely that the locus curve is something like a circle passing through $A$ and $B$. (Actually, the locus
+is a circle \textit{without} points $A$ and $B$.) The Algebra View shows the equation of the
+computed locus, this can be however difficult for younger learners to identify.
 
-In this approach it may make more sense to use the technically more difficult \texttt{LocusEquation[g$\perp$h,C]} command first, than finishing the construction and use the Relation tool or command directly. What is more, the output of the \texttt{LocusEquation} command can suggest a conjecture for the pupils, namely that the curve is indeed a circle. The Algebra View shows the equation of the locus, this can be however difficult for younger learners to identify.
-
-Finally, Thales' circle theorem can be generalized towards the theorem of the inscribed angle in a triangle. In this case the condition is no longer $g\perp h$, but that the angle between them equals to a fix one. GeoGebra currently supports entering this kind of investigation with the syntax
+Finally, Thales' circle theorem can be generalized towards the theorem of the inscribed angle in a circle,
+that is, the angle does not change as its vertex is moved to different positions on the circle.
+In this case the condition is no longer $g\perp h$, but that the angle between them equals to a fixed one. GeoGebra currently supports entering this kind of investigation with the syntax
 \begin{center}
 \texttt{LocusEquation[AreCongruent[$\alpha$,$\beta$],C]}
 \end{center}
 if $\alpha$ is fixed and $\beta=\angle{ACB}$.
 
-To sum up, in this approach
+To summarize this approach:
 \begin{enumerate}
     \item an implicit locus is computed with GeoGebra,
     \item a conjecture for the output curve is made by the pupil,
@@ -300,15 +344,9 @@ To sum up, in this approach
     \item the theorem can be generalized by plotting further implicit loci with GeoGebra---as further experiments for the pupil.
 \end{enumerate}
 
-\subsection{Further examples}
-
-The triangle inequality can be translated to an equality which can be turned into an investigation of degenerated triangles. As a generalization, the synthetic definition of conic sections can be mentioned.
-
-Another application is to derive the locus equation in triangle $ABC$ with the condition $a\stackrel{?}{=}b$, here $C$ is to be found (step 1). Clearly, $C$ must lie on the bisector of segment $AB$ (step 2). As  by explicitly putting $C$ on the bisector, GeoGebra confirms that $AC=BC$ when starting the Relation tool's symbolic machinery (step 3). After proving the statement by traditional means (step 4), a generalization can be obtained by typing e.g.~\texttt{LocusEquation[a==2b,C]}: this can be an interesting experiment for advanced learners, too (step 5).
-
 \subsection{A worked out example: The midline theorem}
 
-Here step-by-step instructions are provided on a possible way on investigating the midline theorem by using GeoGebra's automated reasoning tools.
+Here step-by-step instructions are provided on a possible way on investigating the midline theorem  (stating that the line through the midpoints of two sides of a triangle is parallel to the third side) by using GeoGebra's automated reasoning tools.
 
 \paragraph{Step 1}
 \begin{center}
@@ -319,7 +357,7 @@ Here step-by-step instructions are provided on a possible way on investigating t
     \item By using the \textit{Midpoint or Center} tool, create the midpoint $D$ of $a$.
     \item Put point $E$ on $b$.
     \item Create line $f$ which joins $D$ and $E$.
-    \item Ask GeoGebra on the requirement for $E$ in order to have $f$ parallel to $c$: type \texttt{LocusEquation[c$\parallel$f,E]} in the Input Bar. Now the implicit curve $d$ will be computed and plotted, and it seems to be a single point. Note: it may to be useful to change the line thickness of the implicit curve $d$, and also to increase ist layer number to ensure that other objects do not hide it. Both settings can be changed in the Object properties window.
+    \item Ask GeoGebra on the requirement for $E$ in order to have $f$ parallel to $c$: type \texttt{LocusEquation[c$\parallel$f,E]} in the Input Bar. Now the implicit curve $d$ will be computed and plotted, and it seems to be a single point. Note: it may be useful to change the color and the line thickness of the implicit curve $d$, and also to increase its layer number to ensure that other objects do not hide it. Both settings can be changed in the Object properties window.
 \end{enumerate}
 \paragraph{Step 2}
 \begin{center}
@@ -342,15 +380,25 @@ Here step-by-step instructions are provided on a possible way on investigating t
 \begin{center}
 \includegraphics[scale=0.5]{classroom3-Relation}
 \end{center}
-The pupils may continue with step 4 if they need an elegant way to prove this statement, or just stop here if there is no time for further work in the classroom.
+The pupils may continue with a next step 4, for instance,  looking for an elegant way to prove this statement, or just stop here if there is no time for further work in the classroom.
 
-Also, in step 5 further questions can be raised. $c$ and $g$ do not have the same length---but can $g$ be computed by using the length of $c$? Maybe $c=1.5\cdot g$, or maybe more? The GeoGebra command \texttt{Relation[c,1.5g]} will result in the answer that $c$ and $1.5g$ are not equal, but maybe there is another constant than $1.5$ which results in a positive answer$\ldots$ Even if there is no time for further work in the classroom, some pupils may find these questions interesting and they can continue thinking on them alone or in groups---but in some sense \textit{independently}, using the computer as an expert system.
+Moreover, a further step 5 could be included after obtaining the classical proof, by considering related questions such as: it is true that $c$ and $g$ do not have the same length---but can $g$ be computed by using the length of $c$? Maybe $c=1.5\cdot g$, or maybe more? The GeoGebra command \texttt{Relation[c,1.5g]} will  answer that $c$ and $1.5g$ are not equal, but maybe there is a constant other than $1.5$ which could yield a positive answer$\ldots$ Even if there is no time for further work in the classroom, some pupils may find these questions interesting to work on their own and they can continue thinking on them alone or in groups---but in some sense \textit{independently}, using the computer as an expert system.
+
+\subsection{Further examples}
+
+The traditional triangle inequality can be translated into an equation, which can be subject  into an investigation of degenerated triangles. As a generalization, the synthetic definition of the ellipse can be discovered.
+Recall the triangle inequality, concerning a triangle of sides $a,b,c$  states that $a+b>c$. Now,  by using GeoGebra ART and the command
+\texttt{LocusEquation[a+b==c,C]},  the output will be the line $AB$,  which
+describes all degenerate triangles. On the other hand, by issuing \texttt{LocusEquation[a+b==2c,C]},
+an ellipse will be drawn with foci $A$ and $B$, focal distance $c/2$, semi-major axis $c$
+and eccentricity $1/2$. Similar investigations can be performed when using different
+ratios between $a+b$ and $c$.
+
+Another application, in a triangle $ABC$, is to derive the locus equation of $C$ with the condition $a\stackrel{?}{=}b$ (step 1). Clearly, $C$ must lie on the bisector of segment $AB$ (step 2). As  by explicitly putting $C$ on the bisector, GeoGebra confirms that $AC=BC$ when starting the Relation tool's symbolic machinery (step 3). After proving the statement by traditional means (step 4), a generalization can be obtained by typing e.g.~\texttt{LocusEquation[a==2b,C]}: this can be an interesting experiment for advanced learners too (step 5).
 
 \section{Limitations: a case study of Thales' circle theorem}
 
-Intiutive use of GeoGebra Automated Reasoning Tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use.
-
-Thales' circle theorem will be investigated.
+Intiutive use of GeoGebra Automated Reasoning Tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use, exemplified through an investigation on Thales' circle theorem  (see Section \ref{par:Thales} on page \pageref{par:Thales}), as follows:
 
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-1}
@@ -361,33 +409,35 @@ Thales' circle theorem will be investigated.
     \item Check the result of the command \texttt{Relation[f,g]}: ``$f$ intersects with $g$''.
     \item Ask GeoGebra about geometric prerequisites of $f\perp g$:
 \begin{center}\texttt{LocusEquation[f$\perp$g,C]}.\end{center}
-An implicit curve $a$ which seems like a circle will be shown.
-    \item Move $C$ in the neighborhood of the implicit curve as close as possible. Now \texttt{Relation[f,g]} may still report that ``$f$ intersects with $g$''. \textbf{Why? Because the point $C$ may be not accurately on the circle. We need to exactly state that it is on the circle.}
+An implicit curve $a$ which seems to be a circle will be shown. Actually, the equation of the circle
+is given in the Algebra Window.
+    \item Move $C$ in the neighborhood of the implicit curve as close as possible. Now \texttt{Relation[f,g]} may still report that ``$f$ intersects with $g$''. \textbf{Why? Because the point $C$ may be not lying accurately enough on the circle. Depending on the adjusted rounding precision (see the Options menu) we might need to exactly state that it is on the circle to get the perpendicularity condition.}
     \begin{enumerate}
-      \item Try attaching point $C$ on implicit curve $a$ by using the \textit{Attach / Detach Point} tool. \textbf{This is not allowed in GeoGebra, because by definition $a$ depends on $C$, and circular dependency would make no sense.}
-      \item Instead, create a new point $D$ by putting it on the implicit curve. This is allowed in GeoGebra. Create also lines $h=AD$, $i=BD$.
+      \item Try attaching point $C$ on the obtained implicit curve $a$ by using the \textit{Attach / Detach Point} tool. \textbf{In fact this is not allowed in GeoGebra, because by definition $a$ depends on $C$, and a circular dependency  would occur when attaching $C$ on $a$ (i.e.~$a$ will depend on $C$ and $C$ will depend on $a$), and this would make no sense.}
+      \item Instead, create a new point $D$ by putting it on the implicit curve $a$. This is allowed in GeoGebra. Create also lines $h=AD$, $i=BD$.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-2}
 \end{center}
-      \item Check the result of the command \texttt{Relation[h,i]}: ``$h$ and $i$ are perpendicular'' when checked numerically. By clicking ``More$\ldots$'' the result is however ``possibly generally true''. \textbf{Why? Because GeoGebra interprets the underlying implicit curve as the result of a particular setup of the construction. In other words: an implicit curve is a numerical object, it does not have a symbolic representation. That is, symbolic checks based on an implicit curve are not possible. Here GeoGebra was just optimistic about the truth of the conjecture, but the software was actually unable to prove it.}
+      \item Check the result of the command \texttt{Relation[h,i]}: ``$h$ and $i$ are perpendicular'' when checked numerically. By clicking ``More$\ldots$'' the result is however ``checked numerically''. \textbf{Why? Because GeoGebra interprets the underlying implicit curve as the result of a particular setup of the construction. In other words: in GeoGebra this implicit curve is a numerical object, it does not have a symbolic representation, as the result of a construction in terms of the given free points $A, B, C$. GeoGebra does not ``know" that $c$ is a circle with diameter $A,B$ going through $C$. That is, symbolic checks based on using an implicit curve as one element of the construction are not possible.}
       \item The proper way to finalize the steps in this approach is to create the circle with diameter $AB$ with a Circle tool, for example by using the \textit{Semicircle through 2 Points} tool, after detaching $D$ from $a$ and making $a$ invisible. Now $D$ can be attached to the semicircle.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-3}
 \end{center}
-      (Optionally the implicit curve can be set to visible by displaying it with a different style. In this example another style was used for the semicircle as well.) Finally \texttt{Relation[h,i]} will now result in positive outputs both numerically and symbolically.
+      (Optionally the implicit curve can be set to visible by displaying it with a different style. In this example another style was used for the semicircle as well.) Finally \texttt{Relation[h,i]} will now yield the correct outputs,  both numerically and symbolically.
     \end{enumerate}
 \end{enumerate}
 
-
 \section{Appendix}
+\label{sec:Appendix}
 \subsection{Low level GeoGebra tools}
 
-Automated reasoning tools in GeoGebra are completed by some low level tools prepared for learning more and in a more accurate way about geometric properties.
+Automated reasoning tools in GeoGebra are completed by some low level tools,  prepared for learning more,  and in a more accurate way,  about geometric properties.
 
 \subsubsection{The \texttt{Prove} command}
 The \texttt{Prove} command decides if a geometric statement is true in general. It has three possible outputs:
 \begin{itemize}
-    \item \textit{true} means that the statement is always true, or true under some non-degeneracy \cite{Chou} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on some components \cite{ZhouWangSun}.
+    \item \textit{true} means that the statement is always true, or true under some non-degeneracy \cite{Chou,CoxLittleOShea,RecioVelez} or essential \cite{KovacsRecioSolyomGecse} conditions, or partially true 
+\cite{BotanaRecio2016,KovacsRecioVelez}.
     \item \textit{false} means that the statement is false in general.
     \item \textit{undefined} means that GeoGebra cannot decide because of some reason:
     \begin{itemize}
@@ -406,6 +456,8 @@ The \texttt{Prove} command decides if a geometric statement is true in general. 
 \vfill\eject % FIXME
 
 \paragraph{Example}
+In a triangle a segment joining the midpoints of two sides
+is parallel to the third side and half its length.
 \begin{center}
 \includegraphics[scale=0.5]{Prove-example}
 \end{center}
@@ -429,10 +481,10 @@ The \texttt{Prove} command decides if a geometric statement is true in general. 
 \end{enumerate}
 
 \subsubsection{The \texttt{ProveDetails} command}
-The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} command has, but it may use different algorithms in the decision process, and may provide more information on the results. It has three possible outputs:
+The \texttt{ProveDetails} command has as similar behavior as the \texttt{Prove} command, but it may use different algorithms in the decision process, and may provide more information on the results. It has three possible outputs:
 \begin{itemize}
     \item \textit{\{true\}} means that the statement is always true.
-    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy \cite{Chou} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on some components \cite{ZhouWangSun}: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions is true, then the statement is true.
+    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy \cite{Chou,RecioVelez} or essential \cite{KovacsRecioSolyomGecse} conditions, or partially true \cite{BotanaRecio2016,KovacsRecioVelez}: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions holds, then the statement should be true.
     \item \textit{\{false\}} means that the statement is false in general.
 \end{itemize}
 \paragraph{Example (continued)}
@@ -447,6 +499,9 @@ The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} c
 \end{enumerate}
 
 \paragraph{Another example}
+Note that segments may be identified as lines which contain the given segment. If a point is placed
+on a segment, GeoGebra may not distinguish if it is inside or outside of the segment,
+but finally there may be a warning shown related to the general position of the point.
 \begin{center}
 \includegraphics[scale=0.5]{ProveDetails-example-2}
 \end{center}
@@ -464,8 +519,18 @@ The \texttt{ProveDetails} command has similar behavior like the \texttt{Prove} c
 \subsubsection{A comparison of \texttt{Prove}, \texttt{ProveDetails} and \texttt{Relation}}
 \label{explanation-table}
 
-The following table explains the meanings of the outputs of the commands \texttt{Prove},
-\texttt{ProveDetails} and \texttt{Relation}.
+The following table explains in a concise way the meanings of the outputs of the commands \texttt{Prove},
+\texttt{ProveDetails} and \texttt{Relation}. We recall that the \texttt{Prove} command uses
+faster and weaker algorithms than the other two, therefore its output is usually simpler.
+On the other hand, it may also be undefined, hence the expected output could be determined by using
+better algorithms that are implemented in the \texttt{ProveDetails} and \texttt{Relation}
+commands. The outputs of these three commands should never be contradictory but
+complimentary. For most users, however, the use of the \texttt{Relation} command is suggested.
+
+The \texttt{Relation} window usually reports the results in a more geometrically readable form than the
+\texttt{ProveDetails} command, but with an equivalent meaning.
+
+For further details see \cite{Kovacs2015,BotanaHohenwarterJanicicKovacsPetrovicRecioWeitzhofer}.
 
 % This table was exported from LyX. LaTeX experts: Please improve its look if possible.
 \begin{tabular}{|>{\raggedright}m{0.15\textwidth}|>{\centering}m{0.2\textwidth}|>{\centering}m{0.2\textwidth}|>{\centering}m{0.3\textwidth}|}
@@ -493,15 +558,15 @@ hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
 % example: (Prove only via Singular) rhombus-AL, Thales-underdetermined, Kovacs-example1
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}generally true\footnotemark[1]} & {\footnotesize{}The statement is true if certain conditions hold.
+ & {\footnotesize{}\{\}} & {\footnotesize{}generally true or partially true} & {\footnotesize{}The statement is true if certain conditions hold.
 GeoGebra was unable to find these conditions due to computational
 difficulties.}\tabularnewline
 % example: sum-of-three-segments1, (Prove only via Giac) isoscel-ex91, (Prove only via Singular) two-circle-ex101
 \hline 
-\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}not generally true\footnotemark[2]} & {\footnotesize{}The statement is false.}\tabularnewline
+\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
 % example: (Prove only via Singular) points-equal
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}not generally true\footnotemark[2]} & {\footnotesize{}The statement is false.}\tabularnewline
+ & {\footnotesize{}\{\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
 % example: (Prove only via Singular) sum-of-three-segments7
 \hline 
 \multirow{5}{0.15\textwidth}{\centerline{\footnotesize{}undefined}} & {\footnotesize{}\{true\}} & {\footnotesize{}always true} & {\footnotesize{}The statement is true.}\tabularnewline
@@ -523,18 +588,30 @@ hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
 % example: Kovacs-example1
 \cline{2-4} 
- & {\footnotesize{}\{false\}} & {\footnotesize{}not generally true\footnotemark[2]} & {\footnotesize{}The statement is false.}\tabularnewline
+ & {\footnotesize{}\{false\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
 % example: (Prove only via Giac) Pythagoras-expression4
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}possibly generally true} & {\footnotesize{}GeoGebra was unable to decide if the statement is
+ & {\footnotesize{}\{\}} & {\footnotesize{}checked numerically} & {\footnotesize{}GeoGebra was unable to decide if the statement is
 true or false. The numerical check confirms the truth, but the symbolic
 check was unsuccessful due to computational difficulties, or the symbolic
 check for the given statement is not yet implemented in GeoGebra.}\tabularnewline
 % example: BlazekPech
 \hline 
 \end{tabular}
-\footnotetext[1]{This case could also be partially true but GeoGebra does not identify this possibility at the moment.}
-\footnotetext[2]{actually, generally false}
+
+\subsection{Translation of GeoGebra commands}
+
+The names of GeoGebra automated reasoning tools may need to be translated to other languages. For example, the German translation of \texttt{Prove} can be \texttt{Pr\"ufe}.
+% or \texttt{Demuestra}
+To learn the translated command names the following steps are recommended:
+
+\begin{enumerate}
+\item Create a GeoGebra file which contains the required commands in the Algebra View.
+\item Change the language in GeoGebra in the \textit{Options} menu by choosing \textit{Language}.
+\item The command names will be automatically changed in the Algebra View.
+\item Move the mouse over a command in the Algebra View and read its translated name off.
+\end{enumerate}
+
 \subsection{Debugging}
 Starting GeoGebra via command line there are more possibilities to investigate the results. Here the method on a typical Linux installation is demonstrated.
 
@@ -618,19 +695,6 @@ OUTPUT for ProveDetails: null = {true, {"f + h = g", "h = f + g"}}
 \end{lstlisting}
 } % \scriptsize
 There is intentionally no easier way to show the users this type of output. However, the last few lines of the debug information is available in GeoGebra in the \textit{Help} menu, by choosing \textit{About/License}, and clicking \textit{System Information}---this copies the latest debug messages into the clipboard.
-
-\subsection{Translation of GeoGebra commands}
-
-The names of GeoGebra automated reasoning tools may need to be translated to other languages. For example, the German translation of \texttt{Prove} can be \texttt{Pr\"ufe}.
-% or \texttt{Demuestra}
-To learn the translated command names the following steps are recommended:
-
-\begin{enumerate}
-\item Create a GeoGebra file which contains the required commands in the Algebra View.
-\item Change the language in GeoGebra in the \textit{Options} menu by choosing \textit{Language}.
-\item The command names will be automatically changed in the Algebra View.
-\item Move the mouse over a command in the Algebra View and read its translated name off.
-\end{enumerate}
 
 \input{bibliography.tex}
 
