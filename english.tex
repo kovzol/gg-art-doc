@@ -37,7 +37,7 @@
   commentstyle=\color{mymauve},
   identifierstyle=\color{mygreen}
 }
-%\tolerance10000
+\tolerance10000
 
 \maketitle
 
@@ -84,7 +84,7 @@ To start with,  the user needs to draw a geometric figure by using certain tools
 These methods are usually well known by the GeoGebra community, and therefore they are well documented and many examples can be found on them at GeoGebra Materials (\url{https://www.geogebra.org/materials/}). On the other hand, GeoGebra also offers symbolic automated reasoning tools for generalizing some observed/conjectured geometric properties:
 \begin{enumerate}
 \setcounter{enumi}{5}
-    \item The Relation tool and command can be used to recompute the numerical results symbolically,
+    \item The Relation tool and command can be used to recompute the numerical results symbolically.
     \item The \texttt{LocusEquation} command refines the result of the Locus command by displaying the algebraic equation of the graphical output (see Section \ref{sec:TechnicalNotes} for a list of possible
 limitations).
     \item The \texttt{LocusEquation} command can investigate implicit loci.
@@ -128,7 +128,7 @@ This command allows the user to find out numerically (that is, for the drawn con
 Some of these checks can also be performed symbolically, that is, the statement can be verified rigorously for the general case (with arbitrary coordinates) and not only for the displayed concrete geometric construction.
 
 When using the Relation \textit{tool}, the user points on two objects and gets a message box as shown in the figure below. Alternatively, two, three or four objects can be selected by the selection rectangle to invoke the message box. To prevent the user to select unneeded objects in the applet it is also possible to disallow selection of unnecessary objects by
-right clicking on the object, selecting \textit{Object properties}, choosing the \textit{Advanced} tab and unchecking \textit{Selection allowed}.
+right clicking on the object, selecting Object properties, choosing the \textit{Advanced} tab and unchecking \textit{Selection allowed}.
 
 When using the Relation \textit{command}, the user types one of the following formulas in the Input Bar:
 \begin{itemize}
@@ -138,16 +138,22 @@ When using the Relation \textit{command}, the user types one of the following fo
     \item \texttt{Relation[ \{ <Object>, <Object>, <Object>, <Object> \} ]}
 \end{itemize}
 
-When the message box is shown with one or more true numerical statements on the objects, there may be a button ``More$\ldots$'' shown if there is symbolic support for the given statement. When clicking ``More$\ldots$'', shortly the numerical statement will be updated to a more general symbolic one, stating or denying the validity of the Relation for arbitrary instances of the given construction (i.e. if some two lines were perpendicular just in the precisely given position or if they are perpendicular in general, etc.).
+When the message box is shown with one or more true numerical statements on the objects, there may be a button ``More$\ldots$'' shown if there is symbolic support for the given statement. When clicking ``More$\ldots$'', shortly the numerical statement will be updated to a more general symbolic one, stating or denying the validity of the Relation for arbitrary instances of the given construction (i.e.~if some two lines were perpendicular just in the precisely given position or if they are perpendicular in general, etc.).
 
 In some GeoGebra installations the message box on using the Relation tool or command
 is shown behind the main GeoGebra window and seems hidden for the user.
 This is considered as an installation issue
 and GeoGebra should be updated to a newer version.
 
+We remark that in the newest GeoGebra versions \textit{brackets} in all commands will be converted to \textit{parentheses}.
+That is, for instance, both of the syntaxes \texttt{Relation [ <Object>, <Object> ]} and 
+\texttt{Relation ( <Object>, <Object> )} are allowed to use, but GeoGebra will always display
+the second form. In this tutorial, however, we still use the first form that is the only allowed method
+in former GeoGebra versions.
+
 \paragraph{Example (Thales' circle theorem)}
 \label{par:Thales}
-Here we want to explore the possible perpendicularity of lines $CA$, $CB$, where $C$ is a point on a circle, while $AB$ is a diameter thereof. We can proceed as follows:
+Here we want to explore the possible perpendicularity of segments $AC$ and $BC$, where $C$ is a point on a circle, while $AB$ is a diameter thereof. We can proceed as follows:
 \begin{center}
 \includegraphics[scale=0.5]{Relation-example}
 \end{center}
@@ -171,7 +177,7 @@ Remark that Relation (step 5) looks for relations between $g$ and $h$ from the c
 
 Sometimes, the relationship among certain objects holds only under certain conditions, that is, not necessarily ``always''. In such cases, if possible, some sufficient conditions would be displayed by the Relation tool. Otherwise GeoGebra just remarks that the statement is ``true if non-degenerate''. This must be interpreted as meaning that the statement is ``generally true'', but in some side cases (which are `a small number of cases' compared to the general case) the statement may fail.
 
-The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (but not generally true)'', because the two given points are considered, in the general symbolic approach, as two free points, with arbitrary coordinates.
+The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (generally false)'', because the two given points are considered, in the general symbolic approach, as two free points, with arbitrary coordinates.
 
 A complete overview of the various results of Relation can be found in Section \ref{explanation-table} on page \pageref{explanation-table}.
 
@@ -213,14 +219,14 @@ The syntax of the command is
 %\vfill\eject %% no idea how to do it elegantly
 
 \paragraph{Example}
-Given a triangle $ABC$, and the circle having $AB$ as diameter, find the locus of $C$ such that $CA^2+ CB^2=AB^2$ (a converse of Pythagoras' Theorem).
+Given a triangle $ABC$, and the circle having $AB$ as diameter, find the locus of $C$ such that $AC^2+BC^2=AB^2$ (a converse of Pythagoras' Theorem).
 \begin{center}
 \includegraphics[scale=0.5]{LocusEquation-example-implicit}
 \end{center}
 \begin{enumerate}
     \item By using the \textit{Polygon} tool, construct triangle $ABC$. Now segments $a$, $b$ and $c$ will be automatically introduced by GeoGebra.
     \item Type \texttt{LocusEquation[a\^{}2+b\^{}2==c\^{}2,C]} in the Input Bar. Now the implicit curve $d$ will be computed and plotted, which seems to be a circle.
-    Note that \textit{two} equal signs must be entered; another possibility is to use $\stackrel{?}{=}$ (by clicking the \framebox{$\alpha$} icon, or inserting this symbol from an external application by using Copy and Paste).
+    Note that \textit{two} equal signs must be entered; another possibility is to use $\stackrel{?}{=}$ (by clicking the \framebox{$\alpha$} icon, or inserting this symbol from an external application by using \textit{Copy} and \textit{Paste}).
     \item Try dragging each draggable objects. It can be visually concluded that if $C$ lies on a circle whose diameter is $AB$, then---because of the right property of the triangle---$a^2+b^2=c^2$ indeed follows.
 \end{enumerate}
 \end{itemize}
@@ -228,7 +234,7 @@ Given a triangle $ABC$, and the circle having $AB$ as diameter, find the locus o
 A Boolean expression can be:
 \begin{itemize}
 \item An \textit{algebraic} equation of labels of segments, e.g.~\texttt{a\^{}2+b\^{}2==c\^{}2}.
-\item An equality of two geometric objects, e.g.~\texttt{A==B}. Note that \textit{two} equal signs must be entered; another possibilities are to use
+\item An equality of two geometric objects, e.g.~\texttt{A==B}. Again, note that \textit{two} equal signs must be entered; another possibilities are to use
 \begin{itemize}
     \item $\stackrel{?}{=}$ (by clicking the \framebox{$\alpha$} icon, or inserting this symbol from an external application by using Copy and Paste), or
     \item alternatively, \texttt{AreEqual[A,B]} for the complete Boolean expression.
@@ -317,7 +323,7 @@ Technically speaking,  the easiest symbolic tool is the Relation tool in the lis
 
 \subsection{Thales' circle theorem}
 
-In many traditional math classes, Thales' circle theorem is stated in an explicit form: if $C$ is on a semicircle, the segments $g$ and $h$ are perpendicular (see Section \ref{par:Thales} on page
+In many traditional maths classes, Thales' circle theorem is stated in an explicit form: if $C$ is on a semicircle, the segments $g$ and $h$ are perpendicular (see Section \ref{par:Thales} on page
 \pageref{par:Thales}). Obviously,  the truth of such statement can be easily verified through the Relation and/or Prove commands. In this way, GeoGebra automated reasoning tools simply act here as a kind of encyclopedic geometry coach, as a kind of ``omniscient'' teacher.  But, we think it is far more interesting to approach this statement in a quite different way, formulating it as an open ended question: \textit{Let $ABC$ be an arbitrary triangle. What is the geometric locus of $C$ if the angle at $C$ is to be right?} (See also
 \cite{Artigue} for a similar approach.)
 \begin{center}
@@ -396,9 +402,11 @@ ratios between $a+b$ and $c$.
 
 Another application, in a triangle $ABC$, is to derive the locus equation of $C$ with the condition $a\stackrel{?}{=}b$ (step 1). Clearly, $C$ must lie on the bisector of segment $AB$ (step 2). As  by explicitly putting $C$ on the bisector, GeoGebra confirms that $AC=BC$ when starting the Relation tool's symbolic machinery (step 3). After proving the statement by traditional means (step 4), a generalization can be obtained by typing e.g.~\texttt{LocusEquation[a==2b,C]}: this can be an interesting experiment for advanced learners too (step 5).
 
+See \cite{Kovacs2017} for additional examples.
+
 \section{Limitations: a case study of Thales' circle theorem}
 
-Intiutive use of GeoGebra Automated Reasoning Tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use, exemplified through an investigation on Thales' circle theorem  (see Section \ref{par:Thales} on page \pageref{par:Thales}), as follows:
+Intiutive use of GeoGebra automated reasoning tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use, exemplified through an investigation on Thales' circle theorem  (see Section \ref{par:Thales} on page \pageref{par:Thales}), as follows:
 
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-1}
@@ -411,14 +419,14 @@ Intiutive use of GeoGebra Automated Reasoning Tools may result in unexpected out
 \begin{center}\texttt{LocusEquation[f$\perp$g,C]}.\end{center}
 An implicit curve $a$ which seems to be a circle will be shown. Actually, the equation of the circle
 is given in the Algebra Window.
-    \item Move $C$ in the neighborhood of the implicit curve as close as possible. Now \texttt{Relation[f,g]} may still report that ``$f$ intersects with $g$''. \textbf{Why? Because the point $C$ may be not lying accurately enough on the circle. Depending on the adjusted rounding precision (see the Options menu) we might need to exactly state that it is on the circle to get the perpendicularity condition.}
+    \item Move $C$ in the neighborhood of the implicit curve as close as possible. Now \texttt{Relation[f,g]} may still report that ``$f$ intersects with $g$''. \textbf{Why? Because the point $C$ may be not lying accurately enough on the circle. Depending on the adjusted rounding precision (see the \textit{Options} menu) we might need to exactly state that it is on the circle to get the perpendicularity condition.}
     \begin{enumerate}
       \item Try attaching point $C$ on the obtained implicit curve $a$ by using the \textit{Attach / Detach Point} tool. \textbf{In fact this is not allowed in GeoGebra, because by definition $a$ depends on $C$, and a circular dependency  would occur when attaching $C$ on $a$ (i.e.~$a$ will depend on $C$ and $C$ will depend on $a$), and this would make no sense.}
       \item Instead, create a new point $D$ by putting it on the implicit curve $a$. This is allowed in GeoGebra. Create also lines $h=AD$, $i=BD$.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-2}
 \end{center}
-      \item Check the result of the command \texttt{Relation[h,i]}: ``$h$ and $i$ are perpendicular'' when checked numerically. By clicking ``More$\ldots$'' the result is however ``checked numerically''. \textbf{Why? Because GeoGebra interprets the underlying implicit curve as the result of a particular setup of the construction. In other words: in GeoGebra this implicit curve is a numerical object, it does not have a symbolic representation, as the result of a construction in terms of the given free points $A, B, C$. GeoGebra does not ``know" that $c$ is a circle with diameter $A,B$ going through $C$. That is, symbolic checks based on using an implicit curve as one element of the construction are not possible.}
+      \item Check the result of the command \texttt{Relation[h,i]}: ``$h$ and $i$ are perpendicular'' when checked numerically. By clicking ``More$\ldots$'' the result is however ``checked numerically''. \textbf{Why? Because GeoGebra interprets the underlying implicit curve as the result of a particular setup of the construction. In other words: in GeoGebra this implicit curve is a numerical object, it does not have a symbolic representation, as the result of a construction in terms of the given free points $A, B, C$. GeoGebra does not ``know'' that $c$ is a circle with diameter $A$, $B$ going through $C$. That is, symbolic checks based on using an implicit curve as one element of the construction are not possible.}
       \item The proper way to finalize the steps in this approach is to create the circle with diameter $AB$ with a Circle tool, for example by using the \textit{Semicircle through 2 Points} tool, after detaching $D$ from $a$ and making $a$ invisible. Now $D$ can be attached to the semicircle.
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-3}
@@ -453,7 +461,7 @@ The \texttt{Prove} command decides if a geometric statement is true in general. 
 \end{itemize}
 
 % Prevent putting the image on the next page.
-\vfill\eject % FIXME
+%\vfill\eject % FIXME
 
 \paragraph{Example}
 In a triangle a segment joining the midpoints of two sides
@@ -558,7 +566,7 @@ hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
 % example: (Prove only via Singular) rhombus-AL, Thales-underdetermined, Kovacs-example1
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}generally true or partially true} & {\footnotesize{}The statement is true if certain conditions hold.
+ & {\footnotesize{}\{\}} & {\footnotesize{}generally true\\or partially true} & {\footnotesize{}The statement is true if certain conditions hold.
 GeoGebra was unable to find these conditions due to computational
 difficulties.}\tabularnewline
 % example: sum-of-three-segments1, (Prove only via Giac) isoscel-ex91, (Prove only via Singular) two-circle-ex101
@@ -607,7 +615,7 @@ To learn the translated command names the following steps are recommended:
 
 \begin{enumerate}
 \item Create a GeoGebra file which contains the required commands in the Algebra View.
-\item Change the language in GeoGebra in the \textit{Options} menu by choosing \textit{Language}.
+\item Change the language in GeoGebra in the Options menu by choosing \textit{Language}.
 \item The command names will be automatically changed in the Algebra View.
 \item Move the mouse over a command in the Algebra View and read its translated name off.
 \end{enumerate}
