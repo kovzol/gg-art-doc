@@ -177,7 +177,7 @@ Remark that Relation (step 5) looks for relations between $g$ and $h$ from the c
 
 Sometimes, the relationship among certain objects holds only under certain conditions, that is, not necessarily ``always''. In such cases, if possible, some sufficient conditions would be displayed by the Relation tool. Otherwise GeoGebra just remarks that the statement is ``true if non-degenerate''. This must be interpreted as meaning that the statement is ``generally true'', but in some side cases (which are `a small number of cases' compared to the general case) the statement may fail.
 
-The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (generally false)'', because the two given points are considered, in the general symbolic approach, as two free points, with arbitrary coordinates.
+The symbolic result of Relation can be negative as well, even if the numerical check is positive. For example, by defining two points $P=(0,0)$ and $Q=(0,0)$ Relation compares them numerically, but the symbolic check will result in ``$P$ and $Q$ are equal (false in general)'', because the two given points are considered, in the general symbolic approach, as two free points, with arbitrary coordinates.
 
 A complete overview of the various results of Relation can be found in Section \ref{explanation-table} on page \pageref{explanation-table}.
 
@@ -444,7 +444,7 @@ Automated reasoning tools in GeoGebra are completed by some low level tools,  pr
 \subsubsection{The \texttt{Prove} command}
 The \texttt{Prove} command decides if a geometric statement is true in general. It has three possible outputs:
 \begin{itemize}
-    \item \textit{true} means that the statement is always true, or true under some non-degeneracy \cite{Chou,CoxLittleOShea,RecioVelez} or essential \cite{KovacsRecioSolyomGecse} conditions, or partially true 
+    \item \textit{true} means that the statement is always true, or true under some non-degeneracy \cite{Chou,CoxLittleOShea,RecioVelez} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on parts, false on parts 
 \cite{BotanaRecio2016,KovacsRecioVelez}.
     \item \textit{false} means that the statement is false in general.
     \item \textit{undefined} means that GeoGebra cannot decide because of some reason:
@@ -492,7 +492,7 @@ is parallel to the third side and half its length.
 The \texttt{ProveDetails} command has as similar behavior as the \texttt{Prove} command, but it may use different algorithms in the decision process, and may provide more information on the results. It has three possible outputs:
 \begin{itemize}
     \item \textit{\{true\}} means that the statement is always true.
-    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy \cite{Chou,RecioVelez} or essential \cite{KovacsRecioSolyomGecse} conditions, or partially true \cite{BotanaRecio2016,KovacsRecioVelez}: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions holds, then the statement should be true.
+    \item \textit{\{true, \{$\ldots$\}\}} if the statement is true under some non-degeneracy \cite{Chou,RecioVelez} or essential \cite{KovacsRecioSolyomGecse} conditions, or true on parts, false on parts \cite{BotanaRecio2016,KovacsRecioVelez}: these conditions are listed in the internal braces. (If the list remains ``$\ldots$'', it means that no synthetic translation could be found.)  If the conjunction of the negated conditions holds, then the statement should be true.
     \item \textit{\{false\}} means that the statement is false in general.
 \end{itemize}
 \paragraph{Example (continued)}
@@ -560,21 +560,21 @@ may be other sufficient conditions to make the statement true.}\tabularnewline
 equations have no visually clear geometric meanings for GeoGebra.}\tabularnewline
 % example: circle-midpoints-are-concyclic-ex211, ICMI2-square, 11gon-1
 \cline{2-4} 
- & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\},``c''\}}} & {\footnotesize{}partially true under }\emph{\footnotesize{}conjuction of the negations of the specified
-conditions} & {\footnotesize{}The statement is partially true if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\},``c''\}}} & {\footnotesize{}true on parts, false on parts under }\emph{\footnotesize{}conjuction of the negations of the specified
+conditions} & {\footnotesize{}The statement is true on parts, false on parts if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
 hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
 % example: (Prove only via Singular) rhombus-AL, Thales-underdetermined, Kovacs-example1
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}generally true\\or partially true} & {\footnotesize{}The statement is true if certain conditions hold.
+ & {\footnotesize{}\{\}} & {\footnotesize{}generally true or true on parts, false on parts} & {\footnotesize{}The statement is true if certain conditions hold.
 GeoGebra was unable to find these conditions due to computational
 difficulties.}\tabularnewline
 % example: sum-of-three-segments1, (Prove only via Giac) isoscel-ex91, (Prove only via Singular) two-circle-ex101
 \hline 
-\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
+\multirow{2}{0.15\textwidth}{\centerline{\footnotesize{}false}} & {\footnotesize{}\{false\}} & {\footnotesize{}false in general} & {\footnotesize{}The statement is false.}\tabularnewline
 % example: (Prove only via Singular) points-equal
 \cline{2-4} 
- & {\footnotesize{}\{\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
+ & {\footnotesize{}\{\}} & {\footnotesize{}false in general} & {\footnotesize{}The statement is false.}\tabularnewline
 % example: (Prove only via Singular) sum-of-three-segments7
 \hline 
 \multirow{5}{0.15\textwidth}{\centerline{\footnotesize{}undefined}} & {\footnotesize{}\{true\}} & {\footnotesize{}always true} & {\footnotesize{}The statement is true.}\tabularnewline
@@ -590,13 +590,13 @@ may be other sufficient conditions to make the statement true.}\tabularnewline
 These equations have no visually clear geometric meanings for GeoGebra.}\tabularnewline
 % example: 13gon-2
 \cline{2-4} 
- & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\},``c''\}}} & {\footnotesize{}partially true under }\emph{\footnotesize{}conjuction of the negations of the specified
-conditions} & {\footnotesize{}The statement is partially true if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
+ & \multicolumn{1}{>{\centering}m{0.2\columnwidth}|}{{\footnotesize{}\{true,\{}\emph{\footnotesize{}conditions}{\footnotesize{}\},``c''\}}} & {\footnotesize{}true on parts, false on parts under }\emph{\footnotesize{}conjuction of the negations of the specified
+conditions} & {\footnotesize{}The statement is true on parts, false on parts if none of the specified }\emph{\footnotesize{}conditions}{\footnotesize{}
 hold. These negated conditions are sufficient, but maybe not necessary. There
 may be other sufficient conditions to make the statement true.}\tabularnewline
 % example: Kovacs-example1
 \cline{2-4} 
- & {\footnotesize{}\{false\}} & {\footnotesize{}generally false} & {\footnotesize{}The statement is false.}\tabularnewline
+ & {\footnotesize{}\{false\}} & {\footnotesize{}false in general} & {\footnotesize{}The statement is false.}\tabularnewline
 % example: (Prove only via Giac) Pythagoras-expression4
 \cline{2-4} 
  & {\footnotesize{}\{\}} & {\footnotesize{}checked numerically} & {\footnotesize{}GeoGebra was unable to decide if the statement is
