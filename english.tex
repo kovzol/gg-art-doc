@@ -39,7 +39,17 @@
 }
 \tolerance10000
 
+
 \maketitle
+
+\begin{abstract}
+This document introduces, describes and exemplifies the technical
+features of the recently implemented automated reasoning tools, based
+on symbolic computation algorithms, allowing the automatic proving and
+discovery of theorems on geometric figures constructed with the dynamics
+mathematics software GeoGebra.
+\end{abstract}
+
 
 \section{Introduction}
 
@@ -195,7 +205,10 @@ The syntax of the command is
 \end{center}
 
 \paragraph{Example}
-Let us study the symmetric of a segment with respect to a point, as follows: 
+Let us present the second kind of usage through a particular way of
+building the symmetric of a segment with respect to a point.
+This particular example allows us to exemplify
+better some of the benefits and problems of the \texttt{LocusEquation} command.
 \begin{center}
 \includegraphics[scale=0.5]{LocusEquation-example-explicit}
 \end{center}
@@ -716,6 +729,65 @@ OUTPUT for ProveDetails: null = {true, {"f + h = g", "h = f + g"}}
 \end{lstlisting}
 } % \scriptsize
 There is intentionally no easier way to show the users this type of output. However, the last few lines of the debug information are available in GeoGebra in the \textit{Help} menu, by choosing \textit{About/License}, and clicking \textit{System Information}---this copies the latest debug messages into the clipboard.
+
+\section*{Acknowledgments}
+
+Authors would like to express thier gratitude to Prof.~T.~Dana-Picard,
+for his careful reading and many suggestions to improve earlier versions
+of this manuscript.  Work partially supported by Spanish Research
+Project MTM2017-88796-P. 
+
+\section*{Biographical notes}
+
+\begin{itemize}
+
+\item
+\textit{Zolt\'an Kov\'acs} (J\'aszber\'eny, Hungary, October 31, 1975). M.Sc.~(1999),
+J\'ozsef Attila University of Szeged,
+Ph.D.~(2015), Johannes Kepler University of Linz. Assistant professor at
+The Private University College of Education of the Diocese of Linz, Institute of Initial Teacher Training (Austria),
+since 2015.
+Team member of Center of Mathematics Education of Linz at University of Linz, Department of Mathematics Education.
+Core developer at GeoGebra, since 2010.
+Author of over fifty published scientific papers and hundred scientific
+communications (including various software packages) in different international journals and conferences.
+Topics: Mathematics Education, Automated Reasoning in Dynamic Geometry, Computer Algebra.
+\url{https://sites.google.com/site/kovzol/}.
+
+Postal address: Private P\"adagogische Hochschule der Di\"ozese Linz.
+Salesianumweg 3, 4020 Linz, Austria.
+
+\item
+\textit{Tom\'as Recio} (Oviedo, Spain, December 14, 1949).  B.Sc., M.Sc.~(1972),
+Ph.D.~(1976), Universidad Complutense de Madrid. Professor of Algebra
+at the Universidad de Cantabria (Santander, Spain), since 1982. Founder
+and Chair of the Institute GeoGebra of Cantabria.
+Author of over hundred
+fifty published scientific papers and three hundred fifty scientific
+communications in different international journals and conferences.
+Topics: Real Algebraic Geometry, CAD, Robotics, Computer Algebra and
+Geometry,  Automatic Reasoning in Dynamic Geometry, Mathematics
+Education. \url{http://www.recio.tk}.
+
+Postal address: Departamento de Matem\'aticas, Estadística y Computaci\'on.
+Facultad de Ciencias, Universidad de Cantabria. Avenida de los Castros, s/n,
+39071 Santander, Spain.
+
+\item
+\textit{M.~Pilar V\'elez} (Logro\~no, Spain, June 3, 1967).  B.Sc., M.Sc.~(1990),
+Ph.D.~(1995), Universidad Complutense de Madrid. Professor of Applied
+Mathematics at the Universidad Antonio de Nebrija (Madrid, Spain), since
+1997. Rector of Universidad Antonio de Nebrija from 2010 to 2014. 
+Author of several scientific papers and scientific communications in different
+international journals and conferences. Topics: Real Algebraic Geometry, Computer Algebra, 
+Automatic Reasoning in Dynamic Geometry, Mathematics Education. \url{https://orcid.org/0000-0002-5724-4300}.
+
+Postal address: Departamento de Ingenier\'{\i}a Industrial,
+Escuela Polit\'ecnica Superior, Universidad Antonio de Nebrija.
+c/ Pirineos, 55, 28040 Madrid, Spain.
+
+\end{itemize}
+
 
 \input{bibliography.tex}
 
