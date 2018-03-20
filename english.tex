@@ -63,7 +63,7 @@ Moreover, embedded GeoGebra applets are accessible on web pages, such as those w
 
 Some specific GeoGebra tools could however differ on the different platforms. Also,  the user experience on the various platforms may be different: the required symbolic computations may need a high amount of calculations and the underlying hardware or software components could or could not support some steps completely.
 
-The recommended platform for classroom use can vary. The fastest results can be obtained by fast desktop (or laptop) computers, but in this case the software must be downloaded and installed by the user. Some examples in this tutorial will work only in the ``desktop'' version (which is created for Microsoft Windows, Apple Macintosh and Linux desktop and laptop computers). On the other hand, the ``web'' version does not require installation by the user: it will run in a modern web browser, and the teacher is able to prepare a list of examples as GeoGebra applets in advance before the classroom use by using GeoGebra Materials, for example. The ``web'' version is however usually slower than the desktop one: the symbolic computations may be slower by a magnitude.
+The recommended platform for classroom use can vary. The fastest results can be obtained by fast desktop (or laptop) computers, but in this case the software must be downloaded and installed by the user. Some examples in this tutorial will work only in the ``desktop'' version (which is created for Microsoft Windows, Apple Macintosh and Linux desktop and laptop computers). On the other hand, the ``web'' version does not require installation by the user: it will run in a modern web browser, and the teacher is able to prepare a list of examples as GeoGebra applets in advance before the classroom use of GeoGebra Materials, for example. The ``web'' version is however usually slower than the desktop one: the symbolic computations may be slower by a magnitude.
 
 Since recently, GeoGebra runs on tablets and smartphones also. In some cases these platforms provide faster user experience than the web version does, but the smaller screen size could prevent the users from investigating geometry theorems in details. It is encouraged that teachers do experiments by using these modern devices, but their use for automated reasoning is still considered as experimental.
 
@@ -95,7 +95,7 @@ limitations).
 
 GeoGebra provides the above high level methods to promote investigating geometry theorems. These are considered as ``high level'' tools because of the simplicity of their  format; and, thus,  they are intended to  be directly used in classrooms. There are also other, more complicated, ways to learn more on the mathematical background of a given statement or just to help in troubleshooting. Those ``low level'' methods are listed in Section \ref{sec:Appendix}, and therefore not suggested for direct use among students.
 
-Obviously, some of the listed methods are easier, and others are more difficult. For instance, using the command line in the Input Bar in GeoGebra can be considered as a more difficult task for most users than using the \textit{Toolbar}. Thus, it can be suggested that a teacher first shows the students how to deal with the easier methods, and later demonstrates the more demanding ways,  when the pupils have enough experiments done and are a little bit more acquainted with the reasoning tools.
+Obviously, some of the listed methods are easier, and others are more difficult. For instance, using the command line in the Input Bar in GeoGebra can be considered as a more difficult task for most users than using the \textit{Toolbar}. Thus, it can be suggested that a teacher first shows the students how to deal with the easier methods, and later demonstrates the more demanding ways,  when the students have enough experiments done and are a little bit more acquainted with the reasoning tools.
 
 \subsection{Tools with symbolic support}
 
@@ -183,11 +183,11 @@ A complete overview of the various results of Relation can be found in Section \
 
 \subsubsection{The \texttt{LocusEquation} command}
 
-This command calculates the equation of a locus and plots it as an implicit curve. There are two kinds of uses:
+This command calculates the equation of a locus and plots it as an implicit curve. There are two kinds of usages:
 
 \begin{itemize}
 \item\textbf{Explicit locus.}
-Consider as given an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output point $\cal O$. The task is to determine the equation $\cal E$ of the locus of $\cal O$ while $\cal I$ is moving on $\cal P$, and then plot $\cal E$. Point $\cal I$ is usually called \textit{mover}, $\cal O$ is the \textit{tracer}. $\cal E$ is called the \textit{locus equation}, and its graphical visualization is the \textit{locus}.
+Consider an input point $\cal{I}$ on a path $\cal{P}$, some construction steps, and an output point $\cal O$. The task is to determine the equation $\cal E$ of the locus of $\cal O$ while $\cal I$ is moving on $\cal P$, and then plot $\cal E$. Point $\cal I$ is usually called \textit{mover}, $\cal O$ is the \textit{tracer}. $\cal E$ is called the \textit{locus equation}, and its graphical visualization is the \textit{locus}.
 
 The syntax of the command is
 \begin{center}
@@ -209,7 +209,7 @@ Let us study the symmetric of a segment with respect to a point, as follows:
 \end{enumerate}
 
 \item \textbf{Implicit locus.}
-Consider as given an input point $\cal I$, either as a free point, or on a path $\cal P$. Moreover, assume some construction steps are also given. The user claims a Boolean condition $\cal C$  holds on some objects of the construction. The task is to determine an equation $\cal E$ such that for all points $\cal{I}'$ of it, if $\cal{I}=\cal{I}'$, then $\cal{C}$ holds. Again, $\cal{E}$ is called locus equation, and its graphical representation is the locus.
+Consider a given input point $\cal I$, either as a free point, or on a path $\cal P$. Moreover, assume some construction steps are also given. The user claims a Boolean condition $\cal C$  holds on some objects of the construction. The task is to determine an equation $\cal E$ such that for all points $\cal{I}'$ of it, if $\cal{I}=\cal{I}'$, then $\cal{C}$ holds. Again, $\cal{E}$ is called locus equation, and its graphical representation is the locus.
 
 The syntax of the command is
 \begin{center}
@@ -261,7 +261,7 @@ More precisely, given an input point $\cal{I}$ on a path $\cal{P}$, some constru
 
 %\vfill\eject %% no idea how to do it elegantly
 
-\paragraph{Example} A well known way to define an ellipse through the tangent to a family of lines is as follows:
+\paragraph{Example} A well known way to define an ellipse as an envelope of lines is as follows:
 Given a circle and an internal point of it.
 The curve which is tangent to the family of the perpendicular bisectors of a moving circumpoint
 of the circle and its internal point, is an ellipse.
@@ -287,9 +287,9 @@ The following notes describe some situations that might occur when one of the pr
 \item Not all GeoGebra tools and construction steps are supported.
 \item The supported tools work only for a restricted set of geometric objects, i.e.~using points, lines, circles, conics, but not for arbitrary curves.
 \item Rays and line segments will be treated as infinite lines. Circle arcs will be treated as circles.
-\item Too complicated locus or envelope computations may return `undefined' in the Algebra View, meaning, for example, that the computation has not been achieved within the allowed time limit.
+\item Computations of too complicated loci or envelopes may return `undefined' in the Algebra View, meaning, for example, that the computation has not been achieved within the allowed time limit.
 \item Relationship proofs which yield too complicated computations will display the message ``checked numerically''. This must be
-interpreted as GeoGebra was unable to decide if the relationship is valid in general, but the numerical results promise optimism.
+interpreted as follows: GeoGebra was unable to decide if the relationship is valid in general, but the numerical results promise optimism.
 That is, the relationship can be false in general in this case, too (or not!).
 \item If there is no locus or envelope associated to a construction, then the output yields the empty implicit curve $0=1$. Example: for an arbitrary point $P$
 \begin{center}
@@ -329,7 +329,7 @@ In many traditional maths classes, Thales' circle theorem is stated in an explic
 \begin{center}
 \includegraphics[scale=0.5]{Thales-triangle}
 \end{center}
-In this approach it may make more sense to use the technically more difficult \texttt{LocusEquation[g$\perp$h,C]} command first, than finishing the construction and use the Relation tool or command directly. Moreover, the output of the \texttt{LocusEquation} command can suggest a conjecture for the pupils, namely that the locus curve is something like a circle passing through $A$ and $B$. (Actually, the locus
+In this approach it may make more sense to use the technically more difficult \texttt{LocusEquation[g$\perp$h,C]} command first, than finishing the construction and use the Relation tool or command directly. Moreover, the output of the \texttt{LocusEquation} command can suggest a conjecture for the students, namely that the locus curve is something like a circle passing through $A$ and $B$. (Actually, the locus
 is a circle \textit{without} points $A$ and $B$.) The Algebra View shows the equation of the
 computed locus, this can be however difficult for younger learners to identify.
 
@@ -343,16 +343,19 @@ if $\alpha$ is fixed and $\beta=\angle{ACB}$.
 
 To summarize this approach:
 \begin{enumerate}
-    \item an implicit locus is computed with GeoGebra,
-    \item a conjecture for the output curve is made by the pupil,
-    \item the conjecture is checked by the Relation tool or command in GeoGebra,
-    \item the proof can be optionally worked out by paper and pencil by the pupil,
-    \item the theorem can be generalized by plotting further implicit loci with GeoGebra---as further experiments for the pupil.
+    \item[step 1:] an implicit locus is computed with GeoGebra,
+    \item[step 2:] a conjecture for the output curve is made by the student,
+    \item[step 3:] the conjecture is checked by the Relation tool or command in GeoGebra,
+    \item[step 4:] the proof can be optionally worked out by paper and pencil by the student,
+    \item[step 5:] the theorem can be generalized by plotting further implicit loci with GeoGebra---as further experiments for the student.
 \end{enumerate}
 
 \subsection{A worked out example: The midline theorem}
 
-Here step-by-step instructions are provided on a possible way on investigating the midline theorem  (stating that the line through the midpoints of two sides of a triangle is parallel to the third side) by using GeoGebra's automated reasoning tools.
+Here step-by-step instructions are provided on a possible way to investigate the midline theorem  (stating that the line through the midpoints of two sides of a triangle is parallel to the third side) by using GeoGebra's automated reasoning tools.
+The midline theorem states that in a triangle,
+the segment joining the midpoints of any two sides will be parallel to the third side and half its length.
+Here we provide step-by-step instructions to formalize this theorem with GeoGebra.
 
 \paragraph{Step 1}
 \begin{center}
@@ -386,27 +389,40 @@ Here step-by-step instructions are provided on a possible way on investigating t
 \begin{center}
 \includegraphics[scale=0.5]{classroom3-Relation}
 \end{center}
-The pupils may continue with a next step 4, for instance,  looking for an elegant way to prove this statement, or just stop here if there is no time for further work in the classroom.
+The students may continue with a next step 4, for instance,  looking for an elegant way to prove this statement, or just stop here if there is no time for further work in the classroom.
 
-Moreover, a further step 5 could be included after obtaining the classical proof, by considering related questions such as: it is true that $c$ and $g$ do not have the same length---but can $g$ be computed by using the length of $c$? Maybe $c=1.5\cdot g$, or maybe more? The GeoGebra command \texttt{Relation[c,1.5g]} will  answer that $c$ and $1.5g$ are not equal, but maybe there is a constant other than $1.5$ which could yield a positive answer$\ldots$ Even if there is no time for further work in the classroom, some pupils may find these questions interesting to work on their own and they can continue thinking on them alone or in groups---but in some sense \textit{independently}, using the computer as an expert system.
+Moreover, a further step 5 could be included after obtaining the classical proof, by considering related questions such as: it is true that $c$ and $g$ do not have the same length---but can $g$ be computed by using the length of $c$? Maybe $c=1.5\cdot g$, or maybe more? The GeoGebra command \texttt{Relation[c,1.5g]} will  answer that $c$ and $1.5g$ are not equal, but maybe there is a constant other than $1.5$ which could yield a positive answer$\ldots$ Even if there is no time for further work in the classroom, some students may find these questions interesting to work on their own and they can continue thinking on them alone or in groups---but in some sense \textit{independently}, using the computer as an expert system.
 
 \subsection{Further examples}
 
-The traditional triangle inequality can be translated into an equation, which can be subject  into an investigation of degenerated triangles. As a generalization, the synthetic definition of the ellipse can be discovered.
+The traditional triangle inequality can be translated into an equation, which can be subject to an investigation of degenerated triangles. As a generalization, the synthetic definition of the ellipse can be discovered.
 Recall the triangle inequality, concerning a triangle of sides $a,b,c$  states that $a+b>c$. Now,  by using GeoGebra ART and the command
 \texttt{LocusEquation[a+b==c,C]},  the output will be the line $AB$,  which
 describes all degenerate triangles. On the other hand, by issuing \texttt{LocusEquation[a+b==2c,C]},
 an ellipse will be drawn with foci $A$ and $B$, focal distance $c/2$, semi-major axis $c$
 and eccentricity $1/2$. Similar investigations can be performed when using different
 ratios between $a+b$ and $c$.
+\begin{center}
+\includegraphics[scale=0.5]{further1}
+\end{center}
 
-Another application, in a triangle $ABC$, is to derive the locus equation of $C$ with the condition $a\stackrel{?}{=}b$ (step 1). Clearly, $C$ must lie on the bisector of segment $AB$ (step 2). As  by explicitly putting $C$ on the bisector, GeoGebra confirms that $AC=BC$ when starting the Relation tool's symbolic machinery (step 3). After proving the statement by traditional means (step 4), a generalization can be obtained by typing e.g.~\texttt{LocusEquation[a==2b,C]}: this can be an interesting experiment for advanced learners too (step 5).
+Another application, in a triangle $ABC$, is to derive the locus equation
+of $C$ with the condition $a\stackrel{?}{=}b$ (step 1). Clearly, $C$ must
+lie on the bisector of segment $AB$ (step 2). As  by explicitly putting
+$C$ on the bisector, GeoGebra confirms that $AC=BC$ when starting the
+Relation tool's symbolic machinery (step 3). After proving the statement
+by traditional means (step 4), a generalization can be obtained by typing
+e.g.~\texttt{LocusEquation[a==2b,C]}: this can be an interesting
+experiment for advanced learners too (step 5).
+\begin{center}
+\includegraphics[scale=0.5]{further2}
+\end{center}
 
 See \cite{Kovacs2017} for additional examples.
 
 \section{Limitations: a case study of Thales' circle theorem}
 
-Intiutive use of GeoGebra automated reasoning tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use, exemplified through an investigation on Thales' circle theorem  (see Section \ref{par:Thales} on page \pageref{par:Thales}), as follows:
+Intuitive use of GeoGebra automated reasoning tools may result in unexpected outputs in some cases. This subsection explains some common mistakes during their use, exemplified through an investigation on Thales' circle theorem  (see Section \ref{par:Thales} on page \pageref{par:Thales}), as follows:
 
 \begin{center}
 \includegraphics[scale=0.5]{limitations-Thales1-1}
